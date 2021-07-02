@@ -1,0 +1,10 @@
+C:\Users\student\Source\Repos\Node2\NodeListForm\NodeListForm\bin\Debug\NodeListForm.exe.config
+C:\Users\student\Source\Repos\Node2\NodeListForm\NodeListForm\bin\Debug\NodeListForm.exe
+C:\Users\student\Source\Repos\Node2\NodeListForm\NodeListForm\bin\Debug\NodeListForm.pdb
+C:\Users\student\Source\Repos\Node2\NodeListForm\NodeListForm\obj\Debug\NodeListForm.csprojAssemblyReference.cache
+C:\Users\student\Source\Repos\Node2\NodeListForm\NodeListForm\obj\Debug\NodeListForm.Form1.resources
+C:\Users\student\Source\Repos\Node2\NodeListForm\NodeListForm\obj\Debug\NodeListForm.Properties.Resources.resources
+C:\Users\student\Source\Repos\Node2\NodeListForm\NodeListForm\obj\Debug\NodeListForm.csproj.GenerateResource.cache
+C:\Users\student\Source\Repos\Node2\NodeListForm\NodeListForm\obj\Debug\NodeListForm.csproj.CoreCompileInputs.cache
+C:\Users\student\Source\Repos\Node2\NodeListForm\NodeListForm\obj\Debug\NodeListForm.exe
+C:\Users\student\Source\Repos\Node2\NodeListForm\NodeListForm\obj\Debug\NodeListForm.pdb
