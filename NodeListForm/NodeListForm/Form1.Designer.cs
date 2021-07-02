@@ -44,6 +44,7 @@ namespace NodeListForm
             this.FormBorderStyle = FormBorderStyle.None;
             this.StartPosition = FormStartPosition.CenterScreen;
             this.Resize += Form1_Resize;
+            
 
             UpperPanel = new Panel()
             {
@@ -51,6 +52,8 @@ namespace NodeListForm
                 Location = new Point(0, 0),
                 BackColor = Color.FromArgb(255, 16, 16, 16)
             };
+            UpperPanel.MouseDoubleClick += UpperPanel_MouseDoubleClick;
+
 
             UpperPanel.MouseDown += UpperPanel_MouseDown;
             UpperPanel.MouseMove += UpperPanel_MouseMove;
@@ -103,41 +106,51 @@ namespace NodeListForm
                 }
             });
 
-            FuncButtons = new List<Label> { };
+            FuncButtons = new List<Button> { };
 
-            FuncButtons.Add(new Label()
+            FuncButtons.Add(new Button()
             {
-                Location = new Point(5 + 60 * FuncButtons.Count, 0),
+                Location = new Point(60 * FuncButtons.Count, 0),
                 Size = new Size(60, 30),
                 Text = "File",
                 Name = "File",
-                FlatStyle = FlatStyle.Popup,
+                FlatStyle = FlatStyle.Flat,
                 ForeColor = Color.FromArgb(255, 130, 130, 130),
                 Font = new Font("Consolas", 9),
                 TextAlign = ContentAlignment.MiddleCenter,
             });
 
-            FuncButtons.Add(new Label()
+            FuncButtons.Add(new Button()
             {
-                Location = new Point(5 + 60 * FuncButtons.Count, 0),
+                Location = new Point(60 * FuncButtons.Count, 0),
                 Size = new Size(60, 30),
                 Text = "Edit",
                 Name = "Edit",
-                FlatStyle = FlatStyle.Popup,
+                FlatStyle = FlatStyle.Flat,
                 ForeColor = Color.FromArgb(255, 130, 130, 130),
                 Font = new Font("Consolas", 9),
                 TextAlign = ContentAlignment.MiddleCenter,
             });
 
+            FuncButtons.ForEach(x => x.FlatAppearance.BorderSize = 0);
             FuncButtons.ForEach(x => UpperPanel.Controls.Add(x));
+            
             MainButtons.ForEach(x => UpperPanel.Controls.Add(x));
             MainButtons.ForEach(x => x.FlatAppearance.BorderSize = 0);
+            
             MainButtons.ForEach(x => x.MouseEnter += X_MouseEnter);
             MainButtons.ForEach(x => x.MouseLeave += X_MouseLeave);
             MainButtons.ForEach(x => x.MouseClick += X_MouseClick);
 
             Controls.Add(UpperPanel);
             Controls.Add(Border);
+        }
+
+        private void UpperPanel_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Normal)
+                this.WindowState = FormWindowState.Maximized;
+            else this.WindowState = FormWindowState.Normal;
         }
 
         private void UpperPanel_MouseMove(object sender, MouseEventArgs e)
@@ -195,7 +208,7 @@ namespace NodeListForm
 
         private Panel UpperPanel;
         private List<Button> MainButtons;
-        private List<Label> FuncButtons;
+        private List<Button> FuncButtons;
 
         private PictureBox Border;
         #endregion
