@@ -42,23 +42,24 @@ namespace NodeListForm
             this.BackColor = Color.FromArgb(255, 26, 26, 26);
             this.FormBorderStyle = FormBorderStyle.None;
             this.StartPosition = FormStartPosition.CenterScreen;
+            this.Resize += Form1_Resize;
 
             UpperPanel = new Panel()
             {
                 Size = new Size(this.Width, 30),
                 Location = new Point(0, 0),
-                BackColor = Color.FromArgb(255, 26, 26, 26)
+                BackColor = Color.FromArgb(255, 16, 16, 16)
             };
 
             Border = new PictureBox()
             {
-                Size = new Size(this.Width, 2),
+                Size = new Size(this.Width, 1),
                 Location = new Point(0, 30),
                 BackColor = Color.FromArgb(255, 0, 0, 0)
             };
 
-            Buttons = new List<Button>();
-            Buttons.AddRange(new List<Button>()
+            MainButtons = new List<Button>();
+            MainButtons.AddRange(new List<Button>()
             {
                 new Button()
                 {
@@ -69,8 +70,8 @@ namespace NodeListForm
                     ForeColor = Color.FromArgb(255, 130, 130, 130),
                     Location = new Point(this.Width-30,0),
                     FlatStyle = FlatStyle.Flat,
+                    TextAlign = ContentAlignment.MiddleCenter,
                     Anchor = AnchorStyles.Right,
-                    TextAlign = ContentAlignment.MiddleCenter
                 },
                 new Button()
                 {
@@ -81,8 +82,8 @@ namespace NodeListForm
                     ForeColor = Color.FromArgb(255, 130, 130, 130),
                     Location = new Point(this.Width-60, 0),
                     FlatStyle = FlatStyle.Flat,
+                    TextAlign = ContentAlignment.MiddleCenter,
                     Anchor = AnchorStyles.Right,
-                    TextAlign = ContentAlignment.MiddleCenter
                 },
                 new Button()
                 {
@@ -93,19 +94,35 @@ namespace NodeListForm
                     ForeColor = Color.FromArgb(255, 130, 130, 130),
                     Location = new Point(this.Width-90, 0),
                     FlatStyle = FlatStyle.Flat,
+                    TextAlign = ContentAlignment.MiddleCenter,
                     Anchor = AnchorStyles.Right,
-                    TextAlign = ContentAlignment.MiddleCenter
                 }
             });
 
-            Buttons.ForEach(x => UpperPanel.Controls.Add(x));
-            Buttons.ForEach(x => x.FlatAppearance.BorderSize = 0);
-            //Buttons.ForEach(x => x.MouseEnter += X_MouseEnter);
-            //Buttons.ForEach(x => x.MouseLeave += X_MouseLeave);
-            Buttons.ForEach(x => x.MouseClick += X_MouseClick);
+            MainButtons.ForEach(x => UpperPanel.Controls.Add(x));
+            MainButtons.ForEach(x => x.FlatAppearance.BorderSize = 0);
+            MainButtons.ForEach(x => x.MouseEnter += X_MouseEnter);
+            MainButtons.ForEach(x => x.MouseLeave += X_MouseLeave);
+            MainButtons.ForEach(x => x.MouseClick += X_MouseClick);
 
             Controls.Add(UpperPanel);
             Controls.Add(Border);
+        }
+
+        private void X_MouseLeave(object sender, System.EventArgs e)
+        {
+            if ((sender as Button).Name == "Quit") MainButtons.Find(x => x.Name == "Quit").ForeColor = Color.FromArgb(255, 130, 130, 130);
+        }
+
+        private void X_MouseEnter(object sender, System.EventArgs e)
+        {
+            if ((sender as Button).Name == "Quit") MainButtons.Find(x => x.Name == "Quit").ForeColor = Color.Red;
+        }
+
+        private void Form1_Resize(object sender, System.EventArgs e)
+        {
+            UpperPanel.Size = new Size(this.Width, 30);
+            Border.Size = new Size(this.Width, 1);
         }
 
         private void X_MouseClick(object sender, MouseEventArgs e)
@@ -129,7 +146,8 @@ namespace NodeListForm
         }
 
         private Panel UpperPanel;
-        private List<Button> Buttons;
+        private List<Button> MainButtons;
+
         private PictureBox Border;
         #endregion
     }
