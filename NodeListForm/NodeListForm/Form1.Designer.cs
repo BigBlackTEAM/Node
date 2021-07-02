@@ -6,6 +6,7 @@ namespace NodeListForm
 {
     partial class Form1
     {
+        Point point;
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -50,6 +51,9 @@ namespace NodeListForm
                 Location = new Point(0, 0),
                 BackColor = Color.FromArgb(255, 16, 16, 16)
             };
+
+            UpperPanel.MouseDown += UpperPanel_MouseDown;
+            UpperPanel.MouseMove += UpperPanel_MouseMove;
 
             Border = new PictureBox()
             {
@@ -99,6 +103,33 @@ namespace NodeListForm
                 }
             });
 
+            FuncButtons = new List<Label> { };
+
+            FuncButtons.Add(new Label()
+            {
+                Location = new Point(5 + 60 * FuncButtons.Count, 0),
+                Size = new Size(60, 30),
+                Text = "File",
+                Name = "File",
+                FlatStyle = FlatStyle.Popup,
+                ForeColor = Color.FromArgb(255, 130, 130, 130),
+                Font = new Font("Consolas", 9),
+                TextAlign = ContentAlignment.MiddleCenter,
+            });
+
+            FuncButtons.Add(new Label()
+            {
+                Location = new Point(5 + 60 * FuncButtons.Count, 0),
+                Size = new Size(60, 30),
+                Text = "Edit",
+                Name = "Edit",
+                FlatStyle = FlatStyle.Popup,
+                ForeColor = Color.FromArgb(255, 130, 130, 130),
+                Font = new Font("Consolas", 9),
+                TextAlign = ContentAlignment.MiddleCenter,
+            });
+
+            FuncButtons.ForEach(x => UpperPanel.Controls.Add(x));
             MainButtons.ForEach(x => UpperPanel.Controls.Add(x));
             MainButtons.ForEach(x => x.FlatAppearance.BorderSize = 0);
             MainButtons.ForEach(x => x.MouseEnter += X_MouseEnter);
@@ -109,6 +140,22 @@ namespace NodeListForm
             Controls.Add(Border);
         }
 
+        private void UpperPanel_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                Point Delta = new Point(point.X - this.Location.X, point.Y - this.Location.Y);
+                this.Location = new Point(this.Location.X + e.X - point.X, this.Location.Y + e.Y - point.Y);
+            }
+        }
+
+        private void UpperPanel_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                point = new Point(e.X, e.Y);
+            }
+        }
         private void X_MouseLeave(object sender, System.EventArgs e)
         {
             if ((sender as Button).Name == "Quit") MainButtons.Find(x => x.Name == "Quit").ForeColor = Color.FromArgb(255, 130, 130, 130);
@@ -145,8 +192,10 @@ namespace NodeListForm
             }
         }
 
+
         private Panel UpperPanel;
         private List<Button> MainButtons;
+        private List<Label> FuncButtons;
 
         private PictureBox Border;
         #endregion
