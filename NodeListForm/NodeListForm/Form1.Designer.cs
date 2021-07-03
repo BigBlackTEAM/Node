@@ -9,7 +9,8 @@ namespace NodeListForm
         Point point;
         bool IsControlPanelShow = true;
         bool IsSearchPanelShow = false;
-        int FloatTime;
+        int FloatTimeOfControlPanelAnim;
+        int FloatTimeOfSearchFieldAnim;
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -55,7 +56,7 @@ namespace NodeListForm
             {
                 Size = new Size(this.Width, 30),
                 Location = new Point(0, 0),
-                BackColor = Color.FromArgb(255, 66, 66, 66)
+                BackColor = Color.FromArgb(255, 66, 66, 66),
             };
             UpperPanel.MouseDoubleClick += UpperPanel_MouseDoubleClick;
 
@@ -147,9 +148,9 @@ namespace NodeListForm
             FuncButtons.Add(new Button()
             {
                 Location = new Point(80, 0),
-                Size = new Size(120, 30),
-                Text = "Редактировать",
-                Name = "Edit",
+                Size = new Size(100, 30),
+                Text = "Настройки",
+                Name = "Settings",
                 FlatStyle = FlatStyle.Flat,
                 ForeColor = Color.FromArgb(255, 160, 160, 160),
                 Font = new Font("Consolas", 9),
@@ -226,12 +227,12 @@ namespace NodeListForm
             {
                 Text = "Поиск",
                 Name = "SearchField",
-                Location = new Point(7, 8),
-                Size = new Size(120, 30),
+                Location = new Point(15, 8),
+                Size = new Size(200, 30),
                 BorderStyle = BorderStyle.None,
                 BackColor = Color.FromArgb(255, 36, 36, 36),
                 ForeColor = Color.FromArgb(255, 160, 160, 160),
-                MaxLength = 22
+                MaxLength = 50
             };
 
             SearchField.GotFocus += SearchField_GotFocus;
@@ -270,13 +271,15 @@ namespace NodeListForm
 
         private void SearchPanelAnim_Tick(object sender, System.EventArgs e)
         {
+            FloatTimeOfSearchFieldAnim = 100;
             if (!IsSearchPanelShow)
             {
                 if (SearchPanel.Size.Width > 30)
                 {
-                    SearchPanel.Size = new Size(SearchPanel.Size.Width - 5, SearchPanel.Size.Width);
+                    SearchPanel.Size = new Size(SearchPanel.Size.Width - FloatTimeOfSearchFieldAnim / 8, SearchPanel.Size.Width);
                     SearchField.Location = new Point(SearchField.Location.X - 1, SearchField.Location.Y);
                     SearchPanel.Region = new Region(RoundedRect(new Rectangle(0, 0, SearchPanel.Width, 30), 16));
+                    if (FloatTimeOfSearchFieldAnim > 28) FloatTimeOfSearchFieldAnim -= 25;
                 }
                 else
                 {
@@ -287,15 +290,16 @@ namespace NodeListForm
             }
             else
             {
-                if (SearchPanel.Size.Width < 160)
+                if (SearchPanel.Size.Width < 260)
                 {
-                    SearchPanel.Size = new Size(SearchPanel.Size.Width + 5, SearchPanel.Size.Width);
+                    SearchPanel.Size = new Size(SearchPanel.Size.Width + FloatTimeOfSearchFieldAnim / 8, SearchPanel.Size.Width);
                     SearchField.Location = new Point(SearchField.Location.X + 1, SearchField.Location.Y);
                     SearchPanel.Region = new Region(RoundedRect(new Rectangle(0, 0, SearchPanel.Width, 30), 16));
+                    if (FloatTimeOfSearchFieldAnim > 28) FloatTimeOfSearchFieldAnim -= 25;
                 }
                 else
                 {
-                    SearchPanel.Size = new Size(160, SearchPanel.Size.Width);
+                    SearchPanel.Size = new Size(260, SearchPanel.Size.Width);
                     SearchPanel.Region = new Region(RoundedRect(new Rectangle(0, 0, SearchPanel.Width, 30), 16));
                     SearchPanelAnim.Stop();
                 }
@@ -308,16 +312,6 @@ namespace NodeListForm
             {
                 case "NoteSearch":
                     IsSearchPanelShow = !IsSearchPanelShow;
-                    if (IsSearchPanelShow)
-                    {
-                        //ControlButtons.Find(x => x.Name == "NoteSearch").BackColor = Color.FromArgb(255, 0, 127, 219);
-                        ControlButtons.Find(x => x.Name == "NoteSearch").ForeColor = Color.FromArgb(255, 255, 255, 255);
-                    }
-                    else
-                    {
-                        //ControlButtons.Find(x => x.Name == "NoteSearch").BackColor = Color.FromArgb(255, 36, 36, 36);
-                        ControlButtons.Find(x => x.Name == "NoteSearch").ForeColor = Color.FromArgb(255, 160, 160, 160);
-                    }
                     SearchPanelAnim.Start();
                     break;
             }
@@ -335,12 +329,15 @@ namespace NodeListForm
 
         private void ControlPanelAnim_Tick(object sender, System.EventArgs e)
         {
+            if (ControlPanel.Location.Y < -12)
+                ControlPanel.Location = new Point(0, -12);
+
             if (IsControlPanelShow)
             {
                 if (ControlPanel.Location.Y > -12)
                 {
-                    ControlPanel.Location = new Point(ControlPanel.Location.X, ControlPanel.Location.Y - FloatTime / 25);
-                    if (FloatTime > 32) FloatTime -= 7;
+                    ControlPanel.Location = new Point(ControlPanel.Location.X, ControlPanel.Location.Y - FloatTimeOfControlPanelAnim / 25);
+                    if (FloatTimeOfControlPanelAnim > 32) FloatTimeOfControlPanelAnim -= 7;
                 }
                 else
                 {
@@ -354,8 +351,8 @@ namespace NodeListForm
                 ControlPanel.Visible = true;
                 if (ControlPanel.Location.Y < 32)
                 {
-                    ControlPanel.Location = new Point(ControlPanel.Location.X, ControlPanel.Location.Y + FloatTime / 25);
-                    if (FloatTime > 32) FloatTime -= 7;
+                    ControlPanel.Location = new Point(ControlPanel.Location.X, ControlPanel.Location.Y + FloatTimeOfControlPanelAnim / 25);
+                    if (FloatTimeOfControlPanelAnim > 32) FloatTimeOfControlPanelAnim -= 7;
                 }
                 else
                 {
@@ -371,9 +368,9 @@ namespace NodeListForm
             {
                 case "Note":
                     IsControlPanelShow = !IsControlPanelShow;
-                    FloatTime = 120;
+                    FloatTimeOfControlPanelAnim = 120;
                     ControlPanelAnim.Start();
-                    if(IsSearchPanelShow)
+                    if (IsSearchPanelShow)
                     {
                         IsSearchPanelShow = false;
                         SearchPanelAnim.Start();
@@ -474,6 +471,10 @@ namespace NodeListForm
             ControlPanel.Size = new Size(this.Width, ControlPanel.Height);
             UpperBorder.Size = new Size(this.Width, UpperBorder.Height);
             BottomBorder.Size = new Size(this.Width, BottomBorder.Height);
+
+            if(this.Height < 87) ControlPanel.Location = new Point(0, this.Height - ControlPanel.Size.Height - 15);
+            //if (this.Height < 87) ControlPanel.Location = new Point(0, ControlPanel.Location.Y -1);
+            //if (this.Height > 47 && !IsControlPanelShow) ControlPanel.Location = new Point(0, ControlPanel.Location.Y + 1);
         }
 
         private void X_MouseClick(object sender, MouseEventArgs e)
