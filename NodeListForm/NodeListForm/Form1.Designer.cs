@@ -43,7 +43,7 @@ namespace NodeListForm
             this.BackColor = Color.FromArgb(255, 40, 40, 40);
             this.FormBorderStyle = FormBorderStyle.None;
             this.StartPosition = FormStartPosition.CenterScreen;
-            this.MinimumSize = new Size(283, 60);
+            this.MinimumSize = new Size(283, 46);
             this.Resize += Form1_Resize;
             this.MouseUp += Form1_MouseUp;
             this.MouseDown += Form1_MouseDown;
@@ -56,15 +56,31 @@ namespace NodeListForm
             };
             UpperPanel.MouseDoubleClick += UpperPanel_MouseDoubleClick;
 
+            ControlPanel = new Panel()
+            {
+                Size = new Size(this.Width, 40),
+                Location = new Point(0, 32),
+                BackColor = Color.FromArgb(255, 66, 66, 66),
+                Visible = false
+            };
 
             UpperPanel.MouseDown += UpperPanel_MouseDown;
             UpperPanel.MouseMove += UpperPanel_MouseMove;
 
-            Border = new PictureBox()
+            UpperBorder = new PictureBox()
             {
-                Size = new Size(this.Width, 1),
+                Size = new Size(this.Width, 2),
                 Location = new Point(0, 30),
                 BackColor = Color.FromArgb(255, 56, 56, 56)
+            };
+
+            BottomBorder = new PictureBox()
+            {
+                Size = new Size(this.Width, 15),
+                Location = new Point(0, this.Height - 15),
+                BackColor = Color.FromArgb(255, 66, 66, 66),
+                Anchor = AnchorStyles.Bottom | AnchorStyles.Left,
+                Enabled = false,
             };
 
             MainButtons = new List<Button>();
@@ -74,7 +90,7 @@ namespace NodeListForm
                 {
                     Name = "Quit",
                     Font = new Font("Consolas", 13),
-                    Text = "x",
+                    Text = "✕",
                     Size = new Size(30, 30),
                     ForeColor = Color.FromArgb(255, 160, 160, 160),
                     Location = new Point(this.Width-30,0),
@@ -115,7 +131,7 @@ namespace NodeListForm
                 Location = new Point(120 * FuncButtons.Count, 0),
                 Size = new Size(80, 30),
                 Text = "Заметка",
-                Name = "File",
+                Name = "Note",
                 FlatStyle = FlatStyle.Flat,
                 ForeColor = Color.FromArgb(255, 160, 160, 160),
                 Font = new Font("Consolas", 9),
@@ -136,6 +152,7 @@ namespace NodeListForm
 
             FuncButtons.ForEach(x => x.FlatAppearance.BorderSize = 0);
             FuncButtons.ForEach(x => UpperPanel.Controls.Add(x));
+            FuncButtons.ForEach(x => x.MouseClick += X_MouseClick1);
 
             MainButtons.ForEach(x => UpperPanel.Controls.Add(x));
             MainButtons.ForEach(x => x.FlatAppearance.BorderSize = 0);
@@ -145,7 +162,19 @@ namespace NodeListForm
             MainButtons.ForEach(x => x.MouseClick += X_MouseClick);
 
             Controls.Add(UpperPanel);
-            Controls.Add(Border);
+            Controls.Add(UpperBorder);
+            Controls.Add(ControlPanel);
+            Controls.Add(BottomBorder);
+        }
+
+        private void X_MouseClick1(object sender, MouseEventArgs e)
+        {
+            switch((sender as Button).Name)
+            {
+                case "Note":
+                    ControlPanel.Visible = !ControlPanel.Visible;
+                    break;
+            }
         }
 
         private void Form1_MouseDown(object sender, MouseEventArgs e)
@@ -197,8 +226,13 @@ namespace NodeListForm
         private void UpperPanel_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (this.WindowState == FormWindowState.Normal)
+            {
                 this.WindowState = FormWindowState.Maximized;
-            else this.WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
         }
 
         private void UpperPanel_MouseMove(object sender, MouseEventArgs e)
@@ -220,17 +254,21 @@ namespace NodeListForm
         private void X_MouseLeave(object sender, System.EventArgs e)
         {
             if ((sender as Button).Name == "Quit") MainButtons.Find(x => x.Name == "Quit").ForeColor = Color.FromArgb(255, 160, 160, 160);
+            //Cursor.Current = Cursors.Default;
         }
 
         private void X_MouseEnter(object sender, System.EventArgs e)
         {
             if ((sender as Button).Name == "Quit") MainButtons.Find(x => x.Name == "Quit").ForeColor = Color.Red;
+            //Cursor.Current = Cursors.Hand;
         }
 
         private void Form1_Resize(object sender, System.EventArgs e)
         {
-            UpperPanel.Size = new Size(this.Width, 30);
-            Border.Size = new Size(this.Width, 1);
+            UpperPanel.Size = new Size(this.Width, UpperPanel.Height);
+            ControlPanel.Size = new Size(this.Width, ControlPanel.Height);
+            UpperBorder.Size = new Size(this.Width, UpperBorder.Height);
+            BottomBorder.Size = new Size(this.Width, BottomBorder.Height);
         }
 
         private void X_MouseClick(object sender, MouseEventArgs e)
@@ -255,10 +293,12 @@ namespace NodeListForm
 
 
         private Panel UpperPanel;
+        private Panel ControlPanel;
         private List<Button> MainButtons;
         private List<Button> FuncButtons;
 
-        private PictureBox Border;
+        private PictureBox UpperBorder;
+        private PictureBox BottomBorder;
         #endregion
     }
 }

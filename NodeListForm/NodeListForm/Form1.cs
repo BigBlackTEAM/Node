@@ -49,28 +49,59 @@ namespace NodeListForm
             return path;
         }
 
-
         private const int cGrip = 16;
         private const int cCaption = 32;
-        protected override void WndProc(ref Message m)
+        protected override void OnPaint(PaintEventArgs e)
         {
-            if (m.Msg == 0x84)
-            {
-                Point pos = new Point(m.LParam.ToInt32());
-                pos = this.PointToClient(pos);
-                if (pos.Y < cCaption)
-                {
-                    m.Result = (IntPtr)2;
-                    return;
-                }
+            Rectangle rc = new Rectangle(this.ClientSize.Width - cGrip, this.ClientSize.Height - cGrip, cGrip, cGrip);
+            ControlPaint.DrawSizeGrip(e.Graphics, this.BackColor, rc);
+            rc = new Rectangle(0, 0, this.ClientSize.Width, cCaption);
+            //e.Graphics.FillRectangle(Brushes.DarkBlue, rc);
 
-                if (pos.X >= this.ClientSize.Width - cGrip && pos.Y >= this.ClientSize.Height - cGrip)
-                {
-                    m.Result = (IntPtr)17;
-                    return;
-                }
+        }
+
+        const int delta = 10;
+
+        private const int
+            HTLEFT = 10,
+            HTRIGHT = 11,
+            HTTOP = 12,
+            HTTOPLEFT = 13,
+            HTTOPRIGHT = 14,
+            HTBOTTOM = 15,
+            HTBOTTOMLEFT = 16,
+            HTBOTTOMRIGHT = 17;
+
+
+        Rectangle Top { get { return new Rectangle(0, 0, this.ClientSize.Width, delta); } }
+        Rectangle Left { get { return new Rectangle(0, 0, delta, this.ClientSize.Height); } }
+        Rectangle Bottom { get { return new Rectangle(0, this.ClientSize.Height - delta, this.ClientSize.Width, delta); } }
+        Rectangle Right { get { return new Rectangle(this.ClientSize.Width - delta, 0, delta, this.ClientSize.Height); } }
+
+        Rectangle TopLeft { get { return new Rectangle(0, 0, delta, delta); } }
+        Rectangle TopRight { get { return new Rectangle(this.ClientSize.Width - delta, 0, delta, delta); } }
+        Rectangle BottomLeft { get { return new Rectangle(0, this.ClientSize.Height - delta, delta, delta); } }
+        Rectangle BottomRight { get { return new Rectangle(this.ClientSize.Width - delta, this.ClientSize.Height - delta, delta, delta); } }
+
+
+        protected override void WndProc(ref Message message)
+        {
+            base.WndProc(ref message);
+
+            if (message.Msg == 0x84) // WM_NCHITTEST
+            {
+                var cursor = this.PointToClient(Cursor.Position);
+
+                if (TopLeft.Contains(cursor)) message.Result = (IntPtr)HTTOPLEFT;
+                else if (TopRight.Contains(cursor)) message.Result = (IntPtr)HTTOPRIGHT;
+                else if (BottomLeft.Contains(cursor)) message.Result = (IntPtr)HTBOTTOMLEFT;
+                else if (BottomRight.Contains(cursor)) message.Result = (IntPtr)HTBOTTOMRIGHT;
+
+                else if (Top.Contains(cursor)) message.Result = (IntPtr)HTTOP;
+                else if (Left.Contains(cursor)) message.Result = (IntPtr)HTLEFT;
+                else if (Right.Contains(cursor)) message.Result = (IntPtr)HTRIGHT;
+                else if (Bottom.Contains(cursor)) message.Result = (IntPtr)HTBOTTOM;
             }
-            base.WndProc(ref m);
         }
     }
 }
