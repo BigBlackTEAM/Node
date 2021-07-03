@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 
             public NodeManager()
             {
-              //lox
+
             }
 
             public NodeManager(List<Node> nodes, string path)
@@ -32,7 +32,27 @@ using System.Threading.Tasks;
                 Nodes.Reverse();
             }
 
+            public void OrderByCreationTimeDecreasing() => Nodes = Nodes.OrderBy(x => x.CreationTime).ToList();
+            
+            public void OrderByCreationTimeIncreasing()
+            {
+                OrderByCreationTimeDecreasing();
+                Nodes.Reverse();
+            }
+
+            public void OrderByChangeTimeDecreasing() => Nodes = Nodes.OrderBy(x => x.ChangeTime).ToList();
+            
+            public void OrderByChangeTimeIncreasing()
+            {
+                OrderByChangeTimeDecreasing();
+                Nodes.Reverse();
+            }
+
             public List<Node> SearchByName(string name) => Nodes.Where(x => x.Name.Contains(name)).ToList();
+
+            public List<Node> SearchByCreationTime(DateTime creationTime) => Nodes.Where(x => x.CreationTime.ToString().Contains(creationTime.ToString())).ToList();
+
+            public List<Node> SearchByChangeTime(DateTime changeTime) => Nodes.Where(x => x.ChangeTime.ToString().Contains(changeTime.ToString())).ToList();
 
         }
     }
