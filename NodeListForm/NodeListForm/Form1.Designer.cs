@@ -7,6 +7,9 @@ namespace NodeListForm
     partial class Form1
     {
         Point point;
+        bool IsControlPanelShow = true;
+        bool IsSearchPanelShow = false;
+        int FloatTime;
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -43,7 +46,7 @@ namespace NodeListForm
             this.BackColor = Color.FromArgb(255, 40, 40, 40);
             this.FormBorderStyle = FormBorderStyle.None;
             this.StartPosition = FormStartPosition.CenterScreen;
-            this.MinimumSize = new Size(283, 46);
+            this.MinimumSize = new Size(292, 47);
             this.Resize += Form1_Resize;
             this.MouseUp += Form1_MouseUp;
             this.MouseDown += Form1_MouseDown;
@@ -59,9 +62,9 @@ namespace NodeListForm
             ControlPanel = new Panel()
             {
                 Size = new Size(this.Width, 40),
-                Location = new Point(0, 32),
-                BackColor = Color.FromArgb(255, 66, 66, 66),
-                Visible = false
+                Location = new Point(0, -12),
+                BackColor = Color.FromArgb(255, 55, 55, 55),
+                Visible = false,
             };
 
             UpperPanel.MouseDown += UpperPanel_MouseDown;
@@ -82,6 +85,9 @@ namespace NodeListForm
                 Anchor = AnchorStyles.Bottom | AnchorStyles.Left,
                 Enabled = false,
             };
+
+            BottomBorder.MouseDown += UpperPanel_MouseDown;
+            BottomBorder.MouseMove += UpperPanel_MouseMove;
 
             MainButtons = new List<Button>();
             MainButtons.AddRange(new List<Button>()
@@ -150,6 +156,93 @@ namespace NodeListForm
                 TextAlign = ContentAlignment.MiddleCenter,
             });
 
+            ControlButtons = new List<Button> { };
+
+            ControlButtons.Add(new Button()
+            {
+                Location = new Point(15 + 40 * ControlButtons.Count, 5),
+                Size = new Size(30, 30),
+                Text = "+",
+                Name = "NoteAdd",
+                FlatStyle = FlatStyle.Flat,
+                ForeColor = Color.FromArgb(255, 160, 160, 160),
+                BackColor = Color.FromArgb(255, 36, 36, 36),
+                TextAlign = ContentAlignment.MiddleRight,
+                Font = new Font("Consolas", 14),
+                Region = new Region(RoundedRect(new Rectangle(0, 0, 30, 30), 16))
+            });
+
+            ControlButtons.Add(new Button()
+            {
+                Location = new Point(15 + 40 * ControlButtons.Count, 5),
+                Size = new Size(30, 30),
+                Text = "-",
+                Name = "NoteRemove",
+                FlatStyle = FlatStyle.Flat,
+                ForeColor = Color.FromArgb(255, 160, 160, 160),
+                BackColor = Color.FromArgb(255, 36, 36, 36),
+                TextAlign = ContentAlignment.MiddleRight,
+                Font = new Font("Consolas", 14),
+                Region = new Region(RoundedRect(new Rectangle(0, 0, 30, 30), 16))
+            });
+
+            ControlButtons.Add(new Button()
+            {
+                Location = new Point(15 + 40 * ControlButtons.Count, 5),
+                Size = new Size(30, 30),
+                Text = "🖋️",
+                Name = "NoteEdit",
+                FlatStyle = FlatStyle.Flat,
+                ForeColor = Color.FromArgb(255, 160, 160, 160),
+                BackColor = Color.FromArgb(255, 36, 36, 36),
+                TextAlign = ContentAlignment.MiddleRight,
+                Font = new Font("Consolas", 9),
+                Region = new Region(RoundedRect(new Rectangle(0, 0, 30, 30), 16))
+            });
+
+            ControlButtons.Add(new Button()
+            {
+                Location = new Point(15 + 40 * ControlButtons.Count, 5),
+                Size = new Size(30, 30),
+                Text = "🔎",
+                Name = "NoteSearch",
+                FlatStyle = FlatStyle.Flat,
+                ForeColor = Color.FromArgb(255, 160, 160, 160),
+                BackColor = Color.FromArgb(255, 36, 36, 36),
+                TextAlign = ContentAlignment.MiddleRight,
+                Font = new Font("Consolas", 9),
+                Region = new Region(RoundedRect(new Rectangle(0, 0, 30, 30), 16))
+            });
+
+            SearchPanel = new Panel()
+            {
+                Size = new Size(30, 30),
+                Location = new Point(ControlButtons.Find(x => x.Name == "NoteSearch").Location.X, 5),
+                BackColor = Color.FromArgb(255, 36, 36, 36),
+                Region = new Region(RoundedRect(new Rectangle(0, 0, 30, 30), 16))
+            };
+
+            SearchField = new TextBox()
+            {
+                Text = "Поиск",
+                Name = "SearchField",
+                Location = new Point(7, 8),
+                Size = new Size(120, 30),
+                BorderStyle = BorderStyle.None,
+                BackColor = Color.FromArgb(255, 36, 36, 36),
+                ForeColor = Color.FromArgb(255, 160, 160, 160),
+                MaxLength = 22
+            };
+
+            SearchField.GotFocus += SearchField_GotFocus;
+            SearchField.LostFocus += SearchField_LostFocus;
+            SearchPanel.Controls.Add(SearchField);
+
+            ControlButtons.ForEach(x => x.FlatAppearance.BorderSize = 0);
+            ControlButtons.ForEach(x => ControlPanel.Controls.Add(x));
+            ControlButtons.ForEach(x => x.MouseClick += X_MouseClick2);
+            ControlPanel.Controls.Add(SearchPanel);
+
             FuncButtons.ForEach(x => x.FlatAppearance.BorderSize = 0);
             FuncButtons.ForEach(x => UpperPanel.Controls.Add(x));
             FuncButtons.ForEach(x => x.MouseClick += X_MouseClick1);
@@ -161,18 +254,130 @@ namespace NodeListForm
             MainButtons.ForEach(x => x.MouseLeave += X_MouseLeave);
             MainButtons.ForEach(x => x.MouseClick += X_MouseClick);
 
+            ControlPanelAnim = new Timer();
+            ControlPanelAnim.Tick += ControlPanelAnim_Tick;
+            ControlPanelAnim.Interval = 1;
+
+            SearchPanelAnim = new Timer();
+            SearchPanelAnim.Tick += SearchPanelAnim_Tick;
+            SearchPanelAnim.Interval = 1;
+
             Controls.Add(UpperPanel);
+            Controls.Add(BottomBorder);
             Controls.Add(UpperBorder);
             Controls.Add(ControlPanel);
-            Controls.Add(BottomBorder);
+        }
+
+        private void SearchPanelAnim_Tick(object sender, System.EventArgs e)
+        {
+            if (!IsSearchPanelShow)
+            {
+                if (SearchPanel.Size.Width > 30)
+                {
+                    SearchPanel.Size = new Size(SearchPanel.Size.Width - 5, SearchPanel.Size.Width);
+                    SearchField.Location = new Point(SearchField.Location.X - 1, SearchField.Location.Y);
+                    SearchPanel.Region = new Region(RoundedRect(new Rectangle(0, 0, SearchPanel.Width, 30), 16));
+                }
+                else
+                {
+                    SearchPanel.Size = new Size(30, SearchPanel.Size.Width);
+                    SearchPanel.Region = new Region(RoundedRect(new Rectangle(0, 0, SearchPanel.Width, 30), 16));
+                    SearchPanelAnim.Stop();
+                }
+            }
+            else
+            {
+                if (SearchPanel.Size.Width < 160)
+                {
+                    SearchPanel.Size = new Size(SearchPanel.Size.Width + 5, SearchPanel.Size.Width);
+                    SearchField.Location = new Point(SearchField.Location.X + 1, SearchField.Location.Y);
+                    SearchPanel.Region = new Region(RoundedRect(new Rectangle(0, 0, SearchPanel.Width, 30), 16));
+                }
+                else
+                {
+                    SearchPanel.Size = new Size(160, SearchPanel.Size.Width);
+                    SearchPanel.Region = new Region(RoundedRect(new Rectangle(0, 0, SearchPanel.Width, 30), 16));
+                    SearchPanelAnim.Stop();
+                }
+            }
+        }
+
+        private void X_MouseClick2(object sender, MouseEventArgs e)
+        {
+            switch ((sender as Button).Name)
+            {
+                case "NoteSearch":
+                    IsSearchPanelShow = !IsSearchPanelShow;
+                    if (IsSearchPanelShow)
+                    {
+                        //ControlButtons.Find(x => x.Name == "NoteSearch").BackColor = Color.FromArgb(255, 0, 127, 219);
+                        ControlButtons.Find(x => x.Name == "NoteSearch").ForeColor = Color.FromArgb(255, 255, 255, 255);
+                    }
+                    else
+                    {
+                        //ControlButtons.Find(x => x.Name == "NoteSearch").BackColor = Color.FromArgb(255, 36, 36, 36);
+                        ControlButtons.Find(x => x.Name == "NoteSearch").ForeColor = Color.FromArgb(255, 160, 160, 160);
+                    }
+                    SearchPanelAnim.Start();
+                    break;
+            }
+        }
+
+        private void SearchField_GotFocus(object sender, System.EventArgs e)
+        {
+            if (SearchField.Text == "Поиск") SearchField.Text = string.Empty;
+        }
+
+        private void SearchField_LostFocus(object sender, System.EventArgs e)
+        {
+            if (SearchField.Text == string.Empty) SearchField.Text = "Поиск";
+        }
+
+        private void ControlPanelAnim_Tick(object sender, System.EventArgs e)
+        {
+            if (IsControlPanelShow)
+            {
+                if (ControlPanel.Location.Y > -12)
+                {
+                    ControlPanel.Location = new Point(ControlPanel.Location.X, ControlPanel.Location.Y - FloatTime / 25);
+                    if (FloatTime > 32) FloatTime -= 7;
+                }
+                else
+                {
+                    ControlPanel.Visible = false;
+                    ControlPanel.Location = new Point(ControlPanel.Location.X, -12);
+                    ControlPanelAnim.Stop();
+                }
+            }
+            else
+            {
+                ControlPanel.Visible = true;
+                if (ControlPanel.Location.Y < 32)
+                {
+                    ControlPanel.Location = new Point(ControlPanel.Location.X, ControlPanel.Location.Y + FloatTime / 25);
+                    if (FloatTime > 32) FloatTime -= 7;
+                }
+                else
+                {
+                    ControlPanel.Location = new Point(ControlPanel.Location.X, 32);
+                    ControlPanelAnim.Stop();
+                }
+            }
         }
 
         private void X_MouseClick1(object sender, MouseEventArgs e)
         {
-            switch((sender as Button).Name)
+            switch ((sender as Button).Name)
             {
                 case "Note":
-                    ControlPanel.Visible = !ControlPanel.Visible;
+                    IsControlPanelShow = !IsControlPanelShow;
+                    FloatTime = 120;
+                    ControlPanelAnim.Start();
+                    if(IsSearchPanelShow)
+                    {
+                        IsSearchPanelShow = false;
+                        SearchPanelAnim.Start();
+                    }
                     break;
             }
         }
@@ -294,11 +499,16 @@ namespace NodeListForm
 
         private Panel UpperPanel;
         private Panel ControlPanel;
+        private Panel SearchPanel;
         private List<Button> MainButtons;
         private List<Button> FuncButtons;
+        private List<Button> ControlButtons;
+        private TextBox SearchField;
 
         private PictureBox UpperBorder;
         private PictureBox BottomBorder;
+        private Timer ControlPanelAnim;
+        private Timer SearchPanelAnim;
         #endregion
     }
 }
