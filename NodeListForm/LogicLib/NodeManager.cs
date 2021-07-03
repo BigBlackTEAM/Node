@@ -24,17 +24,15 @@ using System.Threading.Tasks;
                 Path = path;
             }
 
-            public void OrderByNameDecreasing()
-            {
-                Nodes = Nodes.OrderBy(x => x.Name).ToList();
-            }
-
+            public void OrderByNameDecreasing() => Nodes = Nodes.OrderBy(x => x.Name).ToList();
+            
             public void OrderByNameIncreasing()
             {
                 OrderByNameDecreasing();
-
                 Nodes.Reverse();
             }
+
+            public List<Node> SearchByName(string name) => Nodes.Where(x => x.Name.Contains(name)).ToList();
 
         }
     }
