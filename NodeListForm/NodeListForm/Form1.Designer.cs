@@ -40,17 +40,19 @@ namespace NodeListForm
             this.Text = "BigBlackNotes";
             this.ForeColor = Color.FromArgb(255, 240, 240, 240);
             this.ShowIcon = false;
-            this.BackColor = Color.FromArgb(255, 26, 26, 26);
+            this.BackColor = Color.FromArgb(255, 40, 40, 40);
             this.FormBorderStyle = FormBorderStyle.None;
             this.StartPosition = FormStartPosition.CenterScreen;
+            this.MinimumSize = new Size(283, 60);
             this.Resize += Form1_Resize;
-            
+            this.MouseUp += Form1_MouseUp;
+            this.MouseDown += Form1_MouseDown;
 
             UpperPanel = new Panel()
             {
                 Size = new Size(this.Width, 30),
                 Location = new Point(0, 0),
-                BackColor = Color.FromArgb(255, 16, 16, 16)
+                BackColor = Color.FromArgb(255, 66, 66, 66)
             };
             UpperPanel.MouseDoubleClick += UpperPanel_MouseDoubleClick;
 
@@ -62,7 +64,7 @@ namespace NodeListForm
             {
                 Size = new Size(this.Width, 1),
                 Location = new Point(0, 30),
-                BackColor = Color.FromArgb(255, 0, 0, 0)
+                BackColor = Color.FromArgb(255, 56, 56, 56)
             };
 
             MainButtons = new List<Button>();
@@ -74,7 +76,7 @@ namespace NodeListForm
                     Font = new Font("Consolas", 13),
                     Text = "x",
                     Size = new Size(30, 30),
-                    ForeColor = Color.FromArgb(255, 130, 130, 130),
+                    ForeColor = Color.FromArgb(255, 160, 160, 160),
                     Location = new Point(this.Width-30,0),
                     FlatStyle = FlatStyle.Flat,
                     TextAlign = ContentAlignment.MiddleCenter,
@@ -86,7 +88,7 @@ namespace NodeListForm
                     Font = new Font("Consolas", 13),
                     Text = "◻",
                     Size = new Size(30, 30),
-                    ForeColor = Color.FromArgb(255, 130, 130, 130),
+                    ForeColor = Color.FromArgb(255, 160, 160, 160),
                     Location = new Point(this.Width-60, 0),
                     FlatStyle = FlatStyle.Flat,
                     TextAlign = ContentAlignment.MiddleCenter,
@@ -98,7 +100,7 @@ namespace NodeListForm
                     Font = new Font("Consolas", 13),
                     Text = "-",
                     Size = new Size(30, 30),
-                    ForeColor = Color.FromArgb(255, 130, 130, 130),
+                    ForeColor = Color.FromArgb(255, 160, 160, 160),
                     Location = new Point(this.Width-90, 0),
                     FlatStyle = FlatStyle.Flat,
                     TextAlign = ContentAlignment.MiddleCenter,
@@ -110,40 +112,86 @@ namespace NodeListForm
 
             FuncButtons.Add(new Button()
             {
-                Location = new Point(60 * FuncButtons.Count, 0),
-                Size = new Size(60, 30),
-                Text = "File",
+                Location = new Point(120 * FuncButtons.Count, 0),
+                Size = new Size(80, 30),
+                Text = "Заметка",
                 Name = "File",
                 FlatStyle = FlatStyle.Flat,
-                ForeColor = Color.FromArgb(255, 130, 130, 130),
+                ForeColor = Color.FromArgb(255, 160, 160, 160),
                 Font = new Font("Consolas", 9),
                 TextAlign = ContentAlignment.MiddleCenter,
             });
 
             FuncButtons.Add(new Button()
             {
-                Location = new Point(60 * FuncButtons.Count, 0),
-                Size = new Size(60, 30),
-                Text = "Edit",
+                Location = new Point(80, 0),
+                Size = new Size(120, 30),
+                Text = "Редактировать",
                 Name = "Edit",
                 FlatStyle = FlatStyle.Flat,
-                ForeColor = Color.FromArgb(255, 130, 130, 130),
+                ForeColor = Color.FromArgb(255, 160, 160, 160),
                 Font = new Font("Consolas", 9),
                 TextAlign = ContentAlignment.MiddleCenter,
             });
 
             FuncButtons.ForEach(x => x.FlatAppearance.BorderSize = 0);
             FuncButtons.ForEach(x => UpperPanel.Controls.Add(x));
-            
+
             MainButtons.ForEach(x => UpperPanel.Controls.Add(x));
             MainButtons.ForEach(x => x.FlatAppearance.BorderSize = 0);
-            
+
             MainButtons.ForEach(x => x.MouseEnter += X_MouseEnter);
             MainButtons.ForEach(x => x.MouseLeave += X_MouseLeave);
             MainButtons.ForEach(x => x.MouseClick += X_MouseClick);
 
             Controls.Add(UpperPanel);
             Controls.Add(Border);
+        }
+
+        private void Form1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                point = new Point(e.X, e.Y);
+            }
+        }
+
+        private void Form1_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                if (this.Location.Y < 0 && (this.Location.X > 40 && this.Location.X + point.X <= Screen.PrimaryScreen.Bounds.Width - 40))
+                {
+                    this.Size = new Size(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
+                    this.Location = new Point(0, 0);
+                }
+                else if (this.Location.X < 0)
+                {
+                    if (this.Location.Y > 0)
+                    {
+                        this.Size = new Size(Screen.PrimaryScreen.Bounds.Width / 2, Screen.PrimaryScreen.Bounds.Height);
+                        this.Location = new Point(0, 0);
+                    }
+                    else
+                    {
+                        this.Size = new Size(Screen.PrimaryScreen.Bounds.Width / 2, Screen.PrimaryScreen.Bounds.Height / 2);
+                        this.Location = new Point(0, 0);
+                    }
+                }
+                else if (this.Location.X + point.X > Screen.PrimaryScreen.Bounds.Width - 40)
+                {
+                    if (this.Location.Y > 0)
+                    {
+                        this.Size = new Size(Screen.PrimaryScreen.Bounds.Width / 2, Screen.PrimaryScreen.Bounds.Height);
+                        this.Location = new Point(Screen.PrimaryScreen.Bounds.Width / 2, 0);
+                    }
+                    else
+                    {
+                        this.Size = new Size(Screen.PrimaryScreen.Bounds.Width / 2, Screen.PrimaryScreen.Bounds.Height / 2);
+                        this.Location = new Point(Screen.PrimaryScreen.Bounds.Width / 2, 0);
+                    }
+                }
+            }
         }
 
         private void UpperPanel_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -171,7 +219,7 @@ namespace NodeListForm
         }
         private void X_MouseLeave(object sender, System.EventArgs e)
         {
-            if ((sender as Button).Name == "Quit") MainButtons.Find(x => x.Name == "Quit").ForeColor = Color.FromArgb(255, 130, 130, 130);
+            if ((sender as Button).Name == "Quit") MainButtons.Find(x => x.Name == "Quit").ForeColor = Color.FromArgb(255, 160, 160, 160);
         }
 
         private void X_MouseEnter(object sender, System.EventArgs e)
