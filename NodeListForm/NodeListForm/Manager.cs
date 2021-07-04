@@ -92,9 +92,10 @@ namespace NodeListForm
             Controls.Add(NoteLabel);
             Controls.Add(CountLabel);
         }
-        public void ChangePage(int Page)
+        public void ChangePage(int Page, Size FormSize)
         {
             this.Page = Page;
+            UpdateSize(FormSize);
 
             if (this.Page == 0) NavigateButtons[0].Enabled = false;
             else NavigateButtons[0].Enabled = true;
@@ -119,12 +120,17 @@ namespace NodeListForm
         public void UpdateSize(Size FormSize)
         {
             NotesPanel.Size = new Size(FormSize.Width - 135, FormSize.Height - 199);
-            for (int i = 0; i < NoteGUIs.Count; i++)
-            {
-                NoteGUIs[i].Panel.Size = new Size((int)((FormSize.Width - 136 - FormSize.Width / 64 * 6) / 7), ((FormSize.Height > 569) ? (FormSize.Height - 199 - FormSize.Width / 64 * 4) / 5 : NoteGUIs[i].Panel.Height));
-                NoteGUIs[i].Panel.Location = new Point(0 + (NoteGUIs[i].Panel.Width + FormSize.Width / 64) * (i % 7), 0 + (NoteGUIs[i].Panel.Height + FormSize.Width / 64) * (i % 35 / 7));
-                NoteGUIs[i].UpdateBorders();
-            }
+            
+            //for (int i = Page*35; i < NoteGUIs.Count; i++)
+            //{
+            //    NoteGUIs[i].Panel.Size = new Size((int)((FormSize.Width - 136 - FormSize.Width / 64 * 6) / 7), ((FormSize.Height > 569) ? (FormSize.Height - 199 - FormSize.Width / 64 * 4) / 5 : NoteGUIs[i].Panel.Height));
+            //    NoteGUIs[i].Panel.Location = new Point(0 + (NoteGUIs[i].Panel.Width + FormSize.Width / 64) * (i % 7), 0 + (NoteGUIs[i].Panel.Height + FormSize.Width / 64) * (i % 35 / 7));
+            //    NoteGUIs[i].UpdateBorders();
+            //}
+
+            NoteGUIs.Where(x => x.Page == this.Page).ToList().ForEach(x => x.Panel.Size = new Size((int)((FormSize.Width - 136 - FormSize.Width / 64 * 6) / 7), ((FormSize.Height > 569) ? (FormSize.Height - 199 - FormSize.Width / 64 * 4) / 5 : x.Panel.Height)));
+            NoteGUIs.Where(x => x.Page == this.Page).ToList().ForEach(x => x.Panel.Location = new Point(0 + (x.Panel.Width + FormSize.Width / 64) * (int.Parse(x.Panel.Name) % 7), 0 + (x.Panel.Height + FormSize.Width / 64) * (int.Parse(x.Panel.Name) % 35 / 7)));
+            NoteGUIs.Where(x => x.Page == this.Page).ToList().ForEach(x => x.UpdateBorders());
         }
         private void UpdateCount()
         {
@@ -152,7 +158,9 @@ namespace NodeListForm
             this.NoteGUIs.Add(new Notegui(NoteGUIs.Count));
             UpdateSize(FormSize);
             NotesPanel.Controls.Add(NoteGUIs[NoteGUIs.Count - 1].Panel);
+            if (NoteGUIs.Last().Page != this.Page) NoteGUIs.Last().Panel.Visible = false;
             UpdateCount();
+            if (NoteGUIs.Count % 35 == 1 && NoteGUIs.Count != 1) ChangePage(this.Page + 1, FormSize);
         }
         public void DeleteNote(Notegui note, Size FormSize)
         {
@@ -161,6 +169,7 @@ namespace NodeListForm
             UpdateSize(FormSize);
             UpdateCount();
             UpdateNames();
+            UpdateSize(FormSize);
         }
         public void Search(string filter)
         {

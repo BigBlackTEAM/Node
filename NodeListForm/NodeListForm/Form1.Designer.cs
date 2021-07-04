@@ -308,10 +308,10 @@ namespace NodeListForm
             switch((sender as Button).Name)
             {
                 case "NavigateToLeft":
-                    manager.ChangePage(manager.Page - 1);
+                    manager.ChangePage(manager.Page - 1, this.Size);
                     break;
                 case "NavigateToRight":
-                    manager.ChangePage(manager.Page + 1);
+                    manager.ChangePage(manager.Page + 1, this.Size);
                     break;
             }
         }
