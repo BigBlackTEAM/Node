@@ -15,13 +15,15 @@ namespace NodeListForm
         public Label MainText;
         public Button Delete;
         public Button Edit;
+        public int Page;
 
         public Notegui(int Num)
         {
+            Page = Num / 35;
             Panel = new Panel()
             {
                 Size = new Size(87, 65),
-                Location = new Point(0 + 96 * (Num % 7), 0 + 76 * (Num / 7)),
+                Location = new Point(0 + 96 * (Num % 7), 0 + 76 * ((Num % 35) / 7)),
                 BackColor = Color.FromArgb(255, 45, 45, 45),
                 Name = Num.ToString()
             };
@@ -54,7 +56,7 @@ namespace NodeListForm
                 Visible = false
             };
             Delete.FlatAppearance.BorderSize = 0;
-            
+
             Edit = new Button()
             {
                 ForeColor = Color.White,

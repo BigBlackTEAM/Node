@@ -293,6 +293,7 @@ namespace NodeListForm
 
             manager = new Manager(Controls);
             manager.NoteGUIs.ForEach(x => x.Delete.MouseClick += NoteDelete_MouseClick);
+            manager.NavigateButtons.ForEach(x => x.MouseClick += Navigate_MouseClick);
 
             Controls.Add(UpperPanel);
             Controls.Add(BottomBorder);
@@ -300,6 +301,19 @@ namespace NodeListForm
             Controls.Add(NoteLabelBorder);
             manager.Init(Controls);
             Controls.Add(ControlPanel);
+        }
+
+        private void Navigate_MouseClick(object sender, MouseEventArgs e)
+        {
+            switch((sender as Button).Name)
+            {
+                case "NavigateToLeft":
+                    manager.ChangePage(manager.Page - 1);
+                    break;
+                case "NavigateToRight":
+                    manager.ChangePage(manager.Page + 1);
+                    break;
+            }
         }
 
         private void SearchField_KeyPress(object sender, KeyPressEventArgs e)
