@@ -77,254 +77,6 @@ namespace NodeListForm
                 BackColor = Color.FromArgb(255, 40, 40, 40),
             };
 
-            //Notes = new List<Panel>();
-            //Notes.Add(new Panel()
-            //{
-            //    Size = new Size(87, 65),
-            //    Location = new Point(0 + 96 * Notes.Count % 7, 0 + 76 * Notes.Count / 7),
-            //    BackColor = Color.FromArgb(255, 66, 66, 66)
-            //});
-
-            //Notes.Add(new Panel()
-            //{
-            //    Size = new Size(87, 65),
-            //    Location = new Point(0 + 96 * (Notes.Count % 7), 0 + 76 * (Notes.Count / 7)),
-            //    BackColor = Color.FromArgb(255, 66, 66, 66)
-            //});
-
-            //Notes.Add(new Panel()
-            //{
-            //    Size = new Size(87, 65),
-            //    Location = new Point(0 + 96 * (Notes.Count % 7), 0 + 76 * (Notes.Count / 7)),
-            //    BackColor = Color.FromArgb(255, 66, 66, 66)
-            //});
-
-            //Notes.Add(new Panel()
-            //{
-            //    Size = new Size(87, 65),
-            //    Location = new Point(0 + 96 * (Notes.Count % 7), 0 + 76 * (Notes.Count / 7)),
-            //    BackColor = Color.FromArgb(255, 66, 66, 66)
-            //});
-
-            //Notes.Add(new Panel()
-            //{
-            //    Size = new Size(87, 65),
-            //    Location = new Point(0 + 96 * (Notes.Count % 7), 0 + 76 * (Notes.Count / 7)),
-            //    BackColor = Color.FromArgb(255, 66, 66, 66)
-            //});
-
-            //Notes.Add(new Panel()
-            //{
-            //    Size = new Size(87, 65),
-            //    Location = new Point(0 + 96 * (Notes.Count % 7), 0 + 76 * (Notes.Count / 7)),
-            //    BackColor = Color.FromArgb(255, 66, 66, 66)
-            //});
-
-            //Notes.Add(new Panel()
-            //{
-            //    Size = new Size(87, 65),
-            //    Location = new Point(0 + 96 * (Notes.Count % 7), 0 + 76 * (Notes.Count / 7)),
-            //    BackColor = Color.FromArgb(255, 66, 66, 66)
-            //});
-
-            //Notes.Add(new Panel()
-            //{
-            //    Size = new Size(87, 65),
-            //    Location = new Point(0 + 96 * (Notes.Count % 7), 0 + 76 * (Notes.Count / 7)),
-            //    BackColor = Color.FromArgb(255, 66, 66, 66)
-            //});
-
-            //Notes.Add(new Panel()
-            //{
-            //    Size = new Size(87, 65),
-            //    Location = new Point(0 + 96 * (Notes.Count % 7), 0 + 76 * (Notes.Count / 7)),
-            //    BackColor = Color.FromArgb(255, 66, 66, 66)
-            //});
-
-            //Notes.Add(new Panel()
-            //{
-            //    Size = new Size(87, 65),
-            //    Location = new Point(0 + 96 * (Notes.Count % 7), 0 + 76 * (Notes.Count / 7)),
-            //    BackColor = Color.FromArgb(255, 66, 66, 66)
-            //});
-
-            //Notes.Add(new Panel()
-            //{
-            //    Size = new Size(87, 65),
-            //    Location = new Point(0 + 96 * (Notes.Count % 7), 0 + 76 * (Notes.Count / 7)),
-            //    BackColor = Color.FromArgb(255, 66, 66, 66)
-            //});
-
-            //Notes.Add(new Panel()
-            //{
-            //    Size = new Size(87, 65),
-            //    Location = new Point(0 + 96 * (Notes.Count % 7), 0 + 76 * (Notes.Count / 7)),
-            //    BackColor = Color.FromArgb(255, 66, 66, 66)
-            //});
-
-            //Notes.Add(new Panel()
-            //{
-            //    Size = new Size(87, 65),
-            //    Location = new Point(0 + 96 * (Notes.Count % 7), 0 + 76 * (Notes.Count / 7)),
-            //    BackColor = Color.FromArgb(255, 66, 66, 66)
-            //});
-
-            //Notes.Add(new Panel()
-            //{
-            //    Size = new Size(87, 65),
-            //    Location = new Point(0 + 96 * (Notes.Count % 7), 0 + 76 * (Notes.Count / 7)),
-            //    BackColor = Color.FromArgb(255, 66, 66, 66)
-            //});
-
-            //Notes.Add(new Panel()
-            //{
-            //    Size = new Size(87, 65),
-            //    Location = new Point(0 + 96 * (Notes.Count % 7), 0 + 76 * (Notes.Count / 7)),
-            //    BackColor = Color.FromArgb(255, 66, 66, 66)
-            //});
-
-            //Notes.Add(new Panel()
-            //{
-            //    Size = new Size(87, 65),
-            //    Location = new Point(0 + 96 * (Notes.Count % 7), 0 + 76 * (Notes.Count / 7)),
-            //    BackColor = Color.FromArgb(255, 66, 66, 66)
-            //});
-
-            //Notes.Add(new Panel()
-            //{
-            //    Size = new Size(87, 65),
-            //    Location = new Point(0 + 96 * (Notes.Count % 7), 0 + 76 * (Notes.Count / 7)),
-            //    BackColor = Color.FromArgb(255, 66, 66, 66)
-            //});
-
-            //Notes.Add(new Panel()
-            //{
-            //    Size = new Size(87, 65),
-            //    Location = new Point(0 + 96 * (Notes.Count % 7), 0 + 76 * (Notes.Count / 7)),
-            //    BackColor = Color.FromArgb(255, 66, 66, 66)
-            //});
-
-            //Notes.Add(new Panel()
-            //{
-            //    Size = new Size(87, 65),
-            //    Location = new Point(0 + 96 * (Notes.Count % 7), 0 + 76 * (Notes.Count / 7)),
-            //    BackColor = Color.FromArgb(255, 66, 66, 66)
-            //});
-
-            //Notes.Add(new Panel()
-            //{
-            //    Size = new Size(87, 65),
-            //    Location = new Point(0 + 96 * (Notes.Count % 7), 0 + 76 * (Notes.Count / 7)),
-            //    BackColor = Color.FromArgb(255, 66, 66, 66)
-            //});
-
-            //Notes.Add(new Panel()
-            //{
-            //    Size = new Size(87, 65),
-            //    Location = new Point(0 + 96 * (Notes.Count % 7), 0 + 76 * (Notes.Count / 7)),
-            //    BackColor = Color.FromArgb(255, 66, 66, 66)
-            //});
-
-            //Notes.Add(new Panel()
-            //{
-            //    Size = new Size(87, 65),
-            //    Location = new Point(0 + 96 * (Notes.Count % 7), 0 + 76 * (Notes.Count / 7)),
-            //    BackColor = Color.FromArgb(255, 66, 66, 66)
-            //});
-
-            //Notes.Add(new Panel()
-            //{
-            //    Size = new Size(87, 65),
-            //    Location = new Point(0 + 96 * (Notes.Count % 7), 0 + 76 * (Notes.Count / 7)),
-            //    BackColor = Color.FromArgb(255, 66, 66, 66)
-            //});
-
-            //Notes.Add(new Panel()
-            //{
-            //    Size = new Size(87, 65),
-            //    Location = new Point(0 + 96 * (Notes.Count % 7), 0 + 76 * (Notes.Count / 7)),
-            //    BackColor = Color.FromArgb(255, 66, 66, 66)
-            //});
-
-            //Notes.Add(new Panel()
-            //{
-            //    Size = new Size(87, 65),
-            //    Location = new Point(0 + 96 * (Notes.Count % 7), 0 + 76 * (Notes.Count / 7)),
-            //    BackColor = Color.FromArgb(255, 66, 66, 66)
-            //});
-
-            //Notes.Add(new Panel()
-            //{
-            //    Size = new Size(87, 65),
-            //    Location = new Point(0 + 96 * (Notes.Count % 7), 0 + 76 * (Notes.Count / 7)),
-            //    BackColor = Color.FromArgb(255, 66, 66, 66)
-            //});
-
-            //Notes.Add(new Panel()
-            //{
-            //    Size = new Size(87, 65),
-            //    Location = new Point(0 + 96 * (Notes.Count % 7), 0 + 76 * (Notes.Count / 7)),
-            //    BackColor = Color.FromArgb(255, 66, 66, 66)
-            //});
-
-            //Notes.Add(new Panel()
-            //{
-            //    Size = new Size(87, 65),
-            //    Location = new Point(0 + 96 * (Notes.Count % 7), 0 + 76 * (Notes.Count / 7)),
-            //    BackColor = Color.FromArgb(255, 66, 66, 66)
-            //});
-
-            //Notes.Add(new Panel()
-            //{
-            //    Size = new Size(87, 65),
-            //    Location = new Point(0 + 96 * (Notes.Count % 7), 0 + 76 * (Notes.Count / 7)),
-            //    BackColor = Color.FromArgb(255, 66, 66, 66)
-            //});
-
-            //Notes.Add(new Panel()
-            //{
-            //    Size = new Size(87, 65),
-            //    Location = new Point(0 + 96 * (Notes.Count % 7), 0 + 76 * (Notes.Count / 7)),
-            //    BackColor = Color.FromArgb(255, 66, 66, 66)
-            //});
-
-            //Notes.Add(new Panel()
-            //{
-            //    Size = new Size(87, 65),
-            //    Location = new Point(0 + 96 * (Notes.Count % 7), 0 + 76 * (Notes.Count / 7)),
-            //    BackColor = Color.FromArgb(255, 66, 66, 66)
-            //});
-
-            //Notes.Add(new Panel()
-            //{
-            //    Size = new Size(87, 65),
-            //    Location = new Point(0 + 96 * (Notes.Count % 7), 0 + 76 * (Notes.Count / 7)),
-            //    BackColor = Color.FromArgb(255, 66, 66, 66)
-            //});
-
-            //Notes.Add(new Panel()
-            //{
-            //    Size = new Size(87, 65),
-            //    Location = new Point(0 + 96 * (Notes.Count % 7), 0 + 76 * (Notes.Count / 7)),
-            //    BackColor = Color.FromArgb(255, 66, 66, 66)
-            //});
-
-            //Notes.Add(new Panel()
-            //{
-            //    Size = new Size(87, 65),
-            //    Location = new Point(0 + 96 * (Notes.Count % 7), 0 + 76 * (Notes.Count / 7)),
-            //    BackColor = Color.FromArgb(255, 66, 66, 66)
-            //});
-
-            //Notes.Add(new Panel()
-            //{
-            //    Size = new Size(87, 65),
-            //    Location = new Point(0 + 96 * (Notes.Count % 7), 0 + 76 * (Notes.Count / 7)),
-            //    BackColor = Color.FromArgb(255, 66, 66, 66)
-            //});
-
-            //Notes.ForEach(x => NotesPanel.Controls.Add(x));
-
             NoteGUIs = new List<Notegui>();
             for (int i = 0; i < 35; i++)
             {
@@ -606,24 +358,50 @@ namespace NodeListForm
             switch ((sender as Button).Name)
             {
                 case "NoteSearch":
-                    IsSearchPanelShow = !IsSearchPanelShow;
-                    SearchPanelAnim.Start();
+                    SearchMode();
                     break;
                 case "NoteRemove":
-                    IsEditing = false;
-                    IsDeleting = !IsDeleting;
-                    NoteGUIs.ForEach(x => x.Edit.Visible = IsEditing);
-                    NoteGUIs.ForEach(x => x.Delete.Visible = IsDeleting);
+                    DeleteMode();
                     break;
                 case "NoteEdit":
-                    IsDeleting = false;
-                    IsEditing = !IsEditing;
-                    NoteGUIs.ForEach(x => x.Edit.Visible = IsEditing);
-                    NoteGUIs.ForEach(x => x.Delete.Visible = IsDeleting);
+                    EditMode();
                     break;
             }
         }
+        private void SearchMode()
+        {
+            IsEditing = false;
+            IsDeleting = false;
+            ControlButtons.Find(x => x.Name == "NoteRemove").ForeColor = IsDeleting ? Color.FromArgb(255, 230, 60, 60) : Color.FromArgb(255, 160, 160, 160);
+            ControlButtons.Find(x => x.Name == "NoteEdit").ForeColor = IsDeleting ? Color.FromArgb(180, 0, 122, 204) : Color.FromArgb(255, 160, 160, 160);
+            NoteGUIs.ForEach(x => x.Edit.Visible = IsEditing);
+            NoteGUIs.ForEach(x => x.Delete.Visible = IsDeleting);
+            IsSearchPanelShow = !IsSearchPanelShow;
+            SearchPanelAnim.Start();
+        }
+        private void DeleteMode()
+        {
+            IsEditing = false;
+            IsDeleting = !IsDeleting;
+            ControlButtons.Find(x => x.Name == "NoteRemove").ForeColor = IsDeleting?Color.FromArgb(255, 230, 60, 60): Color.FromArgb(255, 160, 160, 160);
+            ControlButtons.Find(x => x.Name == "NoteEdit").ForeColor = IsEditing ? Color.FromArgb(180, 0, 122, 204) : Color.FromArgb(255, 160, 160, 160);
+            NoteGUIs.ForEach(x => x.Edit.Visible = IsEditing);
+            NoteGUIs.ForEach(x => x.Delete.Visible = IsDeleting);
+            IsSearchPanelShow = false;
+            SearchPanelAnim.Start();
+        }
+        private void EditMode()
+        {
+            IsDeleting = false;
+            IsEditing = !IsEditing;
+            ControlButtons.Find(x => x.Name == "NoteRemove").ForeColor = IsDeleting ? Color.FromArgb(255, 230, 60, 60) : Color.FromArgb(255, 160, 160, 160);
+            ControlButtons.Find(x => x.Name == "NoteEdit").ForeColor = IsEditing ? Color.FromArgb(180, 0, 122, 204) : Color.FromArgb(255, 160, 160, 160);
 
+            NoteGUIs.ForEach(x => x.Edit.Visible = IsEditing);
+            NoteGUIs.ForEach(x => x.Delete.Visible = IsDeleting);
+            IsSearchPanelShow = false;
+            SearchPanelAnim.Start();
+        }
         private void SearchField_GotFocus(object sender, System.EventArgs e)
         {
             if (SearchField.Text == "Поиск") SearchField.Text = string.Empty;
@@ -763,13 +541,11 @@ namespace NodeListForm
         private void X_MouseLeave(object sender, System.EventArgs e)
         {
             if ((sender as Button).Name == "Quit") MainButtons.Find(x => x.Name == "Quit").ForeColor = Color.FromArgb(255, 160, 160, 160);
-            //Cursor.Current = Cursors.Default;
         }
 
         private void X_MouseEnter(object sender, System.EventArgs e)
         {
             if ((sender as Button).Name == "Quit") MainButtons.Find(x => x.Name == "Quit").ForeColor = Color.Red;
-            //Cursor.Current = Cursors.Hand;
         }
 
         private void Form1_Resize(object sender, System.EventArgs e)
@@ -781,12 +557,6 @@ namespace NodeListForm
             NoteLabelBorder.Size = new Size(this.Width - 136, NoteLabelBorder.Height);
 
             NotesPanel.Size = new Size(this.Width - 135, this.Height - 199);
-            //for (int i = 0; i < Notes.Count; i++)
-            //{
-            //    Notes[i].Size = new Size((int)((this.Width - 136 - this.Width / 64 * 6) / 7), ((this.Height > 569) ? (this.Height - 199 - this.Width / 64 * 4) / 5 : Notes[i].Height));
-            //    Notes[i].Location = new Point(0 + (Notes[i].Width + this.Width / 64) * (i % 7), 0 + (Notes[i].Height + this.Width / 64) * (i / 7));
-            //} 
-
             for (int i = 0; i < NoteGUIs.Count; i++)
             {
                 NoteGUIs[i].Panel.Size = new Size((int)((this.Width - 136 - this.Width / 64 * 6) / 7), ((this.Height > 569) ? (this.Height - 199 - this.Width / 64 * 4) / 5 : NoteGUIs[i].Panel.Height));
@@ -795,8 +565,6 @@ namespace NodeListForm
             }
 
             if (this.Height < 87) ControlPanel.Location = new Point(0, this.Height - ControlPanel.Size.Height - 15);
-            //if (this.Height < 87) ControlPanel.Location = new Point(0, ControlPanel.Location.Y -1);
-            //if (this.Height > 47 && !IsControlPanelShow) ControlPanel.Location = new Point(0, ControlPanel.Location.Y + 1);
         }
 
         private void X_MouseClick(object sender, MouseEventArgs e)
@@ -831,7 +599,6 @@ namespace NodeListForm
         private Label CountLabel;
 
         private Panel NotesPanel;
-        private List<Panel> Notes;
         private List<Notegui> NoteGUIs;
 
         private PictureBox UpperBorder;

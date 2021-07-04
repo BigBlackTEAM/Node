@@ -31,8 +31,7 @@ namespace NodeListForm
                 Location = new Point(5, 5),
                 Size = new Size(77, 30),
                 Text = "Список 10 вещей, которые нужно успеть сделать до следующей недели по просьбе родителей",
-                Font = new Font("Consolas", 8),
-                Enabled = false
+                Font = new Font("Consolas", 8)
             };
             MainText = new Label()
             {
