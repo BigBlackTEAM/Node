@@ -30,7 +30,7 @@ namespace NodeListForm
                 ForeColor = Color.FromArgb(255, 240, 240, 240),
                 Location = new Point(5, 5),
                 Size = new Size(77, 30),
-                Text = "Список 10 вещей, которые нужно успеть сделать до следующей недели по просьбе родителей",
+                Text = $"Список {Num} вещей, которые нужно успеть сделать до следующей недели по просьбе родителей",
                 Font = new Font("Consolas", 8)
             };
             MainText = new Label()
@@ -46,6 +46,7 @@ namespace NodeListForm
                 ForeColor = Color.White,
                 BackColor = Color.FromArgb(180, 206, 17, 38),
                 Text = "✕",
+                Name = this.Panel.Name,
                 Size = new Size(Panel.Width, Panel.Height),
                 Font = new Font("Consolas", 15),
                 FlatStyle = FlatStyle.Flat,
@@ -59,6 +60,7 @@ namespace NodeListForm
                 ForeColor = Color.White,
                 BackColor = Color.FromArgb(180, 0, 122, 204),
                 Text = "🖋",
+                Name = this.Panel.Name,
                 Size = new Size(Panel.Width, Panel.Height),
                 Font = new Font("Consolas", 15),
                 FlatStyle = FlatStyle.Flat,

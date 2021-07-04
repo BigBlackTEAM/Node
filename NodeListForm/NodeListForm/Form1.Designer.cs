@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace NodeListForm
@@ -70,19 +71,19 @@ namespace NodeListForm
                 Visible = false,
             };
 
-            NotesPanel = new Panel()
-            {
-                Size = new Size(658, 370),
-                Location = new Point(68, 160),
-                BackColor = Color.FromArgb(255, 40, 40, 40),
-            };
+            //NotesPanel = new Panel()
+            //{
+            //    Size = new Size(658, 370),
+            //    Location = new Point(68, 160),
+            //    BackColor = Color.FromArgb(255, 40, 40, 40),
+            //};
 
-            NoteGUIs = new List<Notegui>();
-            for (int i = 0; i < 35; i++)
-            {
-                NoteGUIs.Add(new Notegui(i));
-            }
-            NoteGUIs.ForEach(x => NotesPanel.Controls.Add(x.Panel));
+            //NoteGUIs = new List<Notegui>();
+            //for (int i = 0; i < 4; i++)
+            //{
+            //    NoteGUIs.Add(new Notegui(i));
+            //}
+            //NoteGUIs.ForEach(x => NotesPanel.Controls.Add(x.Panel));
 
             UpperPanel.MouseDown += UpperPanel_MouseDown;
             UpperPanel.MouseMove += UpperPanel_MouseMove;
@@ -109,25 +110,6 @@ namespace NodeListForm
                 Location = new Point(68, 139),
                 BackColor = Color.FromArgb(255, 66, 66, 66),
                 Enabled = false,
-            };
-            NoteLabel = new Label()
-            {
-                Text = "ЗАМЕТКИ",
-                Location = new Point(63, 100),
-                Size = new Size(90, 30),
-                TextAlign = ContentAlignment.MiddleLeft,
-                ForeColor = Color.FromArgb(255, 160, 160, 160),
-                Font = new Font("Consolas", 15),
-            };
-            CountLabel = new Label()
-            {
-                Text = "ВСЕГО 30",
-                Location = new Point(340, 100),
-                Size = new Size(400, 30),
-                TextAlign = ContentAlignment.MiddleRight,
-                Font = new Font("Consolas", 15),
-                ForeColor = Color.FromArgb(255, 160, 160, 160),
-                Anchor = AnchorStyles.Right | AnchorStyles.Top
             };
 
             BottomBorder.MouseDown += UpperPanel_MouseDown;
@@ -280,6 +262,9 @@ namespace NodeListForm
 
             SearchField.GotFocus += SearchField_GotFocus;
             SearchField.LostFocus += SearchField_LostFocus;
+            SearchField.TextChanged += SearchField_TextChanged;
+            SearchField.KeyPress += SearchField_KeyPress;
+
             SearchPanel.Controls.Add(SearchField);
 
             ControlButtons.ForEach(x => x.FlatAppearance.BorderSize = 0);
@@ -306,14 +291,26 @@ namespace NodeListForm
             SearchPanelAnim.Tick += SearchPanelAnim_Tick;
             SearchPanelAnim.Interval = 1;
 
+            manager = new Manager(Controls);
+            manager.NoteGUIs.ForEach(x => x.Delete.MouseClick += NoteDelete_MouseClick);
+
             Controls.Add(UpperPanel);
             Controls.Add(BottomBorder);
             Controls.Add(UpperBorder);
-            Controls.Add(NoteLabel);
-            Controls.Add(CountLabel);
             Controls.Add(NoteLabelBorder);
-            Controls.Add(NotesPanel);
+            manager.Init(Controls);
             Controls.Add(ControlPanel);
+        }
+
+        private void SearchField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == (char)Keys.Back) manager.NoteGUIs.ForEach(x => x.Panel.Visible = true);
+        }
+
+        private void SearchField_TextChanged(object sender, System.EventArgs e)
+        {
+            manager.Search((sender as TextBox).Text);
+            if ((sender as TextBox).Text == "Поиск") manager.NoteGUIs.ForEach(x => x.Panel.Visible = true);
         }
 
         private void SearchPanelAnim_Tick(object sender, System.EventArgs e)
@@ -357,6 +354,9 @@ namespace NodeListForm
         {
             switch ((sender as Button).Name)
             {
+                case "NoteAdd":
+                    AddMode();
+                    break;
                 case "NoteSearch":
                     SearchMode();
                     break;
@@ -368,50 +368,55 @@ namespace NodeListForm
                     break;
             }
         }
+        private void AddMode()
+        {
+            ChangeNoteModes(false, false);
+            manager.AddNote(this.Size);
+            manager.NoteGUIs.Last().Delete.MouseClick += NoteDelete_MouseClick;
+        }
+
+        private void NoteDelete_MouseClick(object sender, MouseEventArgs e)
+        {
+            manager.DeleteNote(manager.NoteGUIs.Find(x => x.Panel.Name == (sender as Button).Name),this.Size);
+            ChangeNoteModes(false, false);
+        }
+
         private void SearchMode()
         {
-            IsEditing = false;
-            IsDeleting = false;
-            ControlButtons.Find(x => x.Name == "NoteRemove").ForeColor = IsDeleting ? Color.FromArgb(255, 230, 60, 60) : Color.FromArgb(255, 160, 160, 160);
-            ControlButtons.Find(x => x.Name == "NoteEdit").ForeColor = IsDeleting ? Color.FromArgb(180, 0, 122, 204) : Color.FromArgb(255, 160, 160, 160);
-            NoteGUIs.ForEach(x => x.Edit.Visible = IsEditing);
-            NoteGUIs.ForEach(x => x.Delete.Visible = IsDeleting);
+            ChangeNoteModes(false, false);
             IsSearchPanelShow = !IsSearchPanelShow;
             SearchPanelAnim.Start();
         }
         private void DeleteMode()
         {
-            IsEditing = false;
-            IsDeleting = !IsDeleting;
-            ControlButtons.Find(x => x.Name == "NoteRemove").ForeColor = IsDeleting?Color.FromArgb(255, 230, 60, 60): Color.FromArgb(255, 160, 160, 160);
-            ControlButtons.Find(x => x.Name == "NoteEdit").ForeColor = IsEditing ? Color.FromArgb(180, 0, 122, 204) : Color.FromArgb(255, 160, 160, 160);
-            NoteGUIs.ForEach(x => x.Edit.Visible = IsEditing);
-            NoteGUIs.ForEach(x => x.Delete.Visible = IsDeleting);
+            ChangeNoteModes(false, !IsDeleting);
             IsSearchPanelShow = false;
             SearchPanelAnim.Start();
         }
         private void EditMode()
         {
-            IsDeleting = false;
-            IsEditing = !IsEditing;
-            ControlButtons.Find(x => x.Name == "NoteRemove").ForeColor = IsDeleting ? Color.FromArgb(255, 230, 60, 60) : Color.FromArgb(255, 160, 160, 160);
-            ControlButtons.Find(x => x.Name == "NoteEdit").ForeColor = IsEditing ? Color.FromArgb(180, 0, 122, 204) : Color.FromArgb(255, 160, 160, 160);
-
-            NoteGUIs.ForEach(x => x.Edit.Visible = IsEditing);
-            NoteGUIs.ForEach(x => x.Delete.Visible = IsDeleting);
+            ChangeNoteModes(!IsEditing, false);
             IsSearchPanelShow = false;
             SearchPanelAnim.Start();
         }
+        private void ChangeNoteModes(bool IsEditing, bool IsDeleting)
+        {
+            this.IsEditing = IsEditing;
+            this.IsDeleting = IsDeleting;
+            ControlButtons.Find(x => x.Name == "NoteRemove").ForeColor = IsDeleting ? Color.FromArgb(255, 230, 60, 60) : Color.FromArgb(255, 160, 160, 160);
+            ControlButtons.Find(x => x.Name == "NoteEdit").ForeColor = IsEditing ? Color.FromArgb(180, 0, 122, 204) : Color.FromArgb(255, 160, 160, 160);
+            manager.NoteGUIs.ForEach(x => x.Edit.Visible = this.IsEditing);
+            manager.NoteGUIs.ForEach(x => x.Delete.Visible = this.IsDeleting);
+        }
+
         private void SearchField_GotFocus(object sender, System.EventArgs e)
         {
             if (SearchField.Text == "Поиск") SearchField.Text = string.Empty;
         }
-
         private void SearchField_LostFocus(object sender, System.EventArgs e)
         {
             if (SearchField.Text == string.Empty) SearchField.Text = "Поиск";
         }
-
         private void ControlPanelAnim_Tick(object sender, System.EventArgs e)
         {
             if (ControlPanel.Location.Y < -12)
@@ -509,7 +514,6 @@ namespace NodeListForm
                 }
             }
         }
-
         private void UpperPanel_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (this.WindowState == FormWindowState.Normal)
@@ -521,7 +525,6 @@ namespace NodeListForm
                 this.WindowState = FormWindowState.Normal;
             }
         }
-
         private void UpperPanel_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -530,7 +533,6 @@ namespace NodeListForm
                 this.Location = new Point(this.Location.X + e.X - point.X, this.Location.Y + e.Y - point.Y);
             }
         }
-
         private void UpperPanel_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -542,12 +544,10 @@ namespace NodeListForm
         {
             if ((sender as Button).Name == "Quit") MainButtons.Find(x => x.Name == "Quit").ForeColor = Color.FromArgb(255, 160, 160, 160);
         }
-
         private void X_MouseEnter(object sender, System.EventArgs e)
         {
             if ((sender as Button).Name == "Quit") MainButtons.Find(x => x.Name == "Quit").ForeColor = Color.Red;
         }
-
         private void Form1_Resize(object sender, System.EventArgs e)
         {
             UpperPanel.Size = new Size(this.Width, UpperPanel.Height);
@@ -556,14 +556,7 @@ namespace NodeListForm
             BottomBorder.Size = new Size(this.Width, BottomBorder.Height);
             NoteLabelBorder.Size = new Size(this.Width - 136, NoteLabelBorder.Height);
 
-            NotesPanel.Size = new Size(this.Width - 135, this.Height - 199);
-            for (int i = 0; i < NoteGUIs.Count; i++)
-            {
-                NoteGUIs[i].Panel.Size = new Size((int)((this.Width - 136 - this.Width / 64 * 6) / 7), ((this.Height > 569) ? (this.Height - 199 - this.Width / 64 * 4) / 5 : NoteGUIs[i].Panel.Height));
-                NoteGUIs[i].Panel.Location = new Point(0 + (NoteGUIs[i].Panel.Width + this.Width / 64) * (i % 7), 0 + (NoteGUIs[i].Panel.Height + this.Width / 64) * (i / 7));
-                NoteGUIs[i].UpdateBorders();
-            }
-
+            manager.UpdateSize(this.Size);
             if (this.Height < 87) ControlPanel.Location = new Point(0, this.Height - ControlPanel.Size.Height - 15);
         }
 
@@ -587,7 +580,6 @@ namespace NodeListForm
             }
         }
 
-
         private Panel UpperPanel;
         private Panel ControlPanel;
         private Panel SearchPanel;
@@ -595,11 +587,8 @@ namespace NodeListForm
         private List<Button> FuncButtons;
         private List<Button> ControlButtons;
         private TextBox SearchField;
-        private Label NoteLabel;
-        private Label CountLabel;
 
-        private Panel NotesPanel;
-        private List<Notegui> NoteGUIs;
+        private Manager manager;
 
         private PictureBox UpperBorder;
         private PictureBox BottomBorder;
