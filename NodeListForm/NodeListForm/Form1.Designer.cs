@@ -47,7 +47,7 @@ namespace NodeListForm
             this.BackColor = Color.FromArgb(255, 40, 40, 40);
             this.FormBorderStyle = FormBorderStyle.None;
             this.StartPosition = FormStartPosition.CenterScreen;
-            this.MinimumSize = new Size(310, 47);
+            this.MinimumSize = new Size(793, 47);
             this.Resize += Form1_Resize;
             this.MouseUp += Form1_MouseUp;
             this.MouseDown += Form1_MouseDown;
@@ -75,7 +75,7 @@ namespace NodeListForm
                 BackColor = Color.FromArgb(255, 40, 40, 40),
             };
 
-            List<Panel> Notes = new List<Panel>();
+            Notes = new List<Panel>();
             Notes.Add(new Panel()
             {
                 Size = new Size(87, 65),
@@ -759,7 +759,15 @@ namespace NodeListForm
             BottomBorder.Size = new Size(this.Width, BottomBorder.Height);
             NoteLabelBorder.Size = new Size(this.Width - 136, NoteLabelBorder.Height);
 
-            //Notes.ForEach(x => x.Size = new Size((int)(this.Width/9.12), (int)(this.Height/8.84)));
+            //Notes.ForEach(x => x.Size = new Size((int)(this.Width / 9.12), (int)(this.Height / 8.84)));
+            NotesPanel.Size = new Size(this.Width - 135, this.Height - 199);
+            for (int i = 0; i < Notes.Count; i++)
+            {
+                Notes[i].Size = new Size((int)((this.Width - 136 - this.Width / 64 * 6) / 7), ((this.Height > 569) ? (this.Height - 199 - this.Width / 64 * 4) / 5 : Notes[i].Height));
+                Notes[i].Location = new Point(0 + (Notes[i].Width + this.Width / 64) * (i % 7), 0 + (Notes[i].Height + this.Width / 64) * (i / 7));
+            }
+            //ew Point(0 + 96 * (Notes.Count % 7), 0 + 76 * (Notes.Count / 7)),
+
             if (this.Height < 87) ControlPanel.Location = new Point(0, this.Height - ControlPanel.Size.Height - 15);
             //if (this.Height < 87) ControlPanel.Location = new Point(0, ControlPanel.Location.Y -1);
             //if (this.Height > 47 && !IsControlPanelShow) ControlPanel.Location = new Point(0, ControlPanel.Location.Y + 1);
