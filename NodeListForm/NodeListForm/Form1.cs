@@ -25,6 +25,7 @@ namespace NodeListForm
         private void Form1_Load(object sender, EventArgs e)
         {
             //this.UpperPanel.Region = new Region(RoundedRect(new Rectangle(0, 0, this.Width, this.Height), 4));
+            AppStartAnim.Start();
         }
 
         public GraphicsPath RoundedRect(Rectangle baseRect, int radius)

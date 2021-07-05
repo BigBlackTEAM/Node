@@ -23,24 +23,33 @@ namespace NodeListForm
             Panel = new Panel()
             {
                 Size = new Size(87, 65),
+                Cursor = Cursors.Hand,
                 Location = new Point(0 + 96 * (Num % 7), 0 + 76 * ((Num % 35) / 7)),
                 BackColor = Color.FromArgb(255, 45, 45, 45),
                 Name = Num.ToString()
             };
             Caption = new Label()
             {
+                Parent = Panel,
+                Name = Panel.Name,
+                Cursor = Cursors.Hand,
                 ForeColor = Color.FromArgb(255, 240, 240, 240),
                 Location = new Point(5, 5),
                 Size = new Size(77, 30),
-                Text = $"Список {Num} вещей, которые нужно успеть сделать до следующей недели по просьбе родителей",
+                //Text = $"Список {Num} вещей, которые нужно успеть сделать до следующей недели по просьбе родителей",
+                Text = "Заголовок записки",
                 Font = new Font("Consolas", 8)
             };
             MainText = new Label()
             {
+                Parent = Panel,
+                Name = Panel.Name,
+                Cursor = Cursors.Hand,
                 ForeColor = Color.FromArgb(255, 200, 200, 200),
                 Location = new Point(5, 35),
                 Size = new Size(77, 30),
-                Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                //Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                Text = "Основной текст записки",
                 Font = new Font("Consolas", 7)
             };
             Delete = new Button()
@@ -75,6 +84,11 @@ namespace NodeListForm
             Panel.Controls.Add(Delete);
             Panel.Controls.Add(MainText);
             Panel.Controls.Add(Caption);
+        }
+        public Notegui(int Num, string Caption, string MainText) : this(Num)
+        {
+            this.Caption.Text = Caption;
+            this.MainText.Text = MainText;
         }
         public void UpdateBorders()
         {

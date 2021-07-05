@@ -179,6 +179,7 @@ namespace NodeListForm
                 FlatStyle = FlatStyle.Flat,
                 ForeColor = Color.FromArgb(255, 160, 160, 160),
                 Font = new Font("Consolas", 9),
+                Enabled = false,
                 TextAlign = ContentAlignment.MiddleCenter,
             });
 
@@ -260,6 +261,13 @@ namespace NodeListForm
                 MaxLength = 50
             };
 
+            Background = new PictureBox()
+            {
+                Size = new Size(this.Width, this.Height),
+                Location = new Point(0, 30),
+                BackColor = Color.FromArgb(255, 56, 56, 56),
+            };
+
             SearchField.GotFocus += SearchField_GotFocus;
             SearchField.LostFocus += SearchField_LostFocus;
             SearchField.TextChanged += SearchField_TextChanged;
@@ -291,6 +299,13 @@ namespace NodeListForm
             SearchPanelAnim.Tick += SearchPanelAnim_Tick;
             SearchPanelAnim.Interval = 1;
 
+            this.Opacity = 0.12;
+
+            AppStartAnim = new Timer();
+            AppStartAnim.Interval = 1;
+            AppStartAnim.Tick += ChangeOpacity;
+            AppStartAnim.Start();
+
             manager = new Manager(Controls);
             manager.NoteGUIs.ForEach(x => x.Delete.MouseClick += NoteDelete_MouseClick);
             manager.NavigateButtons.ForEach(x => x.MouseClick += Navigate_MouseClick);
@@ -299,13 +314,45 @@ namespace NodeListForm
             Controls.Add(BottomBorder);
             Controls.Add(UpperBorder);
             Controls.Add(NoteLabelBorder);
-            manager.Init(Controls);
+            
+            
+            
+            
+            manager.FinishInit(Controls);       // Метод 
+                                                // Где-то тут нужно будет вызвать метод EventsForAllNotes()
+
+
+
             Controls.Add(ControlPanel);
+        }
+
+        private void EventsForAllNotes()        // Вот этот метод нужно будет вызвать для добавления ивентов
+        {
+            manager.NoteGUIs.ForEach(x => x.Panel.MouseClick += Panel_MouseClick);
+            manager.NoteGUIs.ForEach(x => x.Caption.MouseClick += Panel_MouseClick);
+            manager.NoteGUIs.ForEach(x => x.MainText.MouseClick += Panel_MouseClick);
+            
+            manager.NoteGUIs.ForEach(x => x.Panel.MouseEnter += Panel_MouseEnter);
+            manager.NoteGUIs.ForEach(x => x.Caption.MouseEnter += Panel_MouseEnter);
+            manager.NoteGUIs.ForEach(x => x.MainText.MouseEnter += Panel_MouseEnter);
+            
+            manager.NoteGUIs.ForEach(x => x.Panel.MouseLeave += Panel_MouseLeave);
+            manager.NoteGUIs.ForEach(x => x.Caption.MouseLeave += Panel_MouseLeave);
+            manager.NoteGUIs.ForEach(x => x.MainText.MouseLeave += Panel_MouseLeave);
+            
+            manager.NoteGUIs.ForEach(x => x.Edit.MouseClick += Edit_MouseClick);
+        }
+
+        private void ChangeOpacity(object sender, System.EventArgs e)
+        {
+            this.Opacity += 0.04;
+            if (this.Opacity >= 1)
+                AppStartAnim.Stop();
         }
 
         private void Navigate_MouseClick(object sender, MouseEventArgs e)
         {
-            switch((sender as Button).Name)
+            switch ((sender as Button).Name)
             {
                 case "NavigateToLeft":
                     manager.ChangePage(manager.Page - 1, this.Size);
@@ -318,7 +365,7 @@ namespace NodeListForm
 
         private void SearchField_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(e.KeyChar == (char)Keys.Back) manager.NoteGUIs.ForEach(x => x.Panel.Visible = true);
+            if (e.KeyChar == (char)Keys.Back) manager.NoteGUIs.ForEach(x => x.Panel.Visible = true);
         }
 
         private void SearchField_TextChanged(object sender, System.EventArgs e)
@@ -326,7 +373,22 @@ namespace NodeListForm
             manager.Search((sender as TextBox).Text);
             if ((sender as TextBox).Text == "Поиск") manager.NoteGUIs.ForEach(x => x.Panel.Visible = true);
         }
+        private void AddEventsForLastNote()
+        {
+            manager.NoteGUIs.Last().Panel.MouseClick += Panel_MouseClick;
+            manager.NoteGUIs.Last().Caption.MouseClick += Panel_MouseClick;
+            manager.NoteGUIs.Last().MainText.MouseClick += Panel_MouseClick;
 
+            manager.NoteGUIs.Last().Panel.MouseEnter += Panel_MouseEnter;
+            manager.NoteGUIs.Last().Caption.MouseEnter += Panel_MouseEnter;
+            manager.NoteGUIs.Last().MainText.MouseEnter += Panel_MouseEnter;
+
+            manager.NoteGUIs.Last().Panel.MouseLeave += Panel_MouseLeave;
+            manager.NoteGUIs.Last().Caption.MouseLeave += Panel_MouseLeave;
+            manager.NoteGUIs.Last().MainText.MouseLeave += Panel_MouseLeave;
+
+            manager.NoteGUIs.Last().Edit.MouseClick += Edit_MouseClick;
+        }
         private void SearchPanelAnim_Tick(object sender, System.EventArgs e)
         {
             FloatTimeOfSearchFieldAnim = 100;
@@ -368,20 +430,102 @@ namespace NodeListForm
         {
             switch ((sender as Button).Name)
             {
-                case "NoteAdd":
-                    AddMode();
+                case "NoteAdd":                 // При нажатии сюда должна добавляться новая записка
+                    AddMode();                  // Этот метод убирает режим добавления (Не влияет на механизм добавления)
+                    AddEventsForLastNote();     // Добавляются ивенты для последней записки
+
+                    FormEdit FormEdit = new FormEdit();
+
+                    FormEdit.Caption.Text = "Заголовок записки";            // Не изменять
+                    FormEdit.MainText.Text = "Основной текст записки";      // Не изменять
+
+                    FormEdit.Date.Text = "?";                               // Сюда нужно будет класть значение даты с библиотеки записок
+
+                    FormEdit.ShowDialog();
+
+                    manager.NoteGUIs.Last().Caption.Text = FormEdit.Caption.Text;           // Тут будет храниться заголовок записки
+                    manager.NoteGUIs.Last().MainText.Text = FormEdit.MainText.Text;         // Тут будет храниться основной текст записки
+
+                    //manager.NoteGUIs.Last().MainText.Text = FormEdit.Date.Text;           
+                    //Не знаю, нужно ли добавлять изменение даты, но если что, в FormEdit.Designer.cs измени ReadOnly у Date на true
+
                     break;
                 case "NoteSearch":
-                    SearchMode();
+                    SearchMode();           // Активирует/Деактивирует режим поиска
                     break;
                 case "NoteRemove":
-                    DeleteMode();
+                    DeleteMode();           // Активирует/Деактивирует режим удаления
                     break;
                 case "NoteEdit":
-                    EditMode();
+                    EditMode();             // Активирует/Деактивирует режим изменения
                     break;
             }
         }
+
+        private void Edit_MouseClick(object sender, MouseEventArgs e)
+        {
+            FormEdit FormEdit;
+            
+            string Caption = manager.NoteGUIs.Find(x => x.Edit.Name == (sender as Button).Name).Caption.Text;
+            string MainText = manager.NoteGUIs.Find(x => x.Edit.Name == (sender as Button).Name).MainText.Text;
+            string Date = "06.07.2021";
+
+            FormEdit = new FormEdit(Caption, MainText, Date);
+
+            FormEdit.ShowDialog();
+
+            //manager.NoteGUIs.Find(x => x.Edit.Name == (sender as Button).Name).Caption.ForeColor = FormEdit.CaptionColor;
+            //manager.NoteGUIs.Find(x => x.Edit.Name == (sender as Button).Name).MainText.ForeColor = FormEdit.MainTextColor;
+            //manager.NoteGUIs.Find(x => x.Edit.Name == (sender as Button).Name).Panel.ForeColor = FormEdit.PanelColor;
+            //manager.NoteGUIs.Find(x => x.Edit.Name == (sender as Button).Name).MainColor = FormEdit.PanelColor;
+
+            manager.NoteGUIs.Find(x => x.Edit.Name == (sender as Button).Name).Caption.Text = FormEdit.Caption.Text;
+            manager.NoteGUIs.Find(x => x.Edit.Name == (sender as Button).Name).MainText.Text = FormEdit.MainText.Text;
+
+            EditMode();
+        }
+
+        private void Panel_MouseLeave(object sender, System.EventArgs e)
+        {
+            if (sender is Panel)
+                (sender as Panel).BackColor = Color.FromArgb(255, 45, 45, 45);
+        }
+        private void Panel_MouseEnter(object sender, System.EventArgs e)
+        {
+            if (sender is Panel)
+                (sender as Panel).BackColor = Color.FromArgb(255, 55, 55, 55);
+            else if(sender is Label)
+            {
+                (sender as Label).Parent.BackColor = Color.FromArgb(255, 55, 55, 55);
+            }
+        }
+
+        private void Panel_MouseClick(object sender, MouseEventArgs e)
+        {
+            NoteForm Note;
+
+            string Caption = string.Empty;
+            string MainText = string.Empty;
+            string Date = string.Empty;
+
+            if (sender is Panel)
+            {
+                Caption = manager.NoteGUIs.Find(x => x.Panel.Name == (sender as Panel).Name).Caption.Text;
+                MainText = manager.NoteGUIs.Find(x => x.Panel.Name == (sender as Panel).Name).MainText.Text;
+                Date = "06.07.2021";
+            }
+            else
+            {
+                Caption = manager.NoteGUIs.Find(x => x.Caption.Name == (sender as Label).Name).Caption.Text;
+                MainText = manager.NoteGUIs.Find(x => x.Caption.Name == (sender as Label).Name).MainText.Text;
+                Date = "06.07.2021";
+            }
+
+            Note = new NoteForm(Caption, MainText, Date);
+
+            Note.Show();
+        }
+
         private void AddMode()
         {
             ChangeNoteModes(false, false);
@@ -391,7 +535,7 @@ namespace NodeListForm
 
         private void NoteDelete_MouseClick(object sender, MouseEventArgs e)
         {
-            manager.DeleteNote(manager.NoteGUIs.Find(x => x.Panel.Name == (sender as Button).Name),this.Size);
+            manager.DeleteNote(manager.NoteGUIs.Find(x => x.Panel.Name == (sender as Button).Name), this.Size);
             ChangeNoteModes(false, false);
         }
 
@@ -490,7 +634,6 @@ namespace NodeListForm
                 point = new Point(e.X, e.Y);
             }
         }
-
         private void Form1_MouseUp(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -537,6 +680,7 @@ namespace NodeListForm
             else
             {
                 this.WindowState = FormWindowState.Normal;
+                manager.UpdateMinimizeSize(this.Size);
             }
         }
         private void UpperPanel_MouseMove(object sender, MouseEventArgs e)
@@ -589,7 +733,11 @@ namespace NodeListForm
                 case "Maximize":
                     if (this.WindowState != FormWindowState.Maximized)
                         this.WindowState = FormWindowState.Maximized;
-                    else this.WindowState = FormWindowState.Normal;
+                    else
+                    {
+                        this.WindowState = FormWindowState.Normal;
+                        manager.UpdateMinimizeSize(this.Size);
+                    }
                     break;
             }
         }
@@ -609,6 +757,9 @@ namespace NodeListForm
         private PictureBox NoteLabelBorder;
         private Timer ControlPanelAnim;
         private Timer SearchPanelAnim;
+        private Timer AppStartAnim;
+
+        private PictureBox Background;
         #endregion
     }
 }
