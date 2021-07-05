@@ -4623,26 +4623,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Danil\\.nuget\\packages\\": {},
-    "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Crustbrns\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Danil\\Source\\Repos\\BigBlackTEAM\\Node\\NodeListForm\\NodeListTest\\NodeListTest.csproj",
+      "projectUniqueName": "C:\\Users\\Crustbrns\\source\\repos\\NodeBlack\\NodeListForm\\NodeListTest\\NodeListTest.csproj",
       "projectName": "NodeListTest",
-      "projectPath": "C:\\Users\\Danil\\Source\\Repos\\BigBlackTEAM\\Node\\NodeListForm\\NodeListTest\\NodeListTest.csproj",
-      "packagesPath": "C:\\Users\\Danil\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Danil\\Source\\Repos\\BigBlackTEAM\\Node\\NodeListForm\\NodeListTest\\obj\\",
+      "projectPath": "C:\\Users\\Crustbrns\\source\\repos\\NodeBlack\\NodeListForm\\NodeListTest\\NodeListTest.csproj",
+      "packagesPath": "C:\\Users\\Crustbrns\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Crustbrns\\source\\repos\\NodeBlack\\NodeListForm\\NodeListTest\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Danil\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Crustbrns\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4696,7 +4689,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

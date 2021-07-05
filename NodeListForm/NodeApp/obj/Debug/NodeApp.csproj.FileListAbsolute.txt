@@ -24,3 +24,16 @@ C:\Users\Danil\Source\Repos\BigBlackTEAM\Node\NodeListForm\NodeApp\obj\Debug\Nod
 C:\Users\Danil\Source\Repos\BigBlackTEAM\Node\NodeListForm\NodeApp\obj\Debug\NodeApp.csproj.CopyComplete
 C:\Users\Danil\Source\Repos\BigBlackTEAM\Node\NodeListForm\NodeApp\obj\Debug\NodeApp.exe
 C:\Users\Danil\Source\Repos\BigBlackTEAM\Node\NodeListForm\NodeApp\obj\Debug\NodeApp.pdb
+C:\Users\Crustbrns\source\repos\NodeBlack\NodeListForm\NodeApp\bin\Debug\NodeApp.exe.config
+C:\Users\Crustbrns\source\repos\NodeBlack\NodeListForm\NodeApp\bin\Debug\NodeApp.exe
+C:\Users\Crustbrns\source\repos\NodeBlack\NodeListForm\NodeApp\bin\Debug\NodeApp.pdb
+C:\Users\Crustbrns\source\repos\NodeBlack\NodeListForm\NodeApp\bin\Debug\LogicLib.dll
+C:\Users\Crustbrns\source\repos\NodeBlack\NodeListForm\NodeApp\bin\Debug\LogicLib.pdb
+C:\Users\Crustbrns\source\repos\NodeBlack\NodeListForm\NodeApp\obj\Debug\NodeApp.csprojAssemblyReference.cache
+C:\Users\Crustbrns\source\repos\NodeBlack\NodeListForm\NodeApp\obj\Debug\NodeApp.Form1.resources
+C:\Users\Crustbrns\source\repos\NodeBlack\NodeListForm\NodeApp\obj\Debug\NodeApp.Properties.Resources.resources
+C:\Users\Crustbrns\source\repos\NodeBlack\NodeListForm\NodeApp\obj\Debug\NodeApp.csproj.GenerateResource.cache
+C:\Users\Crustbrns\source\repos\NodeBlack\NodeListForm\NodeApp\obj\Debug\NodeApp.csproj.CoreCompileInputs.cache
+C:\Users\Crustbrns\source\repos\NodeBlack\NodeListForm\NodeApp\obj\Debug\NodeApp.csproj.CopyComplete
+C:\Users\Crustbrns\source\repos\NodeBlack\NodeListForm\NodeApp\obj\Debug\NodeApp.exe
+C:\Users\Crustbrns\source\repos\NodeBlack\NodeListForm\NodeApp\obj\Debug\NodeApp.pdb

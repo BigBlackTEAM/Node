@@ -120,7 +120,7 @@ namespace NodeListForm
                 BorderStyle = BorderStyle.None,
                 Text = $"",
                 Font = new Font("Consolas", 10),
-                Enabled = true
+                Enabled = false
             };
 
             this.MouseDown += NoteForm_MouseDown;

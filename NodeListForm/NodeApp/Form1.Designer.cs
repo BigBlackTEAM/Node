@@ -387,7 +387,7 @@ namespace NodeListForm
                 manager.NoteGUIs.Last().MainText.Text = item.Text;
             }
             EventsForAllNotes();
-
+            manager.ChangePage(0, this.Size);
 
 
             if ((sender as TextBox).Text == "Поиск") manager.NoteGUIs.ForEach(x => x.Panel.Visible = true);
@@ -447,6 +447,7 @@ namespace NodeListForm
 
         private void X_MouseClick2(object sender, MouseEventArgs e)
         {
+            this.ActiveControl = null;
             switch ((sender as Button).Name)
             {
                 case "NoteAdd":                 // При нажатии сюда должна добавляться новая записка
@@ -458,7 +459,7 @@ namespace NodeListForm
                     FormEdit.Caption.Text = "Заголовок записки";            // Не изменять
                     FormEdit.MainText.Text = "Основной текст записки";      // Не изменять
 
-                    FormEdit.Date.Text = "?";                               // Сюда нужно будет класть значение даты с библиотеки записок
+                    FormEdit.Date.Text = "";                               // Сюда нужно будет класть значение даты с библиотеки записок
 
                     FormEdit.ShowDialog();
 
