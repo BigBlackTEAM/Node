@@ -4623,28 +4623,27 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\DELL_PRECISION\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\Danil\\.nuget\\packages\\": {},
+    "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\DELL_PRECISION\\Source\\Repos\\NodeMaster\\NodeListForm\\NodeListTest\\NodeListTest.csproj",
+      "projectUniqueName": "C:\\Users\\Danil\\Source\\Repos\\BigBlackTEAM\\Node\\NodeListForm\\NodeListTest\\NodeListTest.csproj",
       "projectName": "NodeListTest",
-      "projectPath": "C:\\Users\\DELL_PRECISION\\Source\\Repos\\NodeMaster\\NodeListForm\\NodeListTest\\NodeListTest.csproj",
-      "packagesPath": "C:\\Users\\DELL_PRECISION\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\DELL_PRECISION\\Source\\Repos\\NodeMaster\\NodeListForm\\NodeListTest\\obj\\",
+      "projectPath": "C:\\Users\\Danil\\Source\\Repos\\BigBlackTEAM\\Node\\NodeListForm\\NodeListTest\\NodeListTest.csproj",
+      "packagesPath": "C:\\Users\\Danil\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Danil\\Source\\Repos\\BigBlackTEAM\\Node\\NodeListForm\\NodeListTest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\DELL_PRECISION\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Danil\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -4697,7 +4696,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

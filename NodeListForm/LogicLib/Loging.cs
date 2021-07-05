@@ -7,12 +7,21 @@ using System.Threading.Tasks;
 
 namespace LogicLib
 {
-    static class Loging
+    public static class Loging
     {
 
-        public static string FileName { get; private set; }
+        
+        
+        public static string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Logs");
+        
+        public static string FileName = Path.Combine(path, "log.txt");
+
+        
         public static void CreateFile(string fileName)
         {
+
+            
+
             if (!File.Exists(fileName))
             {
                 File.Create(fileName).Close();
@@ -24,7 +33,7 @@ namespace LogicLib
         private static void WriteToLog(string info, LogType type) =>
             File.AppendAllText(FileName, string.Format("{0}-{1},\n{2}\n", type.ToString(), DateTime.Now.ToString(), info));
 
-        private static void WriteToLogSep() => File.AppendAllText(FileName, string.Format("{0}\n"));
+        private static void WriteToLogSep() => File.AppendAllText(FileName, "\n");
 
         public static void SetLog(string info, LogType type = LogType.ERROR)
         {

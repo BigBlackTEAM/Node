@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LogicLib;
 
 namespace NodeListForm
 {
@@ -122,6 +123,9 @@ namespace NodeListForm
             NavigateButtons.ForEach(x => x.SendToBack());
             CountLabel.SendToBack();
             NoteLabel.SendToBack();
+            Loging.SetLog($"Init was finished", LogType.MESSAGE);
+
+
         }
 
         public void ChangePage(int Page, Size FormSize)
@@ -138,6 +142,8 @@ namespace NodeListForm
             CountLabel.Text = $"СТРАНИЦА {this.Page + 1} | ВСЕГО {NoteGUIs.Count}";
             NoteGUIs.Where(x => x.Page != this.Page).ToList().ForEach(x => x.Panel.Visible = false);
             NoteGUIs.Where(x => x.Page == this.Page).ToList().ForEach(x => x.Panel.Visible = true);
+            Loging.SetLog($"Page was changed to {this.Page}", LogType.MESSAGE);
+
         }
         public void UpdateSize(Size FormSize)
         {
@@ -153,6 +159,8 @@ namespace NodeListForm
             NoteGUIs.Where(x => x.Page == this.Page).ToList().ForEach(x => x.Panel.Size = new Size((int)((FormSize.Width - 136 - FormSize.Width / 64 * 6) / 7), ((FormSize.Height > 569) ? (FormSize.Height - 199 - FormSize.Width / 64 * 4) / 5 : x.Panel.Height)));
             NoteGUIs.Where(x => x.Page == this.Page).ToList().ForEach(x => x.Panel.Location = new Point(0 + (x.Panel.Width + FormSize.Width / 64) * (int.Parse(x.Panel.Name) % 7), 0 + (x.Panel.Height + FormSize.Width / 64) * (int.Parse(x.Panel.Name) % 35 / 7)));
             NoteGUIs.Where(x => x.Page == this.Page).ToList().ForEach(x => x.UpdateBorders());
+            Loging.SetLog($"Size was changed", LogType.MESSAGE);
+
         }
         public void UpdateMinimizeSize(Size FormSize)
         {
@@ -168,6 +176,7 @@ namespace NodeListForm
 
             if (this.Page == NoteGUIs.Count / 35) NavigateButtons[1].Enabled = false;
             else NavigateButtons[1].Enabled = true;
+
         }
         private void UpdateNames()
         {
@@ -193,6 +202,8 @@ namespace NodeListForm
             if (NoteGUIs.Last().Page != this.Page) NoteGUIs.Last().Panel.Visible = false;
             UpdateCount();
             if (NoteGUIs.Count % 35 == 1 && NoteGUIs.Count != 1) ChangePage(this.Page + 1, FormSize);
+            Loging.SetLog($"Note was added | current notes {NoteGUIs.Count} ", LogType.MESSAGE);
+
         }
         public void DeleteNote(Notegui note, Size FormSize)
         {
@@ -202,6 +213,8 @@ namespace NodeListForm
             UpdateCount();
             UpdateNames();
             UpdateSize(FormSize);
+            Loging.SetLog($"Note was deleted ", LogType.WARNING);
+
         }
         public void Search(string filter)
         {

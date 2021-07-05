@@ -1,6 +1,7 @@
 ﻿
 using System.Drawing;
 using System.Windows.Forms;
+using LogicLib;
 
 namespace NodeListForm
 {
@@ -136,6 +137,8 @@ namespace NodeListForm
         private void MinimizeButton_MouseClick(object sender, MouseEventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+            Loging.SetLog($"Windowstate was changed to {this.WindowState}", LogType.MESSAGE);
+
         }
 
         private void NoteForm_MouseMove(object sender, MouseEventArgs e)
@@ -143,6 +146,7 @@ namespace NodeListForm
             if (e.Button == MouseButtons.Left)
             {
                 Point Delta = new Point(point.X - this.Location.X, point.Y - this.Location.Y);
+                
                 this.Location = new Point(this.Location.X + e.X - point.X, this.Location.Y + e.Y - point.Y);
             }
         }
@@ -152,30 +156,40 @@ namespace NodeListForm
             if (e.Button == MouseButtons.Left)
             {
                 point = new Point(e.X, e.Y);
+                //Loging.SetLog($"Mouse down in{e.Location}", LogType.MESSAGE);
+
             }
         }
 
         private void QuitButton_MouseLeave(object sender, System.EventArgs e)
         {
             QuitButton.ForeColor = Color.FromArgb(255, 240, 240, 240);
+            Loging.SetLog($"ForeColor was changed to{QuitButton.ForeColor.ToString()}", LogType.MESSAGE);
+
+
         }
 
         private void QuitButton_MouseEnter(object sender, System.EventArgs e)
         {
             QuitButton.ForeColor = Color.Red;
+            Loging.SetLog($"ForeColor was changed to{QuitButton.ForeColor.ToString()}", LogType.MESSAGE);
+
         }
 
         private void QuitButton_MouseClick(object sender, MouseEventArgs e)
         {
-
+            Loging.SetLog("Application was closed", LogType.MESSAGE);
             this.Close();
         }
 
         private void ChangeOpacity(object sender, System.EventArgs e)
         {
+            Loging.SetLog($"Opacity was changed >last{this.Opacity}", LogType.MESSAGE);
             this.Opacity += 0.04;
             if (this.Opacity >= 0.96)
                 AppStartAnim.Stop();
+            Loging.SetLog($"Application was changed >current {this.Opacity}", LogType.MESSAGE);
+
         }
 
         private Button QuitButton;
