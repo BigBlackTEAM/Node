@@ -8,3 +8,6 @@ C:\Users\DELL_PRECISION\Source\Repos\NodeMaster\NodeListForm\NodeApp\obj\Debug\N
 C:\Users\DELL_PRECISION\Source\Repos\NodeMaster\NodeListForm\NodeApp\obj\Debug\NodeApp.csproj.CoreCompileInputs.cache
 C:\Users\DELL_PRECISION\Source\Repos\NodeMaster\NodeListForm\NodeApp\obj\Debug\NodeApp.exe
 C:\Users\DELL_PRECISION\Source\Repos\NodeMaster\NodeListForm\NodeApp\obj\Debug\NodeApp.pdb
+C:\Users\DELL_PRECISION\Source\Repos\NodeMaster\NodeListForm\NodeApp\bin\Debug\LogicLib.dll
+C:\Users\DELL_PRECISION\Source\Repos\NodeMaster\NodeListForm\NodeApp\bin\Debug\LogicLib.pdb
+C:\Users\DELL_PRECISION\Source\Repos\NodeMaster\NodeListForm\NodeApp\obj\Debug\NodeApp.csproj.CopyComplete

@@ -167,6 +167,7 @@ namespace NodeListForm
 
         private void QuitButton_MouseClick(object sender, MouseEventArgs e)
         {
+
             this.Close();
         }
 

@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -370,7 +372,22 @@ namespace NodeListForm
 
         private void SearchField_TextChanged(object sender, System.EventArgs e)
         {
-            manager.Search((sender as TextBox).Text);
+            //manager.Search((sender as TextBox).Text);
+            var search = (sender as TextBox).Text;
+            //manager.NoteGUIs.Clear();
+
+            while (manager.NoteGUIs.Count!=0) {
+                manager.DeleteNote(manager.NoteGUIs.Last(), this.Size);
+            }
+            foreach (var item in this.nodeManager.SearchByName(search)) {
+                manager.AddNote(this.Size);
+                manager.NoteGUIs.Last().Caption.Text = item.Name;
+                manager.NoteGUIs.Last().MainText.Text = item.Text;
+            }
+            EventsForAllNotes();
+
+
+
             if ((sender as TextBox).Text == "Поиск") manager.NoteGUIs.ForEach(x => x.Panel.Visible = true);
         }
         private void AddEventsForLastNote()
@@ -445,6 +462,18 @@ namespace NodeListForm
 
                     manager.NoteGUIs.Last().Caption.Text = FormEdit.Caption.Text;           // Тут будет храниться заголовок записки
                     manager.NoteGUIs.Last().MainText.Text = FormEdit.MainText.Text;         // Тут будет храниться основной текст записки
+
+                    if (!Directory.Exists("Nodes")) {
+                        Directory.CreateDirectory("Nodes");
+                    }
+
+                    if (!File.Exists("Nodes/" + FormEdit.Caption.Text + ".txt"))
+                    {
+                        File.Create("Nodes/" + FormEdit.Caption.Text + ".txt").Close();
+                    }
+                    File.WriteAllText("Nodes/" + FormEdit.Caption.Text + ".txt", FormEdit.MainText.Text);
+                    this.nodeManager.Nodes.Add(new LogicLib.Node(FormEdit.Caption.Text, FormEdit.MainText.Text));
+                    this.nodeManager.Nodes.Last().CreationTime = DateTime.Now;
 
                     //manager.NoteGUIs.Last().MainText.Text = FormEdit.Date.Text;           
                     //Не знаю, нужно ли добавлять изменение даты, но если что, в FormEdit.Designer.cs измени ReadOnly у Date на true
@@ -574,6 +603,13 @@ namespace NodeListForm
         private void SearchField_LostFocus(object sender, System.EventArgs e)
         {
             if (SearchField.Text == string.Empty) SearchField.Text = "Поиск";
+            foreach (var item in this.nodeManager.Nodes)
+            {
+                manager.AddNote(this.Size);
+                manager.NoteGUIs.Last().Caption.Text = item.Name;
+                manager.NoteGUIs.Last().MainText.Text = item.Text;
+            }
+            EventsForAllNotes();
         }
         private void ControlPanelAnim_Tick(object sender, System.EventArgs e)
         {

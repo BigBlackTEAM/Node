@@ -4,15 +4,20 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LogicLib;
 
 namespace NodeListForm
 {
     public partial class Form1 : Form
     {
+
+        private NodeManager nodeManager = new NodeManager();
+
         public Form1()
         {
             InitializeComponent();
@@ -20,6 +25,19 @@ namespace NodeListForm
             this.Load += Form1_Load;
             this.ResizeRedraw = true;
             this.DoubleBuffered = true;
+
+            if (Directory.Exists("Nodes")) {
+                Directory.GetFiles("Nodes").ToList().ForEach((item)=> {
+                    manager.AddNote(this.Size);
+                    manager.NoteGUIs.Last().Caption.Text = new FileInfo(item).Name.Remove(new FileInfo(item).Name.Length-4,4);
+                    manager.NoteGUIs.Last().MainText.Text = File.ReadAllText(item);
+
+                    this.nodeManager.Nodes.Add(new Node(manager.NoteGUIs.Last().Caption.Text, manager.NoteGUIs.Last().MainText.Text));
+
+                });
+            }
+            EventsForAllNotes();
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
