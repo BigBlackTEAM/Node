@@ -10,3 +10,9 @@ C:\October\Source\BigBlackTEAM\Node\NodeListForm\LogicLib\obj\Debug\LogicLib.csp
 C:\October\Source\BigBlackTEAM\Node\NodeListForm\LogicLib\obj\Debug\LogicLib.csproj.CoreCompileInputs.cache
 C:\October\Source\BigBlackTEAM\Node\NodeListForm\LogicLib\obj\Debug\LogicLib.dll
 C:\October\Source\BigBlackTEAM\Node\NodeListForm\LogicLib\obj\Debug\LogicLib.pdb
+C:\Users\DELL_PRECISION\Source\Repos\NodeMaster\NodeListForm\LogicLib\bin\Debug\LogicLib.dll
+C:\Users\DELL_PRECISION\Source\Repos\NodeMaster\NodeListForm\LogicLib\bin\Debug\LogicLib.pdb
+C:\Users\DELL_PRECISION\Source\Repos\NodeMaster\NodeListForm\LogicLib\obj\Debug\LogicLib.csproj.AssemblyReference.cache
+C:\Users\DELL_PRECISION\Source\Repos\NodeMaster\NodeListForm\LogicLib\obj\Debug\LogicLib.csproj.CoreCompileInputs.cache
+C:\Users\DELL_PRECISION\Source\Repos\NodeMaster\NodeListForm\LogicLib\obj\Debug\LogicLib.dll
+C:\Users\DELL_PRECISION\Source\Repos\NodeMaster\NodeListForm\LogicLib\obj\Debug\LogicLib.pdb

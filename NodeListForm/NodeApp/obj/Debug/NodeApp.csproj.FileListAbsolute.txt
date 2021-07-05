@@ -1,0 +1,10 @@
+C:\Users\DELL_PRECISION\Source\Repos\NodeMaster\NodeListForm\NodeApp\bin\Debug\NodeApp.exe.config
+C:\Users\DELL_PRECISION\Source\Repos\NodeMaster\NodeListForm\NodeApp\bin\Debug\NodeApp.exe
+C:\Users\DELL_PRECISION\Source\Repos\NodeMaster\NodeListForm\NodeApp\bin\Debug\NodeApp.pdb
+C:\Users\DELL_PRECISION\Source\Repos\NodeMaster\NodeListForm\NodeApp\obj\Debug\NodeApp.csproj.AssemblyReference.cache
+C:\Users\DELL_PRECISION\Source\Repos\NodeMaster\NodeListForm\NodeApp\obj\Debug\NodeApp.Form1.resources
+C:\Users\DELL_PRECISION\Source\Repos\NodeMaster\NodeListForm\NodeApp\obj\Debug\NodeApp.Properties.Resources.resources
+C:\Users\DELL_PRECISION\Source\Repos\NodeMaster\NodeListForm\NodeApp\obj\Debug\NodeApp.csproj.GenerateResource.cache
+C:\Users\DELL_PRECISION\Source\Repos\NodeMaster\NodeListForm\NodeApp\obj\Debug\NodeApp.csproj.CoreCompileInputs.cache
+C:\Users\DELL_PRECISION\Source\Repos\NodeMaster\NodeListForm\NodeApp\obj\Debug\NodeApp.exe
+C:\Users\DELL_PRECISION\Source\Repos\NodeMaster\NodeListForm\NodeApp\obj\Debug\NodeApp.pdb

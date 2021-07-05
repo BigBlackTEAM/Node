@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicLib", "LogicLib\LogicLib.csproj", "{35EBDB8D-0837-4985-98B6-B0221AA5830F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NodeListTest", "NodeListTest\NodeListTest.csproj", "{12EBEE58-E962-4174-B9E5-7A64A0E0C7CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NodeListTest", "NodeListTest\NodeListTest.csproj", "{12EBEE58-E962-4174-B9E5-7A64A0E0C7CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NodeApp", "NodeApp\NodeApp.csproj", "{610ADA9B-98B8-4471-BE5B-D8EB410B5913}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{12EBEE58-E962-4174-B9E5-7A64A0E0C7CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12EBEE58-E962-4174-B9E5-7A64A0E0C7CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12EBEE58-E962-4174-B9E5-7A64A0E0C7CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{610ADA9B-98B8-4471-BE5B-D8EB410B5913}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{610ADA9B-98B8-4471-BE5B-D8EB410B5913}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{610ADA9B-98B8-4471-BE5B-D8EB410B5913}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{610ADA9B-98B8-4471-BE5B-D8EB410B5913}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
