@@ -343,6 +343,7 @@ namespace NodeListForm
             manager.NoteGUIs.ForEach(x => x.MainText.MouseLeave += Panel_MouseLeave);
             
             manager.NoteGUIs.ForEach(x => x.Edit.MouseClick += Edit_MouseClick);
+            manager.NoteGUIs.ForEach(x => x.Delete.MouseClick += NoteDelete_MouseClick);
         }
 
         private void ChangeOpacity(object sender, System.EventArgs e)
@@ -564,8 +565,19 @@ namespace NodeListForm
 
         private void NoteDelete_MouseClick(object sender, MouseEventArgs e)
         {
+
+            this.nodeManager.Nodes.RemoveAt(Convert.ToInt32((sender as Button).Name));
+            //MessageBox.Show((sender as Button).Name);
             manager.DeleteNote(manager.NoteGUIs.Find(x => x.Panel.Name == (sender as Button).Name), this.Size);
             ChangeNoteModes(false, false);
+
+            Directory.Delete("Nodes",true);
+            Directory.CreateDirectory("Nodes");
+            foreach (var item in this.nodeManager.Nodes) {
+                File.Create("Nodes/"+item.Name+".txt").Close();
+                File.WriteAllText("Nodes/" + item.Name + ".txt",item.Text);
+            }
+
         }
 
         private void SearchMode()
@@ -602,6 +614,10 @@ namespace NodeListForm
         }
         private void SearchField_LostFocus(object sender, System.EventArgs e)
         {
+            while (manager.NoteGUIs.Count != 0)
+            {
+                manager.DeleteNote(manager.NoteGUIs.Last(), this.Size);
+            }
             if (SearchField.Text == string.Empty) SearchField.Text = "Поиск";
             foreach (var item in this.nodeManager.Nodes)
             {
