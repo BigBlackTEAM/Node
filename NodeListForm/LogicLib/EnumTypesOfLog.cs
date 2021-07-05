@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 
 namespace LogicLib
 {
-    static class Loging
+    public enum LogType
     {
-
-        
-
-        //YA Lox
-
-
+        ERROR = 1,
+        WARNING = 2,
+        MESSAGE = 3
     }
 }
