@@ -21,6 +21,18 @@ namespace LogicLib
         }
 
 
+        private static void WriteToLog(string info, LogType type) =>
+            File.AppendAllText(FileName, string.Format("{0}-{1},\n{2}\n", type.ToString(), DateTime.Now.ToString(), info));
+
+        private static void WriteToLogSep() => File.AppendAllText(FileName, string.Format("{0}\n"));
+
+        public static void SetLog(string info, LogType type = LogType.ERROR)
+        {
+            WriteToLog(info, type);
+            WriteToLogSep();
+        }
+
+
 
 
     }
