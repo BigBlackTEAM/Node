@@ -32,7 +32,15 @@ namespace LogicLib
             WriteToLogSep();
         }
 
-
+        public static void SetLog(string info, LogType type, params object[] _params)
+        {
+            if (_params != null)
+            {
+                WriteToLog(info, type);
+                _params.ToList().ForEach(x => File.AppendAllText(FileName, string.Format("{0}\n", x.ToString())));
+                WriteToLogSep();
+            }
+        }
 
 
     }
