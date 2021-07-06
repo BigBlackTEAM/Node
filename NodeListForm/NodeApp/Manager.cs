@@ -12,6 +12,8 @@ namespace NodeListForm
 {
     class Manager
     {
+        bool IsDarkMode;
+
         public Panel NotesPanel;
         public List<Notegui> NoteGUIs;
         public Label NoteLabel;
@@ -19,15 +21,17 @@ namespace NodeListForm
         public List<Button> NavigateButtons;
 
         public int Page;
-        public Manager(Control.ControlCollection Controls)
+        public Manager(Control.ControlCollection Controls, bool DarkMode)
         {
+            IsDarkMode = DarkMode;
+
             NoteGUIs = new List<Notegui>();
 
             NotesPanel = new Panel()
             {
                 Size = new Size(658, 370),
                 Location = new Point(68, 160),
-                BackColor = Color.FromArgb(255, 40, 40, 40),
+                BackColor = IsDarkMode ? Color.FromArgb(255, 25, 25, 25) : Color.FromArgb(255, 228, 228, 228),
             };
 
             NavigateButtons = new List<Button>()
@@ -39,8 +43,8 @@ namespace NodeListForm
                 Anchor = AnchorStyles.Left | AnchorStyles.Top,
                 Name = "NavigateToLeft",
                 FlatStyle = FlatStyle.Flat,
-                ForeColor = Color.FromArgb(255, 160, 160, 160),
-                BackColor = Color.FromArgb(255, 66, 66, 66),
+                ForeColor = IsDarkMode ? Color.FromArgb(255, 160, 160, 160) : Color.FromArgb(255, 6, 6, 6),
+                BackColor = IsDarkMode ? Color.FromArgb(255, 66, 66, 66) : Color.FromArgb(255, 200, 200, 200),
                 TextAlign = ContentAlignment.MiddleCenter,
                 Font = new Font("Consolas", 9),
                 Region = new Region(RoundedRect(new Rectangle(0, 0, 30, 30), 16))
@@ -53,8 +57,8 @@ namespace NodeListForm
                 Anchor = AnchorStyles.Left | AnchorStyles.Top,
                 Name = "NavigateToRight",
                 FlatStyle = FlatStyle.Flat,
-                ForeColor = Color.FromArgb(255, 160, 160, 160),
-                BackColor = Color.FromArgb(255, 66, 66, 66),
+                ForeColor = IsDarkMode ? Color.FromArgb(255, 160, 160, 160) : Color.FromArgb(255, 6, 6, 6),
+                BackColor = IsDarkMode ? Color.FromArgb(255, 66, 66, 66) : Color.FromArgb(255, 200, 200, 200),
                 TextAlign = ContentAlignment.MiddleCenter,
                 Font = new Font("Consolas", 9),
                 Region = new Region(RoundedRect(new Rectangle(0, 0, 30, 30), 16))
@@ -72,7 +76,7 @@ namespace NodeListForm
                 Location = new Point(63, 100),
                 Size = new Size(90, 30),
                 TextAlign = ContentAlignment.MiddleLeft,
-                ForeColor = Color.FromArgb(255, 160, 160, 160),
+                ForeColor = IsDarkMode ? Color.FromArgb(255, 160, 160, 160) : Color.FromArgb(255, 6, 6, 6),
                 Font = new Font("Consolas", 15),
             };
 
@@ -83,7 +87,7 @@ namespace NodeListForm
                 Size = new Size(400, 30),
                 TextAlign = ContentAlignment.MiddleRight,
                 Font = new Font("Consolas", 15),
-                ForeColor = Color.FromArgb(255, 160, 160, 160),
+                ForeColor = IsDarkMode ? Color.FromArgb(255, 160, 160, 160) : Color.FromArgb(255, 6, 6, 6),
                 Anchor = AnchorStyles.Right | AnchorStyles.Top
             };
 
@@ -99,9 +103,9 @@ namespace NodeListForm
 
             int Size = 3; // Инициализируется сначала коллекция записок, а потом сюда нужно присвоить значение / или сразу в фор
 
-            for(int i = 0; i < Size; i++)   // Переменная i нужна для того, чтобы задать контролам имена, чтобы можно было обращаться к ним
+            for (int i = 0; i < Size; i++)   // Переменная i нужна для того, чтобы задать контролам имена, чтобы можно было обращаться к ним
             {
-                this.NoteGUIs.Add(new Notegui(i, "Заголовок", "Основной текст"));       // Пример добавления новой записки
+                this.NoteGUIs.Add(new Notegui(i, IsDarkMode, "Заголовок", "Основной текст"));       // Пример добавления новой записки
             }
 
             // После нужно будет добавить в главную форму после создания всех записок нужные ивенты к ним
@@ -148,7 +152,7 @@ namespace NodeListForm
         public void UpdateSize(Size FormSize)
         {
             NotesPanel.Size = new Size(FormSize.Width - 135, FormSize.Height - 199);
-            
+
             //for (int i = Page*35; i < NoteGUIs.Count; i++)
             //{
             //    NoteGUIs[i].Panel.Size = new Size((int)((FormSize.Width - 136 - FormSize.Width / 64 * 6) / 7), ((FormSize.Height > 569) ? (FormSize.Height - 199 - FormSize.Width / 64 * 4) / 5 : NoteGUIs[i].Panel.Height));
@@ -166,7 +170,7 @@ namespace NodeListForm
         {
             NotesPanel.Size = new Size(FormSize.Width - 135, FormSize.Height - 199);
 
-            NoteGUIs.Where(x => x.Page == this.Page).ToList().ForEach(x => x.Panel.Size = new Size((int)((FormSize.Width - 136 - FormSize.Width / 64 * 6) / 7), (int)(FormSize.Height - 199 - FormSize.Width / 64 * 4) / 5 ));
+            NoteGUIs.Where(x => x.Page == this.Page).ToList().ForEach(x => x.Panel.Size = new Size((int)((FormSize.Width - 136 - FormSize.Width / 64 * 6) / 7), (int)(FormSize.Height - 199 - FormSize.Width / 64 * 4) / 5));
             NoteGUIs.Where(x => x.Page == this.Page).ToList().ForEach(x => x.Panel.Location = new Point(0 + (x.Panel.Width + FormSize.Width / 64) * (int.Parse(x.Panel.Name) % 7), 0 + (x.Panel.Height + FormSize.Width / 64) * (int.Parse(x.Panel.Name) % 35 / 7)));
             NoteGUIs.Where(x => x.Page == this.Page).ToList().ForEach(x => x.UpdateBorders());
         }
@@ -196,7 +200,7 @@ namespace NodeListForm
         }
         public void AddNote(Size FormSize)
         {
-            this.NoteGUIs.Add(new Notegui(NoteGUIs.Count));
+            this.NoteGUIs.Add(new Notegui(NoteGUIs.Count, IsDarkMode));
             UpdateSize(FormSize);
             NotesPanel.Controls.Add(NoteGUIs[NoteGUIs.Count - 1].Panel);
             if (NoteGUIs.Last().Page != this.Page) NoteGUIs.Last().Panel.Visible = false;
@@ -220,6 +224,16 @@ namespace NodeListForm
         {
             //NoteGUIs.Where(x => !x.Caption.Text.Contains(filter)).ToList().ForEach(x=> x.Panel.Visible = false);
             //NoteGUIs.Where(x => !x.Caption.Text.Contains(filter)).ToList().ForEach(x=> x.Panel.Visible = false);
+        }
+        public void UpdateTheme(bool IsDarkMode)
+        {
+            this.IsDarkMode = IsDarkMode;
+
+            NotesPanel.BackColor = IsDarkMode ? Color.FromArgb(255, 25, 25, 25) : Color.FromArgb(255, 228, 228, 228);
+            NavigateButtons.ForEach(x=>x.ForeColor = IsDarkMode ? Color.FromArgb(255, 160, 160, 160) : Color.FromArgb(255, 6, 6, 6));
+            NavigateButtons.ForEach(x => x.BackColor = IsDarkMode ? Color.FromArgb(255, 66, 66, 66) : Color.FromArgb(255, 200, 200, 200));
+            NoteLabel.ForeColor = IsDarkMode ? Color.FromArgb(255, 160, 160, 160) : Color.FromArgb(255, 6, 6, 6);
+            CountLabel.ForeColor = IsDarkMode ? Color.FromArgb(255, 160, 160, 160) : Color.FromArgb(255, 6, 6, 6);
         }
         private GraphicsPath RoundedRect(Rectangle baseRect, int radius)
         {

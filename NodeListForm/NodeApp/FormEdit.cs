@@ -19,8 +19,10 @@ namespace NodeListForm
             this.Load += Form1_Load;
         }
 
-        public FormEdit(string Caption, string MainText, string Date)
+        public FormEdit(bool IsDarkMode, string Caption, string MainText, string Date)
         {
+            this.IsDarkMode = IsDarkMode;
+
             InitializeComponent();
 
             this.Load += Form1_Load;

@@ -9,6 +9,7 @@ namespace NodeListForm
 {
     partial class FormEdit
     {
+        bool IsDarkMode;
         Point point;
 
         public Color CaptionColor;
@@ -45,9 +46,9 @@ namespace NodeListForm
             this.ClientSize = new System.Drawing.Size(450, 600);
             this.Text = "";
             this.Opacity = 0.99;
-            this.ForeColor = Color.FromArgb(255, 240, 240, 240);
+            ForeColor = IsDarkMode ? Color.FromArgb(255, 240, 240, 240) : Color.FromArgb(255, 16, 16, 16);
             this.ShowIcon = false;
-            this.BackColor = Color.FromArgb(255, 30, 30, 30);
+            BackColor = IsDarkMode ? Color.FromArgb(255, 30, 30, 30) : Color.FromArgb(255, 250, 250, 250);
             this.FormBorderStyle = FormBorderStyle.None;
             this.StartPosition = FormStartPosition.CenterScreen;
             this.Opacity = 0.12;
@@ -58,7 +59,7 @@ namespace NodeListForm
                 Font = new Font("Consolas", 15),
                 Text = "✕",
                 Size = new Size(30, 30),
-                ForeColor = Color.Red,
+                ForeColor = IsDarkMode ? Color.Red : Color.FromArgb(255,16,16,16),
                 Location = new Point(this.Width - 30, 0),
                 FlatStyle = FlatStyle.Flat,
                 Cursor = Cursors.Hand,
@@ -75,7 +76,7 @@ namespace NodeListForm
                 Font = new Font("Consolas", 15),
                 Text = "-",
                 Size = new Size(30, 30),
-                ForeColor = Color.FromArgb(255, 160, 160, 160),
+                ForeColor = IsDarkMode ? Color.FromArgb(255, 160, 160, 160) : Color.FromArgb(255, 16, 16, 16),
                 Location = new Point(this.Width - 60, 0),
                 FlatStyle = FlatStyle.Flat,
                 TextAlign = ContentAlignment.MiddleCenter,
@@ -87,7 +88,7 @@ namespace NodeListForm
             Caption = new TextBox()
             {
                 BackColor = this.BackColor,
-                ForeColor = Color.FromArgb(255, 240, 240, 240),
+                ForeColor = IsDarkMode ? Color.FromArgb(255, 240, 240, 240) : Color.FromArgb(255, 16, 16, 16),
                 Size = new Size(this.Width - 50, (int)((float)this.Height / 3) - 45),
                 Location = new Point(25, 25),
                 ReadOnly = false,
@@ -99,7 +100,7 @@ namespace NodeListForm
             MainText = new TextBox()
             {
                 BackColor = this.BackColor,
-                ForeColor = Color.FromArgb(255, 200, 200, 200),
+                ForeColor = IsDarkMode ? Color.FromArgb(255, 200, 200, 200) : Color.FromArgb(255, 56, 56, 56),
                 Size = new Size(this.Width - 50, (int)((float)this.Height / 1.5) - 60),
                 Location = new Point(25, (int)((float)this.Height / 4) + 35),
                 ReadOnly = false,
@@ -112,7 +113,7 @@ namespace NodeListForm
             Date = new TextBox()
             {
                 BackColor = this.BackColor,
-                ForeColor = Color.FromArgb(255, 240, 240, 240),
+                ForeColor = IsDarkMode ? Color.FromArgb(255, 240, 240, 240) : Color.FromArgb(255, 16, 16, 16),
                 Size = new Size(100, 30),
                 Location = new Point(25, this.Height - 45),
                 ReadOnly = false,

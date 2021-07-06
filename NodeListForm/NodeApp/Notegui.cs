@@ -10,6 +10,8 @@ namespace NodeListForm
 {
     class Notegui
     {
+        bool IsDarkMode;
+
         public Panel Panel;
         public Label Caption;
         public Label MainText;
@@ -17,23 +19,25 @@ namespace NodeListForm
         public Button Edit;
         public int Page;
 
-        public Notegui(int Num)
+        public Notegui(int Num, bool IsDarkMode)
         {
+            this.IsDarkMode = IsDarkMode;
+
             Page = Num / 35;
             Panel = new Panel()
             {
                 Size = new Size(87, 65),
                 Cursor = Cursors.Hand,
                 Location = new Point(0 + 96 * (Num % 7), 0 + 76 * ((Num % 35) / 7)),
-                BackColor = Color.FromArgb(255, 45, 45, 45),
-                Name = Num.ToString()
+                BackColor = IsDarkMode ? Color.FromArgb(255, 45, 45, 45) : Color.FromArgb(255, 255, 255, 255),
+                Name = Num.ToString(),
             };
             Caption = new Label()
             {
                 Parent = Panel,
                 Name = Panel.Name,
                 Cursor = Cursors.Hand,
-                ForeColor = Color.FromArgb(255, 240, 240, 240),
+                ForeColor = IsDarkMode ? Color.FromArgb(255, 240, 240, 240) : Color.FromArgb(255, 26, 26, 26),
                 Location = new Point(5, 5),
                 Size = new Size(77, 30),
                 //Text = $"Список {Num} вещей, которые нужно успеть сделать до следующей недели по просьбе родителей",
@@ -45,7 +49,7 @@ namespace NodeListForm
                 Parent = Panel,
                 Name = Panel.Name,
                 Cursor = Cursors.Hand,
-                ForeColor = Color.FromArgb(255, 200, 200, 200),
+                ForeColor = IsDarkMode ? Color.FromArgb(255, 240, 240, 240) : Color.FromArgb(255, 56, 56, 56),
                 Location = new Point(5, 35),
                 Size = new Size(77, 30),
                 //Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -55,7 +59,7 @@ namespace NodeListForm
             Delete = new Button()
             {
                 ForeColor = Color.White,
-                BackColor = Color.FromArgb(180, 206, 17, 38),
+                BackColor = IsDarkMode ? Color.FromArgb(180, 206, 17, 38) : Color.FromArgb(200, 206, 17, 38),
                 Text = "✕",
                 Name = this.Panel.Name,
                 Size = new Size(Panel.Width, Panel.Height),
@@ -69,7 +73,7 @@ namespace NodeListForm
             Edit = new Button()
             {
                 ForeColor = Color.White,
-                BackColor = Color.FromArgb(180, 0, 122, 204),
+                BackColor = IsDarkMode ? Color.FromArgb(180, 0, 122, 204) : Color.FromArgb(200, 0, 122, 204),
                 Text = "🖋",
                 Name = this.Panel.Name,
                 Size = new Size(Panel.Width, Panel.Height),
@@ -85,7 +89,7 @@ namespace NodeListForm
             Panel.Controls.Add(MainText);
             Panel.Controls.Add(Caption);
         }
-        public Notegui(int Num, string Caption, string MainText) : this(Num)
+        public Notegui(int Num, bool IsDarkMode, string Caption, string MainText) : this(Num, IsDarkMode)
         {
             this.Caption.Text = Caption;
             this.MainText.Text = MainText;
@@ -100,9 +104,16 @@ namespace NodeListForm
             this.Delete.Size = new Size(this.Panel.Width, this.Panel.Height);
             this.Edit.Size = new Size(this.Panel.Width, this.Panel.Height);
         }
-        public void ChangeColor(Color color)
+        public void ChangeColors(bool IsDarkMode)
         {
-            this.Panel.BackColor = color;
+            this.IsDarkMode = IsDarkMode;
+
+            Panel.BackColor = IsDarkMode ? Color.FromArgb(255, 45, 45, 45) : Color.FromArgb(255, 255, 255, 255);
+            Caption.ForeColor = IsDarkMode ? Color.FromArgb(255, 240, 240, 240) : Color.FromArgb(255, 26, 26, 26);
+            MainText.ForeColor = IsDarkMode ? Color.FromArgb(255, 240, 240, 240) : Color.FromArgb(255, 56, 56, 56);
+            Delete.BackColor = IsDarkMode ? Color.FromArgb(180, 206, 17, 38) : Color.FromArgb(200, 206, 17, 38);
+            Edit.BackColor = IsDarkMode ? Color.FromArgb(180, 0, 122, 204) : Color.FromArgb(200, 0, 122, 204);
+
         }
     }
 }

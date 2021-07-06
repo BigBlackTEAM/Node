@@ -10,6 +10,8 @@ namespace NodeListForm
 {
     partial class Form1
     {
+        static bool IsDarkMode = true;
+
         Point point;
         bool IsControlPanelShow = true;
         bool IsSearchPanelShow = false;
@@ -48,9 +50,9 @@ namespace NodeListForm
             this.ClientSize = new System.Drawing.Size(793, 569);
             this.Name = "BigBlackNotes";
             this.Text = "BigBlackNotes";
-            this.ForeColor = Color.FromArgb(255, 240, 240, 240);
+            this.ForeColor = IsDarkMode ? Color.FromArgb(255, 238, 238, 238) : Color.FromArgb(255, 25, 25, 25);
             this.ShowIcon = false;
-            this.BackColor = Color.FromArgb(255, 40, 40, 40);
+            this.BackColor = IsDarkMode ? Color.FromArgb(255, 25, 25, 25) : Color.FromArgb(255, 228, 228, 228);
             this.FormBorderStyle = FormBorderStyle.None;
             this.StartPosition = FormStartPosition.CenterScreen;
             this.MinimumSize = new Size(793, 47);
@@ -62,7 +64,7 @@ namespace NodeListForm
             {
                 Size = new Size(this.Width, 30),
                 Location = new Point(0, 0),
-                BackColor = Color.FromArgb(255, 66, 66, 66),
+                BackColor = IsDarkMode ? Color.FromArgb(255, 66, 66, 66) : Color.FromArgb(255, 254, 254, 254),
             };
             UpperPanel.MouseDoubleClick += UpperPanel_MouseDoubleClick;
 
@@ -70,7 +72,7 @@ namespace NodeListForm
             {
                 Size = new Size(this.Width, 40),
                 Location = new Point(0, -12),
-                BackColor = Color.FromArgb(255, 55, 55, 55),
+                BackColor = IsDarkMode ? Color.FromArgb(255, 55, 55, 55) : Color.FromArgb(255, 200, 200, 200),
                 Visible = false,
             };
 
@@ -95,14 +97,14 @@ namespace NodeListForm
             {
                 Size = new Size(this.Width, 2),
                 Location = new Point(0, 30),
-                BackColor = Color.FromArgb(255, 56, 56, 56)
+                BackColor = IsDarkMode ? Color.FromArgb(255, 56, 56, 56) : Color.FromArgb(255, 180, 180, 180),
             };
 
             BottomBorder = new PictureBox()
             {
                 Size = new Size(this.Width, 15),
                 Location = new Point(0, this.Height - 15),
-                BackColor = Color.FromArgb(255, 66, 66, 66),
+                BackColor = IsDarkMode ? Color.FromArgb(255, 66, 66, 66) : Color.FromArgb(255, 254, 254, 254),
                 Anchor = AnchorStyles.Bottom | AnchorStyles.Left,
                 Enabled = false,
             };
@@ -111,7 +113,7 @@ namespace NodeListForm
             {
                 Size = new Size(this.Width - 136, 3),
                 Location = new Point(68, 139),
-                BackColor = Color.FromArgb(255, 66, 66, 66),
+                BackColor = IsDarkMode ? Color.FromArgb(255, 66, 66, 66) : Color.FromArgb(255, 180, 180, 180),
                 Enabled = false,
             };
 
@@ -127,7 +129,7 @@ namespace NodeListForm
                     Font = new Font("Consolas", 13),
                     Text = "✕",
                     Size = new Size(30, 30),
-                    ForeColor = Color.FromArgb(255, 160, 160, 160),
+                    ForeColor = IsDarkMode? Color.FromArgb(255, 160, 160, 160):Color.FromArgb(255, 6, 6, 6),
                     Location = new Point(this.Width-30,0),
                     FlatStyle = FlatStyle.Flat,
                     TextAlign = ContentAlignment.MiddleCenter,
@@ -139,7 +141,7 @@ namespace NodeListForm
                     Font = new Font("Consolas", 13),
                     Text = "◻",
                     Size = new Size(30, 30),
-                    ForeColor = Color.FromArgb(255, 160, 160, 160),
+                    ForeColor = IsDarkMode? Color.FromArgb(255, 160, 160, 160):Color.FromArgb(255, 6, 6, 6),
                     Location = new Point(this.Width-60, 0),
                     FlatStyle = FlatStyle.Flat,
                     TextAlign = ContentAlignment.MiddleCenter,
@@ -151,7 +153,7 @@ namespace NodeListForm
                     Font = new Font("Consolas", 13),
                     Text = "-",
                     Size = new Size(30, 30),
-                    ForeColor = Color.FromArgb(255, 160, 160, 160),
+                    ForeColor = IsDarkMode? Color.FromArgb(255, 160, 160, 160):Color.FromArgb(255, 6, 6, 6),
                     Location = new Point(this.Width-90, 0),
                     FlatStyle = FlatStyle.Flat,
                     TextAlign = ContentAlignment.MiddleCenter,
@@ -163,12 +165,12 @@ namespace NodeListForm
 
             FuncButtons.Add(new Button()
             {
-                Location = new Point(120 * FuncButtons.Count, 0),
+                Location = new Point(120 * FuncButtons.Count + 30, 0),
                 Size = new Size(80, 30),
                 Text = "Заметка",
                 Name = "Note",
                 FlatStyle = FlatStyle.Flat,
-                ForeColor = Color.FromArgb(255, 160, 160, 160),
+                ForeColor = IsDarkMode ? Color.FromArgb(255, 160, 160, 160) : Color.FromArgb(255, 6, 6, 6),
                 Font = new Font("Consolas", 9),
                 TextAlign = ContentAlignment.MiddleCenter,
             });
@@ -180,9 +182,10 @@ namespace NodeListForm
                 Text = "Настройки",
                 Name = "Settings",
                 FlatStyle = FlatStyle.Flat,
-                ForeColor = Color.FromArgb(255, 160, 160, 160),
+                ForeColor = IsDarkMode ? Color.FromArgb(255, 160, 160, 160) : Color.FromArgb(255, 6, 6, 6),
                 Font = new Font("Consolas", 9),
                 Enabled = false,
+                Visible = false,
                 TextAlign = ContentAlignment.MiddleCenter,
             });
 
@@ -195,8 +198,8 @@ namespace NodeListForm
                 Text = "+",
                 Name = "NoteAdd",
                 FlatStyle = FlatStyle.Flat,
-                ForeColor = Color.FromArgb(255, 160, 160, 160),
-                BackColor = Color.FromArgb(255, 36, 36, 36),
+                ForeColor = IsDarkMode ? Color.FromArgb(255, 160, 160, 160) : Color.FromArgb(255, 16, 16, 16),
+                BackColor = IsDarkMode ? Color.FromArgb(255, 25, 25, 25) : Color.FromArgb(255, 240, 240, 240),
                 TextAlign = ContentAlignment.MiddleRight,
                 Font = new Font("Consolas", 14),
                 Region = new Region(RoundedRect(new Rectangle(0, 0, 30, 30), 16))
@@ -209,8 +212,8 @@ namespace NodeListForm
                 Text = "-",
                 Name = "NoteRemove",
                 FlatStyle = FlatStyle.Flat,
-                ForeColor = Color.FromArgb(255, 160, 160, 160),
-                BackColor = Color.FromArgb(255, 36, 36, 36),
+                ForeColor = IsDarkMode ? Color.FromArgb(255, 160, 160, 160) : Color.FromArgb(255, 16, 16, 16),
+                BackColor = IsDarkMode ? Color.FromArgb(255, 25, 25, 25) : Color.FromArgb(255, 240, 240, 240),
                 TextAlign = ContentAlignment.MiddleRight,
                 Font = new Font("Consolas", 14),
                 Region = new Region(RoundedRect(new Rectangle(0, 0, 30, 30), 16))
@@ -223,8 +226,8 @@ namespace NodeListForm
                 Text = "🖋️",
                 Name = "NoteEdit",
                 FlatStyle = FlatStyle.Flat,
-                ForeColor = Color.FromArgb(255, 160, 160, 160),
-                BackColor = Color.FromArgb(255, 36, 36, 36),
+                ForeColor = IsDarkMode ? Color.FromArgb(255, 160, 160, 160) : Color.FromArgb(255, 16, 16, 16),
+                BackColor = IsDarkMode ? Color.FromArgb(255, 25, 25, 25) : Color.FromArgb(255, 240, 240, 240),
                 TextAlign = ContentAlignment.MiddleRight,
                 Font = new Font("Consolas", 9),
                 Region = new Region(RoundedRect(new Rectangle(0, 0, 30, 30), 16))
@@ -237,8 +240,8 @@ namespace NodeListForm
                 Text = "🔎",
                 Name = "NoteSearch",
                 FlatStyle = FlatStyle.Flat,
-                ForeColor = Color.FromArgb(255, 160, 160, 160),
-                BackColor = Color.FromArgb(255, 36, 36, 36),
+                ForeColor = IsDarkMode ? Color.FromArgb(255, 160, 160, 160) : Color.FromArgb(255, 16, 16, 16),
+                BackColor = IsDarkMode ? Color.FromArgb(255, 25, 25, 25) : Color.FromArgb(255, 240, 240, 240),
                 TextAlign = ContentAlignment.MiddleRight,
                 Font = new Font("Consolas", 9),
                 Region = new Region(RoundedRect(new Rectangle(0, 0, 30, 30), 16))
@@ -248,7 +251,7 @@ namespace NodeListForm
             {
                 Size = new Size(30, 30),
                 Location = new Point(ControlButtons.Find(x => x.Name == "NoteSearch").Location.X, 5),
-                BackColor = Color.FromArgb(255, 36, 36, 36),
+                BackColor = IsDarkMode ? Color.FromArgb(255, 25, 25, 25) : Color.FromArgb(255, 240, 240, 240),
                 Region = new Region(RoundedRect(new Rectangle(0, 0, 30, 30), 16))
             };
 
@@ -259,8 +262,8 @@ namespace NodeListForm
                 Location = new Point(15, 8),
                 Size = new Size(200, 30),
                 BorderStyle = BorderStyle.None,
-                BackColor = Color.FromArgb(255, 36, 36, 36),
-                ForeColor = Color.FromArgb(255, 160, 160, 160),
+                ForeColor = IsDarkMode ? Color.FromArgb(255, 160, 160, 160) : Color.FromArgb(255, 16, 16, 16),
+                BackColor = IsDarkMode ? Color.FromArgb(255, 25, 25, 25) : Color.FromArgb(255, 240, 240, 240),
                 MaxLength = 50
             };
 
@@ -268,8 +271,29 @@ namespace NodeListForm
             {
                 Size = new Size(this.Width, this.Height),
                 Location = new Point(0, 30),
-                BackColor = Color.FromArgb(255, 56, 56, 56),
+                BackColor = IsDarkMode ? Color.FromArgb(255, 56, 56, 56) : Color.FromArgb(255, 170, 170, 170),
             };
+
+            Theme = new Button()
+            {
+                Location = new Point(5, 5),
+                Size = new Size(20, 20),
+                Name = "Theme",
+                FlatStyle = FlatStyle.Flat,
+                BackColor = IsDarkMode ? Color.FromArgb(255, 255, 205, 66) : Color.FromArgb(255, 38, 37, 31),
+                TextAlign = ContentAlignment.MiddleRight,
+                Region = new Region(RoundedRect(new Rectangle(0, 0, 20, 20), 11))
+            };
+            Theme.FlatAppearance.BorderSize = 0;
+
+            Theme.MouseClick += (sender, args) =>
+            {
+                IsDarkMode = !IsDarkMode;
+                Theme.BackColor = IsDarkMode ? Color.FromArgb(255, 255, 205, 66) : Color.FromArgb(255, 38, 37, 31);
+                ChangeTheme();
+            };
+
+            UpperPanel.Controls.Add(Theme);
 
             SearchField.GotFocus += SearchField_GotFocus;
             SearchField.LostFocus += SearchField_LostFocus;
@@ -309,7 +333,7 @@ namespace NodeListForm
             AppStartAnim.Tick += ChangeOpacity;
             AppStartAnim.Start();
 
-            manager = new Manager(Controls);
+            manager = new Manager(Controls, IsDarkMode);
             manager.NoteGUIs.ForEach(x => x.Delete.MouseClick += NoteDelete_MouseClick);
             manager.NavigateButtons.ForEach(x => x.MouseClick += Navigate_MouseClick);
 
@@ -317,10 +341,10 @@ namespace NodeListForm
             Controls.Add(BottomBorder);
             Controls.Add(UpperBorder);
             Controls.Add(NoteLabelBorder);
-            
-            
-            
-            
+
+
+
+
             manager.FinishInit(Controls);       // Метод 
                                                 // Где-то тут нужно будет вызвать метод EventsForAllNotes()
 
@@ -334,15 +358,15 @@ namespace NodeListForm
             manager.NoteGUIs.ForEach(x => x.Panel.MouseClick += Panel_MouseClick);
             manager.NoteGUIs.ForEach(x => x.Caption.MouseClick += Panel_MouseClick);
             manager.NoteGUIs.ForEach(x => x.MainText.MouseClick += Panel_MouseClick);
-            
+
             manager.NoteGUIs.ForEach(x => x.Panel.MouseEnter += Panel_MouseEnter);
             manager.NoteGUIs.ForEach(x => x.Caption.MouseEnter += Panel_MouseEnter);
             manager.NoteGUIs.ForEach(x => x.MainText.MouseEnter += Panel_MouseEnter);
-            
+
             manager.NoteGUIs.ForEach(x => x.Panel.MouseLeave += Panel_MouseLeave);
             manager.NoteGUIs.ForEach(x => x.Caption.MouseLeave += Panel_MouseLeave);
             manager.NoteGUIs.ForEach(x => x.MainText.MouseLeave += Panel_MouseLeave);
-            
+
             manager.NoteGUIs.ForEach(x => x.Edit.MouseClick += Edit_MouseClick);
             manager.NoteGUIs.ForEach(x => x.Delete.MouseClick += NoteDelete_MouseClick);
         }
@@ -378,10 +402,12 @@ namespace NodeListForm
             var search = (sender as TextBox).Text;
             //manager.NoteGUIs.Clear();
 
-            while (manager.NoteGUIs.Count!=0) {
+            while (manager.NoteGUIs.Count != 0)
+            {
                 manager.DeleteNote(manager.NoteGUIs.Last(), this.Size);
             }
-            foreach (var item in this.nodeManager.SearchByName(search)) {
+            foreach (var item in this.nodeManager.SearchByName(search))
+            {
                 manager.AddNote(this.Size);
                 manager.NoteGUIs.Last().Caption.Text = item.Name;
                 manager.NoteGUIs.Last().MainText.Text = item.Text;
@@ -466,7 +492,8 @@ namespace NodeListForm
                     manager.NoteGUIs.Last().Caption.Text = FormEdit.Caption.Text;           // Тут будет храниться заголовок записки
                     manager.NoteGUIs.Last().MainText.Text = FormEdit.MainText.Text;         // Тут будет храниться основной текст записки
 
-                    if (!Directory.Exists("Nodes")) {
+                    if (!Directory.Exists("Nodes"))
+                    {
                         Directory.CreateDirectory("Nodes");
                     }
 
@@ -497,12 +524,12 @@ namespace NodeListForm
         private void Edit_MouseClick(object sender, MouseEventArgs e)
         {
             FormEdit FormEdit;
-            
+
             string Caption = manager.NoteGUIs.Find(x => x.Edit.Name == (sender as Button).Name).Caption.Text;
             string MainText = manager.NoteGUIs.Find(x => x.Edit.Name == (sender as Button).Name).MainText.Text;
             string Date = "06.07.2021";
 
-            FormEdit = new FormEdit(Caption, MainText, Date);
+            FormEdit = new FormEdit(IsDarkMode, Caption, MainText, Date);
 
             FormEdit.ShowDialog();
 
@@ -520,15 +547,15 @@ namespace NodeListForm
         private void Panel_MouseLeave(object sender, System.EventArgs e)
         {
             if (sender is Panel)
-                (sender as Panel).BackColor = Color.FromArgb(255, 45, 45, 45);
+                (sender as Panel).BackColor = IsDarkMode ? Color.FromArgb(255, 45, 45, 45) : Color.FromArgb(255, 255, 255, 255);
         }
         private void Panel_MouseEnter(object sender, System.EventArgs e)
         {
             if (sender is Panel)
-                (sender as Panel).BackColor = Color.FromArgb(255, 55, 55, 55);
-            else if(sender is Label)
+                (sender as Panel).BackColor = IsDarkMode ? Color.FromArgb(255, 55, 55, 55) : Color.FromArgb(255, 196, 196, 200);
+            else if (sender is Label)
             {
-                (sender as Label).Parent.BackColor = Color.FromArgb(255, 55, 55, 55);
+                (sender as Label).Parent.BackColor = IsDarkMode ? Color.FromArgb(255, 55, 55, 55) : Color.FromArgb(255, 196, 196, 200);
             }
         }
 
@@ -553,7 +580,7 @@ namespace NodeListForm
                 Date = "06.07.2021";
             }
 
-            Note = new NoteForm(Caption, MainText, Date);
+            Note = new NoteForm(IsDarkMode, Caption, MainText, Date);
 
             Note.Show();
         }
@@ -567,17 +594,17 @@ namespace NodeListForm
 
         private void NoteDelete_MouseClick(object sender, MouseEventArgs e)
         {
-
             this.nodeManager.Nodes.RemoveAt(Convert.ToInt32((sender as Button).Name));
             //MessageBox.Show((sender as Button).Name);
             manager.DeleteNote(manager.NoteGUIs.Find(x => x.Panel.Name == (sender as Button).Name), this.Size);
-            ChangeNoteModes(false, false);
+            ChangeNoteModes(false, true);
 
-            Directory.Delete("Nodes",true);
+            Directory.Delete("Nodes", true);
             Directory.CreateDirectory("Nodes");
-            foreach (var item in this.nodeManager.Nodes) {
-                File.Create("Nodes/"+item.Name+".txt").Close();
-                File.WriteAllText("Nodes/" + item.Name + ".txt",item.Text);
+            foreach (var item in this.nodeManager.Nodes)
+            {
+                File.Create("Nodes/" + item.Name + ".txt").Close();
+                File.WriteAllText("Nodes/" + item.Name + ".txt", item.Text);
             }
 
         }
@@ -604,8 +631,8 @@ namespace NodeListForm
         {
             this.IsEditing = IsEditing;
             this.IsDeleting = IsDeleting;
-            ControlButtons.Find(x => x.Name == "NoteRemove").ForeColor = IsDeleting ? Color.FromArgb(255, 230, 60, 60) : Color.FromArgb(255, 160, 160, 160);
-            ControlButtons.Find(x => x.Name == "NoteEdit").ForeColor = IsEditing ? Color.FromArgb(180, 0, 122, 204) : Color.FromArgb(255, 160, 160, 160);
+            ControlButtons.Find(x => x.Name == "NoteRemove").ForeColor = IsDeleting ? Color.FromArgb(255, 230, 60, 60) : (IsDarkMode ? Color.FromArgb(255, 160, 160, 160) : Color.FromArgb(255, 6, 6, 6));
+            ControlButtons.Find(x => x.Name == "NoteEdit").ForeColor = IsEditing ? Color.FromArgb(180, 0, 122, 204) : (IsDarkMode ? Color.FromArgb(255, 160, 160, 160) : Color.FromArgb(255, 6, 6, 6));
             manager.NoteGUIs.ForEach(x => x.Edit.Visible = this.IsEditing);
             manager.NoteGUIs.ForEach(x => x.Delete.Visible = this.IsDeleting);
         }
@@ -754,7 +781,7 @@ namespace NodeListForm
         }
         private void X_MouseLeave(object sender, System.EventArgs e)
         {
-            if ((sender as Button).Name == "Quit") MainButtons.Find(x => x.Name == "Quit").ForeColor = Color.FromArgb(255, 160, 160, 160);
+            if ((sender as Button).Name == "Quit") MainButtons.Find(x => x.Name == "Quit").ForeColor = IsDarkMode ? Color.FromArgb(255, 160, 160, 160) : Color.FromArgb(255, 6, 6, 6);
         }
         private void X_MouseEnter(object sender, System.EventArgs e)
         {
@@ -796,6 +823,28 @@ namespace NodeListForm
             }
         }
 
+        private void ChangeTheme()
+        {
+            this.ForeColor = IsDarkMode ? Color.FromArgb(255, 238, 238, 238) : Color.FromArgb(255, 25, 25, 25);
+            this.BackColor = IsDarkMode ? Color.FromArgb(255, 25, 25, 25) : Color.FromArgb(255, 228, 228, 228);
+            UpperPanel.BackColor = IsDarkMode ? Color.FromArgb(255, 66, 66, 66) : Color.FromArgb(255, 254, 254, 254);
+            ControlPanel.BackColor = IsDarkMode ? Color.FromArgb(255, 55, 55, 55) : Color.FromArgb(255, 200, 200, 200);
+            UpperBorder.BackColor = IsDarkMode ? Color.FromArgb(255, 56, 56, 56) : Color.FromArgb(255, 180, 180, 180);
+            BottomBorder.BackColor = IsDarkMode ? Color.FromArgb(255, 66, 66, 66) : Color.FromArgb(255, 254, 254, 254);
+            NoteLabelBorder.BackColor = IsDarkMode ? Color.FromArgb(255, 66, 66, 66) : Color.FromArgb(255, 180, 180, 180);
+            MainButtons.ForEach(x=>x.ForeColor = IsDarkMode ? Color.FromArgb(255, 160, 160, 160) : Color.FromArgb(255, 6, 6, 6));
+            FuncButtons.ForEach(x => x.ForeColor = IsDarkMode ? Color.FromArgb(255, 160, 160, 160) : Color.FromArgb(255, 6, 6, 6));
+            ControlButtons.ForEach(x => x.ForeColor = IsDarkMode ? Color.FromArgb(255, 160, 160, 160) : Color.FromArgb(255, 16, 16, 16));
+            ControlButtons.ForEach(x => x.BackColor = IsDarkMode ? Color.FromArgb(255, 25, 25, 25) : Color.FromArgb(255, 240, 240, 240));
+            SearchPanel.BackColor = IsDarkMode ? Color.FromArgb(255, 25, 25, 25) : Color.FromArgb(255, 240, 240, 240);
+            SearchField.ForeColor = IsDarkMode ? Color.FromArgb(255, 160, 160, 160) : Color.FromArgb(255, 16, 16, 16);
+            SearchField.BackColor = IsDarkMode ? Color.FromArgb(255, 25, 25, 25) : Color.FromArgb(255, 240, 240, 240);
+            Background.BackColor = IsDarkMode ? Color.FromArgb(255, 56, 56, 56) : Color.FromArgb(255, 170, 170, 170);
+
+            manager.UpdateTheme(IsDarkMode);
+            manager.NoteGUIs.ForEach(x => x.ChangeColors(IsDarkMode));
+        }
+
         private Panel UpperPanel;
         private Panel ControlPanel;
         private Panel SearchPanel;
@@ -812,6 +861,8 @@ namespace NodeListForm
         private Timer ControlPanelAnim;
         private Timer SearchPanelAnim;
         private Timer AppStartAnim;
+
+        private Button Theme;
 
         private PictureBox Background;
         #endregion
