@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -320,7 +321,22 @@ namespace NodeListForm
 
         private void QuitButton_MouseClick(object sender, MouseEventArgs e)
         {
-            this.Close();
+            if (Directory.Exists("Nodes")) {
+                if (Directory.GetFiles("Nodes").ToList().Any((file) => {
+
+                    //MessageBox.Show(new FileInfo(file).Name.Substring(0, new FileInfo(file).Name.Length - 4));
+                    return new FileInfo(file).Name.Substring(0, new FileInfo(file).Name.Length - 4) == this.Caption.Text;
+                    
+                        }))
+                {
+                    MessageBox.Show("Node Exists!");
+                }
+                else
+                {
+                    this.Close();
+                }
+            }
+            
         }
 
         private void ChangeOpacity(object sender, System.EventArgs e)

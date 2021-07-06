@@ -489,6 +489,8 @@ namespace NodeListForm
 
                     FormEdit.ShowDialog();
 
+                    
+
                     manager.NoteGUIs.Last().Caption.Text = FormEdit.Caption.Text;           // Тут будет храниться заголовок записки
                     manager.NoteGUIs.Last().MainText.Text = FormEdit.MainText.Text;         // Тут будет храниться основной текст записки
 
@@ -840,6 +842,9 @@ namespace NodeListForm
             SearchField.ForeColor = IsDarkMode ? Color.FromArgb(255, 160, 160, 160) : Color.FromArgb(255, 16, 16, 16);
             SearchField.BackColor = IsDarkMode ? Color.FromArgb(255, 25, 25, 25) : Color.FromArgb(255, 240, 240, 240);
             Background.BackColor = IsDarkMode ? Color.FromArgb(255, 56, 56, 56) : Color.FromArgb(255, 170, 170, 170);
+
+            File.Create("Mode.txt").Close();
+            File.WriteAllText("Mode.txt",IsDarkMode.ToString());
 
             manager.UpdateTheme(IsDarkMode);
             manager.NoteGUIs.ForEach(x => x.ChangeColors(IsDarkMode));

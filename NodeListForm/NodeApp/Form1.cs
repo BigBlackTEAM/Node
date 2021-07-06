@@ -20,6 +20,16 @@ namespace NodeListForm
 
         public Form1()
         {
+            if (File.Exists("Mode.txt")) {
+                if (File.ReadAllText("Mode.txt") == "True")
+                {
+                    IsDarkMode = true;
+                }
+                else { 
+                    IsDarkMode = false;
+                    
+                }
+            }
             InitializeComponent();
 
             this.Load += Form1_Load;
