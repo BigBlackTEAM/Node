@@ -166,7 +166,7 @@ namespace NodeListForm
             FuncButtons.Add(new Button()
             {
                 Location = new Point(120 * FuncButtons.Count + 30, 0),
-                Size = new Size(80, 30),
+                Size = new Size(65, 30),
                 Text = "Заметка",
                 Name = "Note",
                 FlatStyle = FlatStyle.Flat,
@@ -276,13 +276,13 @@ namespace NodeListForm
 
             Theme = new Button()
             {
-                Location = new Point(5, 5),
-                Size = new Size(20, 20),
+                Location = new Point(8, 8),
+                Size = new Size(14, 14),
                 Name = "Theme",
                 FlatStyle = FlatStyle.Flat,
                 BackColor = IsDarkMode ? Color.FromArgb(255, 255, 205, 66) : Color.FromArgb(255, 38, 37, 31),
                 TextAlign = ContentAlignment.MiddleRight,
-                Region = new Region(RoundedRect(new Rectangle(0, 0, 20, 20), 11))
+                Region = new Region(RoundedRect(new Rectangle(0, 0, 14, 14), 8))
             };
             Theme.FlatAppearance.BorderSize = 0;
 
