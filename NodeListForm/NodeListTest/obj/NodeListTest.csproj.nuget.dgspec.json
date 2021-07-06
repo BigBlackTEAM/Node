@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\DELL_PRECISION\\Source\\Repos\\Node2\\NodeListForm\\NodeListTest\\NodeListTest.csproj": {}
+    "C:\\Users\\DELL_PRECISION\\Source\\Repos\\Node3\\NodeListForm\\NodeListTest\\NodeListTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\DELL_PRECISION\\Source\\Repos\\Node2\\NodeListForm\\NodeListTest\\NodeListTest.csproj": {
+    "C:\\Users\\DELL_PRECISION\\Source\\Repos\\Node3\\NodeListForm\\NodeListTest\\NodeListTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DELL_PRECISION\\Source\\Repos\\Node2\\NodeListForm\\NodeListTest\\NodeListTest.csproj",
+        "projectUniqueName": "C:\\Users\\DELL_PRECISION\\Source\\Repos\\Node3\\NodeListForm\\NodeListTest\\NodeListTest.csproj",
         "projectName": "NodeListTest",
-        "projectPath": "C:\\Users\\DELL_PRECISION\\Source\\Repos\\Node2\\NodeListForm\\NodeListTest\\NodeListTest.csproj",
+        "projectPath": "C:\\Users\\DELL_PRECISION\\Source\\Repos\\Node3\\NodeListForm\\NodeListTest\\NodeListTest.csproj",
         "packagesPath": "C:\\Users\\DELL_PRECISION\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DELL_PRECISION\\Source\\Repos\\Node2\\NodeListForm\\NodeListTest\\obj\\",
+        "outputPath": "C:\\Users\\DELL_PRECISION\\Source\\Repos\\Node3\\NodeListForm\\NodeListTest\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

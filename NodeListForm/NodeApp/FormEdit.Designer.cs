@@ -321,20 +321,28 @@ namespace NodeListForm
 
         private void QuitButton_MouseClick(object sender, MouseEventArgs e)
         {
-            if (Directory.Exists("Nodes")) {
-                if (Directory.GetFiles("Nodes").ToList().Any((file) => {
+            if (this.Caption.Text != ActualFileName)
+            {
+                if (Directory.Exists("Nodes"))
+                {
+                    if (Directory.GetFiles("Nodes").ToList().Any((file) =>
+                    {
 
-                    //MessageBox.Show(new FileInfo(file).Name.Substring(0, new FileInfo(file).Name.Length - 4));
-                    return new FileInfo(file).Name.Substring(0, new FileInfo(file).Name.Length - 4) == this.Caption.Text;
-                    
-                        }))
-                {
-                    MessageBox.Show("Node Exists!");
+                        //MessageBox.Show(new FileInfo(file).Name.Substring(0, new FileInfo(file).Name.Length - 4));
+                        return new FileInfo(file).Name.Substring(0, new FileInfo(file).Name.Length - 4) == this.Caption.Text;
+
+                    }))
+                    {
+                        MessageBox.Show("Node Exists!");
+                    }
+                    else
+                    {
+                        this.Close();
+                    }
                 }
-                else
-                {
-                    this.Close();
-                }
+            }
+            else {
+                this.Close();
             }
             
         }

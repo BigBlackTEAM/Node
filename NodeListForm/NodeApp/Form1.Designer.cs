@@ -480,7 +480,7 @@ namespace NodeListForm
                     AddMode();                  // Этот метод убирает режим добавления (Не влияет на механизм добавления)
                     AddEventsForLastNote();     // Добавляются ивенты для последней записки
 
-                    FormEdit FormEdit = new FormEdit();
+                    FormEdit FormEdit = new FormEdit(IsDarkMode);
 
                     FormEdit.Caption.Text = "Заголовок записки";            // Не изменять
                     FormEdit.MainText.Text = "Основной текст записки";      // Не изменять

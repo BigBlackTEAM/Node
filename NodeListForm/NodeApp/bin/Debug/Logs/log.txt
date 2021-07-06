@@ -123874,3 +123874,1587 @@ Size was changed
 MESSAGE-06.07.2021 20:42:54,
 Application was started
 
+MESSAGE-06.07.2021 21:16:37,
+Init was finished
+
+MESSAGE-06.07.2021 21:16:37,
+Size was changed
+
+MESSAGE-06.07.2021 21:16:37,
+Note was added | current notes 1 
+
+MESSAGE-06.07.2021 21:16:37,
+Size was changed
+
+MESSAGE-06.07.2021 21:16:37,
+Note was added | current notes 2 
+
+MESSAGE-06.07.2021 21:16:37,
+Size was changed
+
+MESSAGE-06.07.2021 21:16:37,
+Note was added | current notes 3 
+
+MESSAGE-06.07.2021 21:16:37,
+Size was changed
+
+MESSAGE-06.07.2021 21:16:37,
+Note was added | current notes 4 
+
+MESSAGE-06.07.2021 21:16:37,
+Size was changed
+
+MESSAGE-06.07.2021 21:16:37,
+Note was added | current notes 5 
+
+MESSAGE-06.07.2021 21:16:37,
+Size was changed
+
+MESSAGE-06.07.2021 21:16:37,
+Note was added | current notes 6 
+
+MESSAGE-06.07.2021 21:16:37,
+Size was changed
+
+MESSAGE-06.07.2021 21:16:37,
+Note was added | current notes 7 
+
+MESSAGE-06.07.2021 21:16:37,
+Size was changed
+
+MESSAGE-06.07.2021 21:16:37,
+Note was added | current notes 8 
+
+MESSAGE-06.07.2021 21:16:37,
+Size was changed
+
+MESSAGE-06.07.2021 21:16:37,
+Note was added | current notes 9 
+
+MESSAGE-06.07.2021 21:16:37,
+Size was changed
+
+MESSAGE-06.07.2021 21:16:37,
+Note was added | current notes 10 
+
+MESSAGE-06.07.2021 21:16:37,
+Size was changed
+
+MESSAGE-06.07.2021 21:16:37,
+Note was added | current notes 11 
+
+MESSAGE-06.07.2021 21:16:37,
+Size was changed
+
+MESSAGE-06.07.2021 21:16:37,
+Note was added | current notes 12 
+
+MESSAGE-06.07.2021 21:16:37,
+Size was changed
+
+MESSAGE-06.07.2021 21:16:37,
+Size was changed
+
+MESSAGE-06.07.2021 21:16:41,
+Size was changed
+
+MESSAGE-06.07.2021 21:16:41,
+Note was added | current notes 13 
+
+MESSAGE-06.07.2021 21:16:47,
+Opacity was changed >last0,12
+
+MESSAGE-06.07.2021 21:16:47,
+Application was changed >current 0,16
+
+MESSAGE-06.07.2021 21:16:47,
+Opacity was changed >last0,16
+
+MESSAGE-06.07.2021 21:16:47,
+Application was changed >current 0,2
+
+MESSAGE-06.07.2021 21:16:47,
+Opacity was changed >last0,2
+
+MESSAGE-06.07.2021 21:16:47,
+Application was changed >current 0,24
+
+MESSAGE-06.07.2021 21:16:47,
+Opacity was changed >last0,24
+
+MESSAGE-06.07.2021 21:16:47,
+Application was changed >current 0,28
+
+MESSAGE-06.07.2021 21:16:47,
+Opacity was changed >last0,28
+
+MESSAGE-06.07.2021 21:16:47,
+Application was changed >current 0,32
+
+MESSAGE-06.07.2021 21:16:47,
+Opacity was changed >last0,32
+
+MESSAGE-06.07.2021 21:16:47,
+Application was changed >current 0,36
+
+MESSAGE-06.07.2021 21:16:47,
+Opacity was changed >last0,36
+
+MESSAGE-06.07.2021 21:16:47,
+Application was changed >current 0,4
+
+MESSAGE-06.07.2021 21:16:47,
+Opacity was changed >last0,4
+
+MESSAGE-06.07.2021 21:16:47,
+Application was changed >current 0,44
+
+MESSAGE-06.07.2021 21:16:47,
+Opacity was changed >last0,44
+
+MESSAGE-06.07.2021 21:16:47,
+Application was changed >current 0,48
+
+MESSAGE-06.07.2021 21:16:47,
+Opacity was changed >last0,48
+
+MESSAGE-06.07.2021 21:16:47,
+Application was changed >current 0,52
+
+MESSAGE-06.07.2021 21:16:47,
+Opacity was changed >last0,52
+
+MESSAGE-06.07.2021 21:16:47,
+Application was changed >current 0,56
+
+MESSAGE-06.07.2021 21:16:47,
+Opacity was changed >last0,56
+
+MESSAGE-06.07.2021 21:16:47,
+Application was changed >current 0,6
+
+MESSAGE-06.07.2021 21:16:47,
+Opacity was changed >last0,6
+
+MESSAGE-06.07.2021 21:16:47,
+Application was changed >current 0,64
+
+MESSAGE-06.07.2021 21:16:47,
+Opacity was changed >last0,64
+
+MESSAGE-06.07.2021 21:16:47,
+Application was changed >current 0,68
+
+MESSAGE-06.07.2021 21:16:47,
+Opacity was changed >last0,68
+
+MESSAGE-06.07.2021 21:16:47,
+Application was changed >current 0,72
+
+MESSAGE-06.07.2021 21:16:47,
+Opacity was changed >last0,72
+
+MESSAGE-06.07.2021 21:16:47,
+Application was changed >current 0,76
+
+MESSAGE-06.07.2021 21:16:47,
+Opacity was changed >last0,76
+
+MESSAGE-06.07.2021 21:16:47,
+Application was changed >current 0,8
+
+MESSAGE-06.07.2021 21:16:47,
+Opacity was changed >last0,8
+
+MESSAGE-06.07.2021 21:16:47,
+Application was changed >current 0,84
+
+MESSAGE-06.07.2021 21:16:47,
+Opacity was changed >last0,84
+
+MESSAGE-06.07.2021 21:16:47,
+Application was changed >current 0,88
+
+MESSAGE-06.07.2021 21:16:47,
+Opacity was changed >last0,88
+
+MESSAGE-06.07.2021 21:16:47,
+Application was changed >current 0,92
+
+MESSAGE-06.07.2021 21:16:47,
+Opacity was changed >last0,92
+
+MESSAGE-06.07.2021 21:16:47,
+Application was changed >current 0,96
+
+MESSAGE-06.07.2021 21:16:51,
+ForeColor was changed toColor [Red]
+
+MESSAGE-06.07.2021 21:16:51,
+Application was closed
+
+MESSAGE-06.07.2021 21:16:51,
+ForeColor was changed toColor [A=255, R=240, G=240, B=240]
+
+MESSAGE-06.07.2021 21:16:53,
+Size was changed
+
+MESSAGE-06.07.2021 21:16:53,
+Note was added | current notes 14 
+
+MESSAGE-06.07.2021 21:18:47,
+Init was finished
+
+MESSAGE-06.07.2021 21:18:47,
+Size was changed
+
+MESSAGE-06.07.2021 21:18:47,
+Note was added | current notes 1 
+
+MESSAGE-06.07.2021 21:18:47,
+Size was changed
+
+MESSAGE-06.07.2021 21:18:47,
+Note was added | current notes 2 
+
+MESSAGE-06.07.2021 21:18:47,
+Size was changed
+
+MESSAGE-06.07.2021 21:18:47,
+Note was added | current notes 3 
+
+MESSAGE-06.07.2021 21:18:47,
+Size was changed
+
+MESSAGE-06.07.2021 21:18:47,
+Note was added | current notes 4 
+
+MESSAGE-06.07.2021 21:18:47,
+Size was changed
+
+MESSAGE-06.07.2021 21:18:47,
+Note was added | current notes 5 
+
+MESSAGE-06.07.2021 21:18:47,
+Size was changed
+
+MESSAGE-06.07.2021 21:18:47,
+Note was added | current notes 6 
+
+MESSAGE-06.07.2021 21:18:47,
+Size was changed
+
+MESSAGE-06.07.2021 21:18:47,
+Note was added | current notes 7 
+
+MESSAGE-06.07.2021 21:18:47,
+Size was changed
+
+MESSAGE-06.07.2021 21:18:47,
+Note was added | current notes 8 
+
+MESSAGE-06.07.2021 21:18:47,
+Size was changed
+
+MESSAGE-06.07.2021 21:18:47,
+Note was added | current notes 9 
+
+MESSAGE-06.07.2021 21:18:47,
+Size was changed
+
+MESSAGE-06.07.2021 21:18:47,
+Note was added | current notes 10 
+
+MESSAGE-06.07.2021 21:18:47,
+Size was changed
+
+MESSAGE-06.07.2021 21:18:47,
+Note was added | current notes 11 
+
+MESSAGE-06.07.2021 21:18:47,
+Size was changed
+
+MESSAGE-06.07.2021 21:18:47,
+Note was added | current notes 12 
+
+MESSAGE-06.07.2021 21:18:47,
+Size was changed
+
+MESSAGE-06.07.2021 21:18:47,
+Note was added | current notes 13 
+
+MESSAGE-06.07.2021 21:18:47,
+Size was changed
+
+MESSAGE-06.07.2021 21:18:47,
+Note was added | current notes 14 
+
+MESSAGE-06.07.2021 21:18:47,
+Size was changed
+
+MESSAGE-06.07.2021 21:18:47,
+Size was changed
+
+MESSAGE-06.07.2021 21:19:29,
+Init was finished
+
+MESSAGE-06.07.2021 21:19:29,
+Size was changed
+
+MESSAGE-06.07.2021 21:19:29,
+Note was added | current notes 1 
+
+MESSAGE-06.07.2021 21:19:29,
+Size was changed
+
+MESSAGE-06.07.2021 21:19:29,
+Note was added | current notes 2 
+
+MESSAGE-06.07.2021 21:19:29,
+Size was changed
+
+MESSAGE-06.07.2021 21:19:29,
+Note was added | current notes 3 
+
+MESSAGE-06.07.2021 21:19:29,
+Size was changed
+
+MESSAGE-06.07.2021 21:19:29,
+Note was added | current notes 4 
+
+MESSAGE-06.07.2021 21:19:29,
+Size was changed
+
+MESSAGE-06.07.2021 21:19:29,
+Note was added | current notes 5 
+
+MESSAGE-06.07.2021 21:19:29,
+Size was changed
+
+MESSAGE-06.07.2021 21:19:29,
+Note was added | current notes 6 
+
+MESSAGE-06.07.2021 21:19:29,
+Size was changed
+
+MESSAGE-06.07.2021 21:19:29,
+Note was added | current notes 7 
+
+MESSAGE-06.07.2021 21:19:29,
+Size was changed
+
+MESSAGE-06.07.2021 21:19:29,
+Note was added | current notes 8 
+
+MESSAGE-06.07.2021 21:19:29,
+Size was changed
+
+MESSAGE-06.07.2021 21:19:29,
+Note was added | current notes 9 
+
+MESSAGE-06.07.2021 21:19:29,
+Size was changed
+
+MESSAGE-06.07.2021 21:19:29,
+Note was added | current notes 10 
+
+MESSAGE-06.07.2021 21:19:29,
+Size was changed
+
+MESSAGE-06.07.2021 21:19:29,
+Note was added | current notes 11 
+
+MESSAGE-06.07.2021 21:19:29,
+Size was changed
+
+MESSAGE-06.07.2021 21:19:29,
+Note was added | current notes 12 
+
+MESSAGE-06.07.2021 21:19:29,
+Size was changed
+
+MESSAGE-06.07.2021 21:19:29,
+Note was added | current notes 13 
+
+MESSAGE-06.07.2021 21:19:29,
+Size was changed
+
+MESSAGE-06.07.2021 21:19:29,
+Note was added | current notes 14 
+
+MESSAGE-06.07.2021 21:19:29,
+Size was changed
+
+MESSAGE-06.07.2021 21:19:29,
+Size was changed
+
+MESSAGE-06.07.2021 21:19:31,
+Size was changed
+
+MESSAGE-06.07.2021 21:19:31,
+Note was added | current notes 15 
+
+MESSAGE-06.07.2021 21:20:08,
+Init was finished
+
+MESSAGE-06.07.2021 21:20:08,
+Size was changed
+
+MESSAGE-06.07.2021 21:20:08,
+Note was added | current notes 1 
+
+MESSAGE-06.07.2021 21:20:08,
+Size was changed
+
+MESSAGE-06.07.2021 21:20:08,
+Note was added | current notes 2 
+
+MESSAGE-06.07.2021 21:20:08,
+Size was changed
+
+MESSAGE-06.07.2021 21:20:08,
+Note was added | current notes 3 
+
+MESSAGE-06.07.2021 21:20:08,
+Size was changed
+
+MESSAGE-06.07.2021 21:20:08,
+Note was added | current notes 4 
+
+MESSAGE-06.07.2021 21:20:08,
+Size was changed
+
+MESSAGE-06.07.2021 21:20:08,
+Note was added | current notes 5 
+
+MESSAGE-06.07.2021 21:20:08,
+Size was changed
+
+MESSAGE-06.07.2021 21:20:08,
+Note was added | current notes 6 
+
+MESSAGE-06.07.2021 21:20:08,
+Size was changed
+
+MESSAGE-06.07.2021 21:20:08,
+Note was added | current notes 7 
+
+MESSAGE-06.07.2021 21:20:08,
+Size was changed
+
+MESSAGE-06.07.2021 21:20:08,
+Note was added | current notes 8 
+
+MESSAGE-06.07.2021 21:20:08,
+Size was changed
+
+MESSAGE-06.07.2021 21:20:08,
+Note was added | current notes 9 
+
+MESSAGE-06.07.2021 21:20:08,
+Size was changed
+
+MESSAGE-06.07.2021 21:20:08,
+Note was added | current notes 10 
+
+MESSAGE-06.07.2021 21:20:08,
+Size was changed
+
+MESSAGE-06.07.2021 21:20:08,
+Note was added | current notes 11 
+
+MESSAGE-06.07.2021 21:20:08,
+Size was changed
+
+MESSAGE-06.07.2021 21:20:08,
+Note was added | current notes 12 
+
+MESSAGE-06.07.2021 21:20:08,
+Size was changed
+
+MESSAGE-06.07.2021 21:20:08,
+Note was added | current notes 13 
+
+MESSAGE-06.07.2021 21:20:08,
+Size was changed
+
+MESSAGE-06.07.2021 21:20:08,
+Note was added | current notes 14 
+
+MESSAGE-06.07.2021 21:20:08,
+Size was changed
+
+MESSAGE-06.07.2021 21:20:08,
+Size was changed
+
+MESSAGE-06.07.2021 21:20:10,
+Opacity was changed >last0,12
+
+MESSAGE-06.07.2021 21:20:10,
+Application was changed >current 0,16
+
+MESSAGE-06.07.2021 21:20:10,
+Opacity was changed >last0,16
+
+MESSAGE-06.07.2021 21:20:10,
+Application was changed >current 0,2
+
+MESSAGE-06.07.2021 21:20:10,
+Opacity was changed >last0,2
+
+MESSAGE-06.07.2021 21:20:10,
+Application was changed >current 0,24
+
+MESSAGE-06.07.2021 21:20:10,
+Opacity was changed >last0,24
+
+MESSAGE-06.07.2021 21:20:10,
+Application was changed >current 0,28
+
+MESSAGE-06.07.2021 21:20:10,
+Opacity was changed >last0,28
+
+MESSAGE-06.07.2021 21:20:10,
+Application was changed >current 0,32
+
+MESSAGE-06.07.2021 21:20:10,
+Opacity was changed >last0,32
+
+MESSAGE-06.07.2021 21:20:10,
+Application was changed >current 0,36
+
+MESSAGE-06.07.2021 21:20:10,
+Opacity was changed >last0,36
+
+MESSAGE-06.07.2021 21:20:10,
+Application was changed >current 0,4
+
+MESSAGE-06.07.2021 21:20:10,
+Opacity was changed >last0,4
+
+MESSAGE-06.07.2021 21:20:10,
+Application was changed >current 0,44
+
+MESSAGE-06.07.2021 21:20:10,
+Opacity was changed >last0,44
+
+MESSAGE-06.07.2021 21:20:10,
+Application was changed >current 0,48
+
+MESSAGE-06.07.2021 21:20:10,
+Opacity was changed >last0,48
+
+MESSAGE-06.07.2021 21:20:10,
+Application was changed >current 0,52
+
+MESSAGE-06.07.2021 21:20:10,
+Opacity was changed >last0,52
+
+MESSAGE-06.07.2021 21:20:10,
+Application was changed >current 0,56
+
+MESSAGE-06.07.2021 21:20:10,
+Opacity was changed >last0,56
+
+MESSAGE-06.07.2021 21:20:10,
+Application was changed >current 0,6
+
+MESSAGE-06.07.2021 21:20:10,
+Opacity was changed >last0,6
+
+MESSAGE-06.07.2021 21:20:10,
+Application was changed >current 0,64
+
+MESSAGE-06.07.2021 21:20:10,
+Opacity was changed >last0,64
+
+MESSAGE-06.07.2021 21:20:10,
+Application was changed >current 0,68
+
+MESSAGE-06.07.2021 21:20:10,
+Opacity was changed >last0,68
+
+MESSAGE-06.07.2021 21:20:10,
+Application was changed >current 0,72
+
+MESSAGE-06.07.2021 21:20:10,
+Opacity was changed >last0,72
+
+MESSAGE-06.07.2021 21:20:10,
+Application was changed >current 0,76
+
+MESSAGE-06.07.2021 21:20:10,
+Opacity was changed >last0,76
+
+MESSAGE-06.07.2021 21:20:10,
+Application was changed >current 0,8
+
+MESSAGE-06.07.2021 21:20:10,
+Opacity was changed >last0,8
+
+MESSAGE-06.07.2021 21:20:10,
+Application was changed >current 0,84
+
+MESSAGE-06.07.2021 21:20:10,
+Opacity was changed >last0,84
+
+MESSAGE-06.07.2021 21:20:10,
+Application was changed >current 0,88
+
+MESSAGE-06.07.2021 21:20:10,
+Opacity was changed >last0,88
+
+MESSAGE-06.07.2021 21:20:10,
+Application was changed >current 0,92
+
+MESSAGE-06.07.2021 21:20:10,
+Opacity was changed >last0,92
+
+MESSAGE-06.07.2021 21:20:10,
+Application was changed >current 0,96
+
+MESSAGE-06.07.2021 21:20:11,
+ForeColor was changed toColor [Red]
+
+MESSAGE-06.07.2021 21:20:11,
+Application was closed
+
+MESSAGE-06.07.2021 21:20:11,
+ForeColor was changed toColor [A=255, R=240, G=240, B=240]
+
+MESSAGE-06.07.2021 21:23:56,
+Init was finished
+
+MESSAGE-06.07.2021 21:23:56,
+Size was changed
+
+MESSAGE-06.07.2021 21:23:56,
+Note was added | current notes 1 
+
+MESSAGE-06.07.2021 21:23:56,
+Size was changed
+
+MESSAGE-06.07.2021 21:23:56,
+Note was added | current notes 2 
+
+MESSAGE-06.07.2021 21:23:56,
+Size was changed
+
+MESSAGE-06.07.2021 21:23:56,
+Note was added | current notes 3 
+
+MESSAGE-06.07.2021 21:23:56,
+Size was changed
+
+MESSAGE-06.07.2021 21:23:56,
+Note was added | current notes 4 
+
+MESSAGE-06.07.2021 21:23:57,
+Size was changed
+
+MESSAGE-06.07.2021 21:23:57,
+Note was added | current notes 5 
+
+MESSAGE-06.07.2021 21:23:57,
+Size was changed
+
+MESSAGE-06.07.2021 21:23:57,
+Note was added | current notes 6 
+
+MESSAGE-06.07.2021 21:23:57,
+Size was changed
+
+MESSAGE-06.07.2021 21:23:57,
+Note was added | current notes 7 
+
+MESSAGE-06.07.2021 21:23:57,
+Size was changed
+
+MESSAGE-06.07.2021 21:23:57,
+Note was added | current notes 8 
+
+MESSAGE-06.07.2021 21:23:57,
+Size was changed
+
+MESSAGE-06.07.2021 21:23:57,
+Note was added | current notes 9 
+
+MESSAGE-06.07.2021 21:23:57,
+Size was changed
+
+MESSAGE-06.07.2021 21:23:57,
+Note was added | current notes 10 
+
+MESSAGE-06.07.2021 21:23:57,
+Size was changed
+
+MESSAGE-06.07.2021 21:23:57,
+Note was added | current notes 11 
+
+MESSAGE-06.07.2021 21:23:57,
+Size was changed
+
+MESSAGE-06.07.2021 21:23:57,
+Note was added | current notes 12 
+
+MESSAGE-06.07.2021 21:23:57,
+Size was changed
+
+MESSAGE-06.07.2021 21:23:57,
+Note was added | current notes 13 
+
+MESSAGE-06.07.2021 21:23:57,
+Size was changed
+
+MESSAGE-06.07.2021 21:23:57,
+Note was added | current notes 14 
+
+MESSAGE-06.07.2021 21:23:57,
+Size was changed
+
+MESSAGE-06.07.2021 21:23:57,
+Size was changed
+
+MESSAGE-06.07.2021 21:26:37,
+Init was finished
+
+MESSAGE-06.07.2021 21:26:37,
+Size was changed
+
+MESSAGE-06.07.2021 21:26:37,
+Note was added | current notes 1 
+
+MESSAGE-06.07.2021 21:26:37,
+Size was changed
+
+MESSAGE-06.07.2021 21:26:37,
+Note was added | current notes 2 
+
+MESSAGE-06.07.2021 21:26:37,
+Size was changed
+
+MESSAGE-06.07.2021 21:26:37,
+Note was added | current notes 3 
+
+MESSAGE-06.07.2021 21:26:37,
+Size was changed
+
+MESSAGE-06.07.2021 21:26:37,
+Note was added | current notes 4 
+
+MESSAGE-06.07.2021 21:26:37,
+Size was changed
+
+MESSAGE-06.07.2021 21:26:37,
+Note was added | current notes 5 
+
+MESSAGE-06.07.2021 21:26:37,
+Size was changed
+
+MESSAGE-06.07.2021 21:26:37,
+Note was added | current notes 6 
+
+MESSAGE-06.07.2021 21:26:37,
+Size was changed
+
+MESSAGE-06.07.2021 21:26:37,
+Note was added | current notes 7 
+
+MESSAGE-06.07.2021 21:26:37,
+Size was changed
+
+MESSAGE-06.07.2021 21:26:37,
+Note was added | current notes 8 
+
+MESSAGE-06.07.2021 21:26:37,
+Size was changed
+
+MESSAGE-06.07.2021 21:26:37,
+Note was added | current notes 9 
+
+MESSAGE-06.07.2021 21:26:37,
+Size was changed
+
+MESSAGE-06.07.2021 21:26:37,
+Note was added | current notes 10 
+
+MESSAGE-06.07.2021 21:26:37,
+Size was changed
+
+MESSAGE-06.07.2021 21:26:37,
+Note was added | current notes 11 
+
+MESSAGE-06.07.2021 21:26:37,
+Size was changed
+
+MESSAGE-06.07.2021 21:26:37,
+Note was added | current notes 12 
+
+MESSAGE-06.07.2021 21:26:37,
+Size was changed
+
+MESSAGE-06.07.2021 21:26:37,
+Note was added | current notes 13 
+
+MESSAGE-06.07.2021 21:26:37,
+Size was changed
+
+MESSAGE-06.07.2021 21:26:37,
+Note was added | current notes 14 
+
+MESSAGE-06.07.2021 21:26:37,
+Size was changed
+
+MESSAGE-06.07.2021 21:26:37,
+Size was changed
+
+MESSAGE-06.07.2021 21:27:24,
+Application was started
+
+MESSAGE-06.07.2021 21:29:04,
+Init was finished
+
+MESSAGE-06.07.2021 21:29:04,
+Size was changed
+
+MESSAGE-06.07.2021 21:29:04,
+Note was added | current notes 1 
+
+MESSAGE-06.07.2021 21:29:04,
+Size was changed
+
+MESSAGE-06.07.2021 21:29:04,
+Note was added | current notes 2 
+
+MESSAGE-06.07.2021 21:29:04,
+Size was changed
+
+MESSAGE-06.07.2021 21:29:04,
+Note was added | current notes 3 
+
+MESSAGE-06.07.2021 21:29:04,
+Size was changed
+
+MESSAGE-06.07.2021 21:29:04,
+Note was added | current notes 4 
+
+MESSAGE-06.07.2021 21:29:04,
+Size was changed
+
+MESSAGE-06.07.2021 21:29:04,
+Note was added | current notes 5 
+
+MESSAGE-06.07.2021 21:29:04,
+Size was changed
+
+MESSAGE-06.07.2021 21:29:04,
+Note was added | current notes 6 
+
+MESSAGE-06.07.2021 21:29:04,
+Size was changed
+
+MESSAGE-06.07.2021 21:29:04,
+Note was added | current notes 7 
+
+MESSAGE-06.07.2021 21:29:04,
+Size was changed
+
+MESSAGE-06.07.2021 21:29:04,
+Note was added | current notes 8 
+
+MESSAGE-06.07.2021 21:29:04,
+Size was changed
+
+MESSAGE-06.07.2021 21:29:04,
+Note was added | current notes 9 
+
+MESSAGE-06.07.2021 21:29:04,
+Size was changed
+
+MESSAGE-06.07.2021 21:29:04,
+Note was added | current notes 10 
+
+MESSAGE-06.07.2021 21:29:04,
+Size was changed
+
+MESSAGE-06.07.2021 21:29:04,
+Note was added | current notes 11 
+
+MESSAGE-06.07.2021 21:29:04,
+Size was changed
+
+MESSAGE-06.07.2021 21:29:04,
+Note was added | current notes 12 
+
+MESSAGE-06.07.2021 21:29:04,
+Size was changed
+
+MESSAGE-06.07.2021 21:29:04,
+Note was added | current notes 13 
+
+MESSAGE-06.07.2021 21:29:04,
+Size was changed
+
+MESSAGE-06.07.2021 21:29:04,
+Note was added | current notes 14 
+
+MESSAGE-06.07.2021 21:29:04,
+Size was changed
+
+MESSAGE-06.07.2021 21:29:04,
+Size was changed
+
+MESSAGE-06.07.2021 21:29:07,
+Opacity was changed >last0,12
+
+MESSAGE-06.07.2021 21:29:07,
+Application was changed >current 0,16
+
+MESSAGE-06.07.2021 21:29:07,
+Opacity was changed >last0,16
+
+MESSAGE-06.07.2021 21:29:07,
+Application was changed >current 0,2
+
+MESSAGE-06.07.2021 21:29:07,
+Opacity was changed >last0,2
+
+MESSAGE-06.07.2021 21:29:07,
+Application was changed >current 0,24
+
+MESSAGE-06.07.2021 21:29:07,
+Opacity was changed >last0,24
+
+MESSAGE-06.07.2021 21:29:07,
+Application was changed >current 0,28
+
+MESSAGE-06.07.2021 21:29:07,
+Opacity was changed >last0,28
+
+MESSAGE-06.07.2021 21:29:07,
+Application was changed >current 0,32
+
+MESSAGE-06.07.2021 21:29:07,
+Opacity was changed >last0,32
+
+MESSAGE-06.07.2021 21:29:07,
+Application was changed >current 0,36
+
+MESSAGE-06.07.2021 21:29:07,
+Opacity was changed >last0,36
+
+MESSAGE-06.07.2021 21:29:07,
+Application was changed >current 0,4
+
+MESSAGE-06.07.2021 21:29:07,
+Opacity was changed >last0,4
+
+MESSAGE-06.07.2021 21:29:07,
+Application was changed >current 0,44
+
+MESSAGE-06.07.2021 21:29:07,
+Opacity was changed >last0,44
+
+MESSAGE-06.07.2021 21:29:07,
+Application was changed >current 0,48
+
+MESSAGE-06.07.2021 21:29:07,
+Opacity was changed >last0,48
+
+MESSAGE-06.07.2021 21:29:07,
+Application was changed >current 0,52
+
+MESSAGE-06.07.2021 21:29:07,
+Opacity was changed >last0,52
+
+MESSAGE-06.07.2021 21:29:07,
+Application was changed >current 0,56
+
+MESSAGE-06.07.2021 21:29:07,
+Opacity was changed >last0,56
+
+MESSAGE-06.07.2021 21:29:07,
+Application was changed >current 0,6
+
+MESSAGE-06.07.2021 21:29:07,
+Opacity was changed >last0,6
+
+MESSAGE-06.07.2021 21:29:07,
+Application was changed >current 0,64
+
+MESSAGE-06.07.2021 21:29:07,
+Opacity was changed >last0,64
+
+MESSAGE-06.07.2021 21:29:07,
+Application was changed >current 0,68
+
+MESSAGE-06.07.2021 21:29:07,
+Opacity was changed >last0,68
+
+MESSAGE-06.07.2021 21:29:07,
+Application was changed >current 0,72
+
+MESSAGE-06.07.2021 21:29:07,
+Opacity was changed >last0,72
+
+MESSAGE-06.07.2021 21:29:07,
+Application was changed >current 0,76
+
+MESSAGE-06.07.2021 21:29:07,
+Opacity was changed >last0,76
+
+MESSAGE-06.07.2021 21:29:07,
+Application was changed >current 0,8
+
+MESSAGE-06.07.2021 21:29:07,
+Opacity was changed >last0,8
+
+MESSAGE-06.07.2021 21:29:07,
+Application was changed >current 0,84
+
+MESSAGE-06.07.2021 21:29:07,
+Opacity was changed >last0,84
+
+MESSAGE-06.07.2021 21:29:07,
+Application was changed >current 0,88
+
+MESSAGE-06.07.2021 21:29:07,
+Opacity was changed >last0,88
+
+MESSAGE-06.07.2021 21:29:07,
+Application was changed >current 0,92
+
+MESSAGE-06.07.2021 21:29:07,
+Opacity was changed >last0,92
+
+MESSAGE-06.07.2021 21:29:07,
+Application was changed >current 0,96
+
+MESSAGE-06.07.2021 21:29:08,
+ForeColor was changed toColor [Red]
+
+MESSAGE-06.07.2021 21:29:08,
+Application was closed
+
+MESSAGE-06.07.2021 21:29:08,
+ForeColor was changed toColor [A=255, R=240, G=240, B=240]
+
+MESSAGE-06.07.2021 21:29:10,
+Size was changed
+
+MESSAGE-06.07.2021 21:29:10,
+Note was added | current notes 15 
+
+MESSAGE-06.07.2021 21:29:19,
+Size was changed
+
+MESSAGE-06.07.2021 21:29:19,
+Size was changed
+
+WARNING-06.07.2021 21:29:19,
+Note was deleted 
+
+MESSAGE-06.07.2021 21:29:20,
+Size was changed
+
+MESSAGE-06.07.2021 21:29:20,
+Size was changed
+
+WARNING-06.07.2021 21:29:20,
+Note was deleted 
+
+MESSAGE-06.07.2021 21:29:21,
+Application was started
+
+MESSAGE-06.07.2021 21:29:58,
+Init was finished
+
+MESSAGE-06.07.2021 21:29:58,
+Size was changed
+
+MESSAGE-06.07.2021 21:29:58,
+Note was added | current notes 1 
+
+MESSAGE-06.07.2021 21:29:58,
+Size was changed
+
+MESSAGE-06.07.2021 21:29:58,
+Note was added | current notes 2 
+
+MESSAGE-06.07.2021 21:29:58,
+Size was changed
+
+MESSAGE-06.07.2021 21:29:58,
+Note was added | current notes 3 
+
+MESSAGE-06.07.2021 21:29:58,
+Size was changed
+
+MESSAGE-06.07.2021 21:29:58,
+Note was added | current notes 4 
+
+MESSAGE-06.07.2021 21:29:58,
+Size was changed
+
+MESSAGE-06.07.2021 21:29:58,
+Note was added | current notes 5 
+
+MESSAGE-06.07.2021 21:29:58,
+Size was changed
+
+MESSAGE-06.07.2021 21:29:58,
+Note was added | current notes 6 
+
+MESSAGE-06.07.2021 21:29:58,
+Size was changed
+
+MESSAGE-06.07.2021 21:29:58,
+Note was added | current notes 7 
+
+MESSAGE-06.07.2021 21:29:58,
+Size was changed
+
+MESSAGE-06.07.2021 21:29:58,
+Note was added | current notes 8 
+
+MESSAGE-06.07.2021 21:29:58,
+Size was changed
+
+MESSAGE-06.07.2021 21:29:58,
+Note was added | current notes 9 
+
+MESSAGE-06.07.2021 21:29:58,
+Size was changed
+
+MESSAGE-06.07.2021 21:29:58,
+Note was added | current notes 10 
+
+MESSAGE-06.07.2021 21:29:58,
+Size was changed
+
+MESSAGE-06.07.2021 21:29:58,
+Note was added | current notes 11 
+
+MESSAGE-06.07.2021 21:29:58,
+Size was changed
+
+MESSAGE-06.07.2021 21:29:58,
+Note was added | current notes 12 
+
+MESSAGE-06.07.2021 21:29:58,
+Size was changed
+
+MESSAGE-06.07.2021 21:29:58,
+Note was added | current notes 13 
+
+MESSAGE-06.07.2021 21:29:58,
+Size was changed
+
+MESSAGE-06.07.2021 21:29:58,
+Size was changed
+
+MESSAGE-06.07.2021 21:30:00,
+Size was changed
+
+MESSAGE-06.07.2021 21:30:00,
+Note was added | current notes 14 
+
+MESSAGE-06.07.2021 21:30:48,
+Init was finished
+
+MESSAGE-06.07.2021 21:30:48,
+Size was changed
+
+MESSAGE-06.07.2021 21:30:48,
+Note was added | current notes 1 
+
+MESSAGE-06.07.2021 21:30:48,
+Size was changed
+
+MESSAGE-06.07.2021 21:30:48,
+Note was added | current notes 2 
+
+MESSAGE-06.07.2021 21:30:48,
+Size was changed
+
+MESSAGE-06.07.2021 21:30:48,
+Note was added | current notes 3 
+
+MESSAGE-06.07.2021 21:30:48,
+Size was changed
+
+MESSAGE-06.07.2021 21:30:48,
+Note was added | current notes 4 
+
+MESSAGE-06.07.2021 21:30:48,
+Size was changed
+
+MESSAGE-06.07.2021 21:30:48,
+Note was added | current notes 5 
+
+MESSAGE-06.07.2021 21:30:48,
+Size was changed
+
+MESSAGE-06.07.2021 21:30:48,
+Note was added | current notes 6 
+
+MESSAGE-06.07.2021 21:30:48,
+Size was changed
+
+MESSAGE-06.07.2021 21:30:48,
+Note was added | current notes 7 
+
+MESSAGE-06.07.2021 21:30:48,
+Size was changed
+
+MESSAGE-06.07.2021 21:30:48,
+Note was added | current notes 8 
+
+MESSAGE-06.07.2021 21:30:48,
+Size was changed
+
+MESSAGE-06.07.2021 21:30:48,
+Note was added | current notes 9 
+
+MESSAGE-06.07.2021 21:30:48,
+Size was changed
+
+MESSAGE-06.07.2021 21:30:48,
+Note was added | current notes 10 
+
+MESSAGE-06.07.2021 21:30:48,
+Size was changed
+
+MESSAGE-06.07.2021 21:30:48,
+Note was added | current notes 11 
+
+MESSAGE-06.07.2021 21:30:48,
+Size was changed
+
+MESSAGE-06.07.2021 21:30:48,
+Note was added | current notes 12 
+
+MESSAGE-06.07.2021 21:30:48,
+Size was changed
+
+MESSAGE-06.07.2021 21:30:48,
+Note was added | current notes 13 
+
+MESSAGE-06.07.2021 21:30:48,
+Size was changed
+
+MESSAGE-06.07.2021 21:30:48,
+Note was added | current notes 14 
+
+MESSAGE-06.07.2021 21:30:49,
+Size was changed
+
+MESSAGE-06.07.2021 21:30:49,
+Size was changed
+
+MESSAGE-06.07.2021 21:30:52,
+Application was started
+
+MESSAGE-06.07.2021 21:31:27,
+Init was finished
+
+MESSAGE-06.07.2021 21:31:27,
+Size was changed
+
+MESSAGE-06.07.2021 21:31:27,
+Note was added | current notes 1 
+
+MESSAGE-06.07.2021 21:31:27,
+Size was changed
+
+MESSAGE-06.07.2021 21:31:27,
+Note was added | current notes 2 
+
+MESSAGE-06.07.2021 21:31:27,
+Size was changed
+
+MESSAGE-06.07.2021 21:31:27,
+Note was added | current notes 3 
+
+MESSAGE-06.07.2021 21:31:27,
+Size was changed
+
+MESSAGE-06.07.2021 21:31:27,
+Note was added | current notes 4 
+
+MESSAGE-06.07.2021 21:31:27,
+Size was changed
+
+MESSAGE-06.07.2021 21:31:27,
+Note was added | current notes 5 
+
+MESSAGE-06.07.2021 21:31:27,
+Size was changed
+
+MESSAGE-06.07.2021 21:31:27,
+Note was added | current notes 6 
+
+MESSAGE-06.07.2021 21:31:27,
+Size was changed
+
+MESSAGE-06.07.2021 21:31:27,
+Note was added | current notes 7 
+
+MESSAGE-06.07.2021 21:31:27,
+Size was changed
+
+MESSAGE-06.07.2021 21:31:27,
+Note was added | current notes 8 
+
+MESSAGE-06.07.2021 21:31:27,
+Size was changed
+
+MESSAGE-06.07.2021 21:31:27,
+Note was added | current notes 9 
+
+MESSAGE-06.07.2021 21:31:27,
+Size was changed
+
+MESSAGE-06.07.2021 21:31:27,
+Note was added | current notes 10 
+
+MESSAGE-06.07.2021 21:31:27,
+Size was changed
+
+MESSAGE-06.07.2021 21:31:27,
+Note was added | current notes 11 
+
+MESSAGE-06.07.2021 21:31:27,
+Size was changed
+
+MESSAGE-06.07.2021 21:31:27,
+Note was added | current notes 12 
+
+MESSAGE-06.07.2021 21:31:27,
+Size was changed
+
+MESSAGE-06.07.2021 21:31:27,
+Note was added | current notes 13 
+
+MESSAGE-06.07.2021 21:31:27,
+Size was changed
+
+MESSAGE-06.07.2021 21:31:27,
+Note was added | current notes 14 
+
+MESSAGE-06.07.2021 21:31:27,
+Size was changed
+
+MESSAGE-06.07.2021 21:31:27,
+Size was changed
+
+MESSAGE-06.07.2021 21:31:29,
+Size was changed
+
+MESSAGE-06.07.2021 21:31:29,
+Note was added | current notes 15 
+
+MESSAGE-06.07.2021 21:35:48,
+Init was finished
+
+MESSAGE-06.07.2021 21:35:48,
+Size was changed
+
+MESSAGE-06.07.2021 21:35:48,
+Note was added | current notes 1 
+
+MESSAGE-06.07.2021 21:35:48,
+Size was changed
+
+MESSAGE-06.07.2021 21:35:48,
+Note was added | current notes 2 
+
+MESSAGE-06.07.2021 21:35:48,
+Size was changed
+
+MESSAGE-06.07.2021 21:35:48,
+Note was added | current notes 3 
+
+MESSAGE-06.07.2021 21:35:48,
+Size was changed
+
+MESSAGE-06.07.2021 21:35:48,
+Note was added | current notes 4 
+
+MESSAGE-06.07.2021 21:35:48,
+Size was changed
+
+MESSAGE-06.07.2021 21:35:48,
+Note was added | current notes 5 
+
+MESSAGE-06.07.2021 21:35:48,
+Size was changed
+
+MESSAGE-06.07.2021 21:35:48,
+Note was added | current notes 6 
+
+MESSAGE-06.07.2021 21:35:48,
+Size was changed
+
+MESSAGE-06.07.2021 21:35:48,
+Note was added | current notes 7 
+
+MESSAGE-06.07.2021 21:35:48,
+Size was changed
+
+MESSAGE-06.07.2021 21:35:48,
+Note was added | current notes 8 
+
+MESSAGE-06.07.2021 21:35:48,
+Size was changed
+
+MESSAGE-06.07.2021 21:35:48,
+Note was added | current notes 9 
+
+MESSAGE-06.07.2021 21:35:48,
+Size was changed
+
+MESSAGE-06.07.2021 21:35:48,
+Note was added | current notes 10 
+
+MESSAGE-06.07.2021 21:35:48,
+Size was changed
+
+MESSAGE-06.07.2021 21:35:48,
+Note was added | current notes 11 
+
+MESSAGE-06.07.2021 21:35:48,
+Size was changed
+
+MESSAGE-06.07.2021 21:35:48,
+Note was added | current notes 12 
+
+MESSAGE-06.07.2021 21:35:48,
+Size was changed
+
+MESSAGE-06.07.2021 21:35:48,
+Note was added | current notes 13 
+
+MESSAGE-06.07.2021 21:35:48,
+Size was changed
+
+MESSAGE-06.07.2021 21:35:48,
+Note was added | current notes 14 
+
+MESSAGE-06.07.2021 21:35:48,
+Size was changed
+
+MESSAGE-06.07.2021 21:35:48,
+Size was changed
+
+MESSAGE-06.07.2021 21:35:50,
+Size was changed
+
+MESSAGE-06.07.2021 21:35:50,
+Note was added | current notes 15 
+
+MESSAGE-06.07.2021 21:36:09,
+Size was changed
+
+MESSAGE-06.07.2021 21:36:09,
+Note was added | current notes 16 
+
+MESSAGE-06.07.2021 21:36:16,
+Size was changed
+
+MESSAGE-06.07.2021 21:36:16,
+Size was changed
+
+WARNING-06.07.2021 21:36:16,
+Note was deleted 
+
+MESSAGE-06.07.2021 21:36:17,
+Size was changed
+
+MESSAGE-06.07.2021 21:36:17,
+Size was changed
+
+WARNING-06.07.2021 21:36:17,
+Note was deleted 
+
+MESSAGE-06.07.2021 21:36:17,
+Size was changed
+
+MESSAGE-06.07.2021 21:36:17,
+Size was changed
+
+WARNING-06.07.2021 21:36:17,
+Note was deleted 
+
+MESSAGE-06.07.2021 21:36:17,
+Size was changed
+
+MESSAGE-06.07.2021 21:36:17,
+Size was changed
+
+WARNING-06.07.2021 21:36:17,
+Note was deleted 
+
+MESSAGE-06.07.2021 21:36:17,
+Size was changed
+
+MESSAGE-06.07.2021 21:36:17,
+Size was changed
+
+WARNING-06.07.2021 21:36:17,
+Note was deleted 
+
+MESSAGE-06.07.2021 21:36:18,
+Size was changed
+
+MESSAGE-06.07.2021 21:36:18,
+Size was changed
+
+WARNING-06.07.2021 21:36:18,
+Note was deleted 
+
+MESSAGE-06.07.2021 21:36:18,
+Size was changed
+
+MESSAGE-06.07.2021 21:36:18,
+Size was changed
+
+WARNING-06.07.2021 21:36:18,
+Note was deleted 
+
+MESSAGE-06.07.2021 21:36:18,
+Size was changed
+
+MESSAGE-06.07.2021 21:36:18,
+Size was changed
+
+WARNING-06.07.2021 21:36:18,
+Note was deleted 
+
+MESSAGE-06.07.2021 21:36:18,
+Size was changed
+
+MESSAGE-06.07.2021 21:36:18,
+Size was changed
+
+WARNING-06.07.2021 21:36:18,
+Note was deleted 
+
+MESSAGE-06.07.2021 21:36:24,
+Size was changed
+
+MESSAGE-06.07.2021 21:36:24,
+Note was added | current notes 8 
+
+MESSAGE-06.07.2021 21:36:27,
+Size was changed
+
+MESSAGE-06.07.2021 21:36:27,
+Size was changed
+
+WARNING-06.07.2021 21:36:27,
+Note was deleted 
+
+MESSAGE-06.07.2021 21:36:31,
+Application was started
+

@@ -50,3 +50,16 @@ C:\Users\DELL_PRECISION\Source\Repos\Node2\NodeListForm\NodeApp\obj\Debug\NodeAp
 C:\Users\DELL_PRECISION\Source\Repos\Node2\NodeListForm\NodeApp\obj\Debug\NodeApp.csproj.CopyComplete
 C:\Users\DELL_PRECISION\Source\Repos\Node2\NodeListForm\NodeApp\obj\Debug\NodeApp.exe
 C:\Users\DELL_PRECISION\Source\Repos\Node2\NodeListForm\NodeApp\obj\Debug\NodeApp.pdb
+C:\Users\DELL_PRECISION\Source\Repos\Node3\NodeListForm\NodeApp\bin\Debug\NodeApp.exe.config
+C:\Users\DELL_PRECISION\Source\Repos\Node3\NodeListForm\NodeApp\bin\Debug\NodeApp.exe
+C:\Users\DELL_PRECISION\Source\Repos\Node3\NodeListForm\NodeApp\bin\Debug\NodeApp.pdb
+C:\Users\DELL_PRECISION\Source\Repos\Node3\NodeListForm\NodeApp\bin\Debug\LogicLib.dll
+C:\Users\DELL_PRECISION\Source\Repos\Node3\NodeListForm\NodeApp\bin\Debug\LogicLib.pdb
+C:\Users\DELL_PRECISION\Source\Repos\Node3\NodeListForm\NodeApp\obj\Debug\NodeApp.csproj.AssemblyReference.cache
+C:\Users\DELL_PRECISION\Source\Repos\Node3\NodeListForm\NodeApp\obj\Debug\NodeApp.Form1.resources
+C:\Users\DELL_PRECISION\Source\Repos\Node3\NodeListForm\NodeApp\obj\Debug\NodeApp.Properties.Resources.resources
+C:\Users\DELL_PRECISION\Source\Repos\Node3\NodeListForm\NodeApp\obj\Debug\NodeApp.csproj.GenerateResource.cache
+C:\Users\DELL_PRECISION\Source\Repos\Node3\NodeListForm\NodeApp\obj\Debug\NodeApp.csproj.CoreCompileInputs.cache
+C:\Users\DELL_PRECISION\Source\Repos\Node3\NodeListForm\NodeApp\obj\Debug\NodeApp.csproj.CopyComplete
+C:\Users\DELL_PRECISION\Source\Repos\Node3\NodeListForm\NodeApp\obj\Debug\NodeApp.exe
+C:\Users\DELL_PRECISION\Source\Repos\Node3\NodeListForm\NodeApp\obj\Debug\NodeApp.pdb

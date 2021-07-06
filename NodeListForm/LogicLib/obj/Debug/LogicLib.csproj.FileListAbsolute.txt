@@ -34,3 +34,9 @@ C:\Users\DELL_PRECISION\Source\Repos\Node2\NodeListForm\LogicLib\obj\Debug\Logic
 C:\Users\DELL_PRECISION\Source\Repos\Node2\NodeListForm\LogicLib\obj\Debug\LogicLib.csproj.CoreCompileInputs.cache
 C:\Users\DELL_PRECISION\Source\Repos\Node2\NodeListForm\LogicLib\obj\Debug\LogicLib.dll
 C:\Users\DELL_PRECISION\Source\Repos\Node2\NodeListForm\LogicLib\obj\Debug\LogicLib.pdb
+C:\Users\DELL_PRECISION\Source\Repos\Node3\NodeListForm\LogicLib\bin\Debug\LogicLib.dll
+C:\Users\DELL_PRECISION\Source\Repos\Node3\NodeListForm\LogicLib\bin\Debug\LogicLib.pdb
+C:\Users\DELL_PRECISION\Source\Repos\Node3\NodeListForm\LogicLib\obj\Debug\LogicLib.csproj.AssemblyReference.cache
+C:\Users\DELL_PRECISION\Source\Repos\Node3\NodeListForm\LogicLib\obj\Debug\LogicLib.csproj.CoreCompileInputs.cache
+C:\Users\DELL_PRECISION\Source\Repos\Node3\NodeListForm\LogicLib\obj\Debug\LogicLib.dll
+C:\Users\DELL_PRECISION\Source\Repos\Node3\NodeListForm\LogicLib\obj\Debug\LogicLib.pdb

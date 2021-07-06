@@ -13,24 +13,31 @@ namespace NodeListForm
 {
     public partial class FormEdit : Form
     {
+        private string ActualFileName;
         public FormEdit()
         {
-            InitializeComponent();
+            
             this.Load += Form1_Load;
         }
+        public FormEdit(bool isdarkMode):this()
+        {
 
+            this.IsDarkMode = isdarkMode;
+            InitializeComponent();
+        }
         public FormEdit(bool IsDarkMode, string Caption, string MainText, string Date)
         {
             this.IsDarkMode = IsDarkMode;
 
             InitializeComponent();
 
-            this.Load += Form1_Load;
+            //this.Load += Form1_Load;
             this.ResizeRedraw = true;
             this.DoubleBuffered = true;
 
             this.Date.Text = Date;
             this.Caption.Text = Caption;
+            this.ActualFileName = Caption;
             this.MainText.Text = MainText;
         }
 
